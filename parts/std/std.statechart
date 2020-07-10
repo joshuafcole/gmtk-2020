@@ -1,0 +1,53 @@
+Mouse*
+    @x: 0
+    @y: 0
+
+    LMB!*
+        Up*
+            on any.mouse.down -> Down
+        Down
+            on any.mouse.up -> Up
+
+    on any.mouse.move
+        @x: event.view_x
+        @y: event.view_y
+
+Components*
+    ModifierKeys*
+        on state.enter
+            add Key
+                @name: "ctrl"
+                @key: "Control"
+                @label: "ctrl"
+            add Key
+                @name: "shift"
+                @key: "Shift"
+                @label: "⇧"
+            add Key
+                @name: "alt"
+                @key: "Alt"
+                @label: "⌥"
+            add Key
+                @name: "super"
+                @key: "super"
+                @label: "⌘"
+        interface
+            modifier-keys
+                draw Key
+
+        Key[]
+            @name: "ctrl"
+            @key: "Control"
+            @label: @name
+
+            Value!*
+                Inactive*
+                    on Key.mouse.down -> Active
+                Active
+                    on Key.mouse.down -> Inactive
+
+            interface
+                _active: lib.ternary(lib.in(Value.Active), "active", "")
+                key-wrapper(class=_active)
+                    key(class=@name)
+                        label {{@label}}

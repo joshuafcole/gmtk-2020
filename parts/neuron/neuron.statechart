@@ -1,0 +1,28 @@
+Neuron[]
+    interface
+        g.neuron(svg=true)
+            draw Axon
+            draw Nucleus
+            draw Terminal
+
+    Nucleus*
+        @x: 0
+        @y: 0
+
+        interface
+            g.nucleus(svg=true)
+                circle(svg=true, cx=@x, cy=@y, r=30)
+
+    Axon*
+        interface
+            g.axon(svg=true)
+                line(svg=true, x1=@Nucleus.x, y1=@Nucleus.y, x2=@Terminal.x, y2=@Terminal.y)
+
+
+    Terminal*
+        @x: 0
+        @y: 0
+
+        interface
+            g.terminal(svg=true)
+                circle(svg=true, cx=@x, cy=@y, r=30)

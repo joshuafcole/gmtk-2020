@@ -1,0 +1,6 @@
+{
+  "index": "index.html",
+  "statechart": "gmtk.statechart",
+  "lib": "gmtk.ts",
+  "style": "gmtk.styl"
+}

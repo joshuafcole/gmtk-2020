@@ -1,0 +1,41 @@
+//------------------------------------------------------------------------------
+// Misc. Components
+//------------------------------------------------------------------------------
+
+modifier-keys
+  align-items: flex-start;
+
+  key
+    width: 2em;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    border: 1px solid rgba($tron-blue, 0.5);
+    color: mix(white, $tron-blue, 50%);
+    transition: background 0.2s ease, border 0.2s ease, color 0.2s ease;
+
+    label
+      font-size: 1.5em;
+      line-height: 1;
+
+    &.ctrl
+      label
+        font-size: 1em;
+
+  key-wrapper
+    padding: 0.25em;
+
+    &:hover
+      key
+        border-color: $tron-blue;
+        background: rgba($tron-blue, 0.15);
+        color: mix(white, $tron-blue, 75%);
+
+    &:active, &.active
+      filter: url("#bloom-tron");
+
+      key
+        border-color: $tron-blue;
+        background: rgba($tron-blue, 0.3);
+        color: white;

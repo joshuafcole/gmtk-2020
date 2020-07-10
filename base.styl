@@ -1,0 +1,37 @@
+support-for-ie = false;
+
+html, body
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  min-height: 100vh;
+  font-size: 20px;
+  line-height: 1.5;
+
+*
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+
+head *
+  display: none;
+
+script, style
+  display: none;
+
+div.__root, div.sc_root
+  flex: 1;
+
+spacer
+  flex: 1;
+
+[contentEditable]
+  min-width: 1em;
+  min-height: 1.5em;
+
+  &[placeholder]:empty
+    &:before
+      content: attr(placeholder);
+      opacity: 0.5;

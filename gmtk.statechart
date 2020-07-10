@@ -1,0 +1,25 @@
+import "./parts/std/std.statechart"
+
+App*
+
+    on state.enter
+        add Neuron
+            Nucleus*
+                @x: 50
+                @y: 200
+            Terminal*
+                @x: 800
+                @y: 50
+
+    interface
+        app
+            draw NeuralScreen
+
+
+    import "./parts/neuron/neuron.statechart"
+
+    NeuralScreen*
+        interface
+            _window: lib.window_size()
+            svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
+                draw Neuron

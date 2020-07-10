@@ -1,0 +1,35 @@
+// Each tile is positioned in grid coordinates, and has a unique tile id.
+// Tiles are composed of layers.
+// Each layer maps to a particular rectangle in the specified tilesheet.
+// The topmost (last) layer to provide a pixel at a given position is definitive.
+// Each sheet will have 3 suffixes:
+// - The base sheet for the actual tile image
+// - The collision mask for detecting terrain collision
+//   - 0 (empty) is no collision, any other color indicates the collision id.
+//   - The collision id can be used to disambiguate between water, pits, spikes, etc.
+// - The edge mask for indicating which terrain group each edge belongs to.
+//   - 0 (empty) is universal, meaning that this pixel does not constrain neighboring tiles.
+//   - Any other color indicates the terrain group, which neighbors must match.
+//   - Optionally, one color channel may be reserved for subgroups (what does that mean exactly?)
+
+Tile
+    @x: 0
+    @y: 0
+    @w: 32
+    @h: 32
+    @tile_id: 0
+
+    interface
+        tile(style="left: {{@x * @w}}; --y: {{@y * @h}}")
+            draw Layer
+
+    Layer[]
+        @sheet: ""
+        @tx: 0
+        @ty: 0
+
+        interface
+            tile-layer(class="sheet-{{@sheet}}", style="--tx: {{@tx}}; --ty: {{@ty}}")
+
+Grid[]
+    Tile[] :: Tile

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+
+    "lib": ["dom", "es2015", "esnext.array", "es2015.iterable"],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es6"
+  },
+  "include": [
+    "src/typings/**/*.d.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,236 @@
+flex-version = flex
+support-for-ie = false
+vendor-prefixes = official
+
+//------------------------------------------------------------------------------
+// Imports
+//------------------------------------------------------------------------------
+
+@font-face
+  font-family: "MockFlow1";
+  src: url("/assets/fonts/MockFlowFont1.woff") format("woff2");
+
+@font-face
+  font-family: "MockFlow2";
+  src: url("/assets/fonts/MockFlowFont2.woff") format("woff2");
+
+//------------------------------------------------------------------------------
+// Mixins
+//------------------------------------------------------------------------------
+
+elevation($level)
+  box-shadow: 0 round(3px*sqrt($level)) 5px*$level rgba(black, 0.2);
+
+knockout-text($fallback, $gradient)
+  color: $fallback;
+  @supports(-webkit-background-clip: text)
+    background-image: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+
+blueprint-grid($major = 1px white, $minor = 1px gray, $width = 32px, $height = $width, $cells_per_major = 5, $dx = 0, $dy = 0)
+  background-image: \
+    linear-gradient($major[1] $major[0], transparent $major[0]), \
+    linear-gradient(90deg, $major[1] $major[0], transparent $major[0]), \
+    linear-gradient($minor[1] $minor[0], transparent $minor[0]), \
+    linear-gradient(90deg, $minor[1] $minor[0], transparent $minor[0]);
+
+  $major_width = "calc(%s * %s)" % ($width $cells_per_major);
+  $major_height = "calc(%s * %s)" % ($height $cells_per_major);
+
+  if type-of($cells_per_major) != "call"
+    if type-of($width) != "call"
+      $major_width = $width * $cells_per_major;
+    if type-of($height) != "call"
+      $major_height = $height * $cells_per_major;
+
+  background-size: \
+    $major_width $major_height, \
+    $major_width $major_height, \
+    $width $height, \
+    $width $height;
+
+  $major_x = "calc(%s - %s)" % ($dx $major[0]);
+  $major_y = "calc(%s - %s)" % ($dy $major[0]);
+  $minor_x = "calc(%s - %s)" % ($dx $minor[0]);
+  $minor_y = "calc(%s - %s)" % ($dy $minor[0]);
+
+  if type-of($dx) != "call"
+    $major_x = $dx - $major[0];
+    $minor_x = $dx - $minor[0];
+  if type-of($dy) != "call"
+    $major_y = $dy - $major[0];
+    $minor_y = $dy - $minor[0];
+
+  background-position: \
+    $major_x $major_y, \
+    $major_x $major_y, \
+    $minor_x $minor_y, \
+    $minor_x $minor_y;
+
+//------------------------------------------------------------------------------
+// Polyfill Mixins
+//------------------------------------------------------------------------------
+
+border-left-radius($n)
+  border-top-left-radius: $n;
+  border-bottom-left-radius: $n;
+border-right-radius($n)
+  border-top-right-radius: $n;
+  border-bottom-right-radius: $n;
+border-top-radius($n)
+  border-top-left-radius: $n;
+  border-top-right-radius: $n;
+border-bottom-radius($n)
+  border-bottom-left-radius: $n;
+  border-bottom-right-radius: $n;
+
+fancy-scrollbars()
+  &::-webkit-scrollbar
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+
+  &::-webkit-scrollbar-track
+    background-color: transparent
+
+  &::-webkit-scrollbar-thumb
+    background-color: #ccc;
+    background-clip: content-box;
+    border: 0px solid transparent;
+
+    &:horizontal
+      border-top-width: 2px;
+    &:vertical
+      border-left-width: 2px;
+
+  &::-webkit-scrollbar-button, &::-webkit-scrollbar-corner
+    display:none;
+
+overlay($pad = 0)
+  position: absolute;
+  top: $pad; right: $pad; bottom: $pad; left: $pad;
+
+//------------------------------------------------------------------------------
+// Mixin Helper Fns
+//------------------------------------------------------------------------------
+
+sqrt(x)
+  return math(x, 'sqrt')
+
+opposite-side($side)
+  if $side == left
+    return right;
+  if $side == right
+    return left;
+  if $side == top
+    return bottom;
+  if $side == bottom
+    return top;
+
+axis-of($side)
+  if $side == left
+    return x;
+  if $side == right
+    return x;
+  if $side == top
+    return y;
+  if $side == bottom
+    return y;
+
+opposite-axis($axis)
+  if $axis == x
+    return y;
+  if $axis == y
+    return x;
+
+align-side($side)
+  if $side == left
+    return start;
+  if $side == right
+    return end;
+  if $side == top
+    return start;
+  if $side == bottom
+    return end;
+
+flex-justify($side)
+  if $side == left
+    return row;
+  if $side == right
+    return row-reverse;
+  if $side == top
+    return column;
+  if $side == bottom
+    return column-reverse;
+
+side-x($side)
+  if $side == left
+    return -1;
+  if $side == right
+    return 1;
+  return 0;
+
+side-y($side)
+  if $side == top
+    return -1;
+  if $side == bottom
+    return 1;
+  return 0;
+
+//------------------------------------------------------------------------------
+// Shared classes
+//------------------------------------------------------------------------------
+
+.redacted
+  font-family: "MockFlow1";
+
+//------------------------------------------------------------------------------
+// Concrete specific
+//------------------------------------------------------------------------------
+
+$tron-blue = #70CEE0;
+$naheschwarz = #060608;
+
+$canvas = #16161D;
+$canvas-highlight = #515161;
+$grid = $naheschwarz;
+$grid-glow = rgba(white, 0.22);
+$dock = rgba(#060608, 0.28);
+
+$grid-width = 32px;
+$grid-height = 32px;
+
+gradient2($a, $b, $base = $canvas, $highlight = $canvas-highlight)
+  $start = blend(rgba($highlight, $a), $base);
+  $end = blend(rgba($highlight, $b), $base);
+  return linear-gradient(165deg, $start 5%, $end 100%);
+
+gradient3($a, $b, $c, $skew = 5%, $angle = 170deg, $base = $canvas, $highlight = $canvas-highlight)
+  $start = blend(rgba($highlight, $a), $base);
+  $near-end = blend(rgba($highlight, $b), $base);
+  $end = blend(rgba($highlight, $c), $base);
+  return linear-gradient($angle, $start 2%, $near-end (100% - $skew), $end 100%);
+
+inset-style($depth = 2, $angle = 170deg)
+  background: gradient3(0.48 - $depth * 0.05, 0.55 - $depth * 0.05, 0.60 - $depth * 0.05, 5%, $angle)
+
+outset-style($depth = 2, $angle = 170deg)
+  background: gradient3(0.62 + $depth * 0.08, 0.51 + $depth * 0.07, 0.50 + $depth * 0.07, 5%, $angle)
+
+//------------------------------------------------------------------------------
+// Animations
+//------------------------------------------------------------------------------
+
+@keyframes fade-in
+  0%
+    opacity: 0;
+  100%
+    opacity: 1;
+
+@keyframes fade-out
+  0%
+    opacity: 1;
+  100%
+    opacity: 0;

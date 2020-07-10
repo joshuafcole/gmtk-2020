@@ -1,0 +1,11 @@
+*#
+#*
+.#*
+*~
+*.js.map
+*.DS_Store
+*.tgz
+node_modules/
+dist/
+
+!typings.d.ts
