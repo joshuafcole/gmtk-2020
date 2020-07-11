@@ -180,11 +180,19 @@ Neuron
             Dragging
                 @ox: @x
                 @oy: @y
-                on any.mouse.move
+                on any.mouse.move (!lib.in(Type.Logic))
                     _dx: event.view_x - @start_x
                     _dy: event.view_y - @start_y
                     @x: @ox + _dx
                     @y: @oy + _dy
+
+                on any.mouse.move (lib.in(Type.Logic))
+                    _dx: event.view_x - @start_x
+                    _dy: event.view_y - @start_y
+                    @x: @ox + _dx
+                    @y: @oy + _dy
+                    @Type.Logic.theta: Math.atan2(@y - @Nucleus.y, @x - @Nucleus.x)
+                    @Type.Logic.base_length: Math.hypot(@y - @Nucleus.y, @x - @Nucleus.x)
 
     Out
         @action: ""
