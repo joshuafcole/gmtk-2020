@@ -4,110 +4,124 @@ App*
     on state.enter
         _: lib.start_ticking()
 
-        add Neuron
-            Nucleus*
-                @x: 50
-                @y: 200
-            Terminal*
-                @x: 800
-                @y: 50
+        add NeuralScreen
+            @name: "Motor"
 
-            Type!*
-                Motor*
+            Neuron
+                Nucleus*
+                    @x: 50
+                    @y: 200
+                Terminal*
+                    @x: 800
+                    @y: 50
 
-        add Neuron
-            Nucleus*
-                @x: 300
-                @y: 300
-            Terminal*
-                @x: 325
-                @y: 350
+                Type!*
+                    Motor*
 
-            Type!*
-                Memory*
-                    @icon: "cog fas"
+            Neuron
+                Nucleus*
+                    @x: 400
+                    @y: 425
+                Terminal*
+                    @x: 100
+                    @y: 600
 
+                Type!*
+                    Motor*
 
-        add Neuron
-            Nucleus*
-                @x: 750
-                @y: 125
-            Terminal*
-                @x: 500
-                @y: 400
-
-            Type!*
-                Memory*
-                    @icon: "feather fas"
-                    Thought
-                        @content: "Is a ton of feathers really not lighter than a ton of bricks?"
-                    Thought
-                        @content: "I mean, it makes sense, but..."
-
-
-        add Neuron
-            Nucleus*
-                @x: 400
-                @y: 425
-            Terminal*
-                @x: 100
-                @y: 600
-
-            Type!*
-                Motor*
-
-            Out*
-                @action: "move_leg"
-                @delay: 500
-
-            Label*
-                @content: "leg"
-                @p: 0.25
-                @side: 1
-
-        add Neuron
-            Nucleus*
-                @x: 575
-                @y: 425
-            Terminal*
-                @x: 650
-                @y: 800
-
-            Type!*
-                Language*
-                    @phoneme: "th"
+                Out*
+                    @action: "move_leg"
+                    @delay: 500
 
                 Label*
-                    @content: "'TH'"
-                    @p: 0.33
+                    @content: "leg"
+                    @p: 0.25
                     @side: 1
 
-        add Neuron
-            Nucleus*
-                @x: 950
-                @y: 400
-            Terminal*
-                @x: 1050
-                @y: 550
+        add NeuralScreen
+            @name: "Logic"
 
-            Type!*
-                Logic*
+            Neuron
+                Nucleus*
+                    @x: 950
+                    @y: 400
+                Terminal*
+                    @x: 1050
+                    @y: 550
 
-        add Neuron
-            Nucleus*
-                @x: 1100
-                @y: 650
-            Terminal*
-                @x: 700
-                @y: 650
+                Type!*
+                    Logic*
 
-        add Neuron
-            Nucleus*
-                @x: 750
-                @y: 550
-            Terminal*
-                @x: 850
-                @y: 400
+            Neuron
+                Nucleus*
+                    @x: 1100
+                    @y: 650
+                Terminal*
+                    @x: 700
+                    @y: 650
+
+            Neuron
+                Nucleus*
+                    @x: 750
+                    @y: 550
+                Terminal*
+                    @x: 850
+                    @y: 400
+
+
+        add NeuralScreen
+            @name: "Language"
+
+            Neuron
+                Nucleus*
+                    @x: 575
+                    @y: 425
+                Terminal*
+                    @x: 650
+                    @y: 800
+
+                Type!*
+                    Language*
+                        @phoneme: "th"
+
+                    Label*
+                        @content: "'TH'"
+                        @p: 0.33
+                        @side: 1
+
+        add NeuralScreen
+            @name: "Memory"
+
+            Neuron
+                Nucleus*
+                    @x: 300
+                    @y: 300
+                Terminal*
+                    @x: 325
+                    @y: 350
+
+                Type!*
+                    Memory*
+                        @icon: "cog fas"
+
+                        Thought
+                            @content: "I wonder how many gears Big Ben contains..."
+
+            Neuron
+                Nucleus*
+                    @x: 750
+                    @y: 125
+                Terminal*
+                    @x: 500
+                    @y: 400
+
+                Type!*
+                    Memory*
+                        @icon: "feather fas"
+                        Thought
+                            @content: "Is a ton of feathers really not lighter than a ton of bricks?"
+                        Thought
+                            @content: "I mean, it makes sense, but..."
 
     interface
         app
@@ -117,12 +131,15 @@ App*
     import "./parts/neuron/neuron.statechart"
     import "./parts/scene/scene.statechart"
 
-    NeuralScreen*
+    NeuralScreen[]
+        @name: ""
         interface
             _window: lib.window_size()
             neural-screen-wrapper
                 svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
                     draw Neuron
+
+        Neuron[] :: App.Neuron
 
 SVGDefs*
     interface

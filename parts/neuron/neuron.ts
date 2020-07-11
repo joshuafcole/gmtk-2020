@@ -27,6 +27,10 @@ export interface Neuron {
   }
 }
 
+export interface NeuronContainer {
+  Neuron: PluralRef<Neuron>;
+}
+
 export interface Pulse {
   p: number;
 
@@ -101,9 +105,9 @@ let lib = {
   },
 
   pulse: {
-    propagate(pulse: Pulse, neuron: Neuron&Ref, app: App) {
+    propagate(pulse: Pulse, neuron: Neuron&Ref, container: NeuronContainer) {
       let receivers:Pulse[] = [];
-      app.Neuron.each((other) => {
+      container.Neuron.each((other) => {
         if(std.is(neuron, other)) return;
         let dx = other.Nucleus.x - neuron.Terminal.x;
         let dy = other.Nucleus.y - neuron.Terminal.y;

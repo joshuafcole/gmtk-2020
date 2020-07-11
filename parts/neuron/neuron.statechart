@@ -1,4 +1,4 @@
-Neuron[]
+Neuron
     interface
         g.neuron(svg=true, class=lib.exclusive.dashed_name(Type))
             g.neuron-inner(svg=true)
@@ -99,9 +99,9 @@ Neuron[]
     Interaction* :: Interactions.MaybeDrag
         None*
             on Neuron.mouse.down (event.button == 0 && event.mod.shift) -> DragOrClick
-                view_x: event.view_x
-                view_y: event.view_y
-                node: event.node
+                _bounds: lib.get_bounds(event.node)
+                @off_x: event.view_x - _bounds.left
+                @off_y: event.view_y - _bounds.top
         Dragging
             @nx: @Nucleus.x
             @ny: @Nucleus.y
@@ -130,9 +130,9 @@ Neuron[]
             @elapsed: 0
             None*
                 on Nucleus.mouse.down (event.button == 0 && !event.mod.shift) -> DragOrClick
-                    view_x: event.view_x
-                    view_y: event.view_y
-                    node: event.node
+                    _bounds: lib.get_bounds(event.node)
+                    @off_x: event.view_x - _bounds.left
+                    @off_y: event.view_y - _bounds.top
                     @elapsed: 0
             DragOrClick
                 on any.mouse.up (event.button == 0)
@@ -142,9 +142,13 @@ Neuron[]
                 on tick
                     @elapsed: @elapsed + 1
             Dragging
+                @ox: @x
+                @oy: @y
                 on any.mouse.move
-                    @x: event.view_x - @off_x
-                    @y: event.view_y - @off_y
+                    _dx: event.view_x - @start_x
+                    _dy: event.view_y - @start_y
+                    @x: @ox + _dx
+                    @y: @oy + _dy
 
     Axon*
         @path: ""
@@ -170,13 +174,17 @@ Neuron[]
         Interaction* :: Interactions.MaybeDrag
             None*
                 on Terminal.mouse.down (event.button == 0 && !event.mod.shift) -> DragOrClick
-                    view_x: event.view_x
-                    view_y: event.view_y
-                    node: event.node
+                    _bounds: lib.get_bounds(event.node)
+                    @off_x: event.view_x - _bounds.left
+                    @off_y: event.view_y - _bounds.top
             Dragging
+                @ox: @x
+                @oy: @y
                 on any.mouse.move
-                    @x: event.view_x - @off_x
-                    @y: event.view_y - @off_y
+                    _dx: event.view_x - @start_x
+                    _dy: event.view_y - @start_y
+                    @x: @ox + _dx
+                    @y: @oy + _dy
 
     Out
         @action: ""
@@ -211,7 +219,7 @@ Neuron[]
             _: lib.wait(@Neuron.Out.delay, @Neuron.Out.action, 0, "strength", @strength)
 
         on tick (@p >= 1)
-            _: lib.neuron.pulse.propagate(Pulse, Neuron, App)
+            _: lib.neuron.pulse.propagate(Pulse, Neuron, NeuralScreen)
             send pulsed to Neuron
             remove Pulse
 

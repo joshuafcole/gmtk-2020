@@ -61,11 +61,6 @@ Interactions
         @start_y: 0
 
         None*
-            on mouse_down -> DragOrClick
-                _bounds: lib.get_bounds(event.node)
-                @off_x: event.view_x - _bounds.left
-                @off_y: event.view_y - _bounds.top
-
         DragOrClick
             @px: 0
             @py: 0
