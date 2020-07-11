@@ -23,6 +23,10 @@ App*
                 @x: 325
                 @y: 350
 
+            Type!*
+                Motor*
+
+
         add Neuron
             Nucleus*
                 @x: 750
@@ -31,6 +35,10 @@ App*
                 @x: 500
                 @y: 400
 
+            Type!*
+                Motor*
+
+
         add Neuron
             Nucleus*
                 @x: 400
@@ -38,6 +46,9 @@ App*
             Terminal*
                 @x: 100
                 @y: 600
+
+            Type!*
+                Motor*
 
             Out*
                 @action: "move_leg"

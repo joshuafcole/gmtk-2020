@@ -14,6 +14,8 @@ export interface Neuron {
 
 export interface Pulse {
   p: number;
+
+  strength: number;
 }
 
 const {atan2, cos, sin, round, min, max, PI} = Math;
@@ -63,6 +65,7 @@ let lib = {
 
   pulse: {
     propagate(pulse: Pulse, neuron: Neuron&Ref, app: App) {
+      let receivers:Pulse[] = [];
       app.Neuron.each((other) => {
         if(std.is(neuron, other)) return;
         let dx = other.Nucleus.x - neuron.Terminal.x;
@@ -70,9 +73,15 @@ let lib = {
         let dist = Math.hypot(dy, dx);
         if(dist < PROPAGATION_THRESHOLD) {
           // Copy current pulse
-          other.Pulse.add({});
+          receivers.push(
+            other.Pulse.add({strength: pulse.strength})
+          );
         }
       });
+
+      for(let receiver of receivers) {
+        receiver.strength /= receivers.length;
+      }
     }
   },
 };

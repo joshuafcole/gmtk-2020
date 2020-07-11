@@ -1,0 +1,15 @@
+{
+  "name": "unnamed-gmtk-entry",
+  "version": "0.0.0",
+  "description": "out of control",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0-beta"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}

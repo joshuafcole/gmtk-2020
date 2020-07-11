@@ -63,12 +63,20 @@ let lib = {
     }
   },
 
-  wait(time: number, event: string, target?: Ref) {
+  wait(time: number, event: string, target?: Ref, ...kvs:any[]) {
+    let props:any;
+    if(kvs.length) {
+      if(kvs.length % 2 !== 0) throw new Error("Odd number of key value pairs provided as wait event props");
+      props = {};
+      for(let ix = 0; ix < kvs.length; ix += 2) {
+        props[kvs[ix]] = props[kvs[ix + 1]];
+      }
+    }
     return setTimeout(
       () =>
         target ?
-        target.send(event) :
-        get_program()?.queue(event).send(),
+        target.send(event, props) :
+        get_program()?.queue(event, props).send(),
       time
     );
   },

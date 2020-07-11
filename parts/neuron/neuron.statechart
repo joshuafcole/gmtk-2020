@@ -143,7 +143,7 @@ Neuron[]
 
         // Outputs
         on tick (@p >= 1 && lib.in(Neuron.Out))
-            _: lib.wait(@Neuron.Out.delay, @Neuron.Out.action)
+            _: lib.wait(@Neuron.Out.delay, @Neuron.Out.action, 0, "strength", @strength)
 
         on tick (@p >= 1)
             _: lib.neuron.pulse.propagate(Pulse, Neuron, App)
