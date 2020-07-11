@@ -10,6 +10,8 @@ export interface Neuron {
   Terminal: {x: number, y: number};
 
   Pulse: PluralRef<Pulse>;
+  Out?: {action: string, delay: number};
+  Label?: {content: string, p: number, side: number};
 
   Type: {
     Normal?: {};

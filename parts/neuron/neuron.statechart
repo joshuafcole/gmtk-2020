@@ -1,4 +1,4 @@
-Neuron
+BaseNeuron
     interface
         g.neuron(svg=true, class=lib.exclusive.dashed_name(Type))
             g.neuron-inner(svg=true)
@@ -13,11 +13,11 @@ Neuron
 
     Type!*
         Normal*
-            on Neuron.create_pulse
+            on BaseNeuron.create_pulse
                 add Pulse
 
         Motor
-            on Neuron.create_pulse
+            on BaseNeuron.create_pulse
                 add Pulse
                     @strength: event.elapsed
 
@@ -25,8 +25,8 @@ Neuron
                 interface
                     _p: 0
                     _strength: @Nucleus.Interaction.elapsed
-                    _pos: lib.neuron.axon.position(_p, Neuron)
-                    _deg: lib.neuron.axon.angle(Neuron) * 180 / lib.PI()
+                    _pos: lib.neuron.axon.position(_p, BaseNeuron)
+                    _deg: lib.neuron.axon.angle(BaseNeuron) * 180 / lib.PI()
                     _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
                     _r: 10 + _strength / 3
                     _rx: _r * 1.2 + 4
@@ -44,11 +44,11 @@ Neuron
             @base_length: 0
 
             on state.enter
-                @theta: lib.neuron.axon.angle(Neuron)
-                @base_length: lib.neuron.axon.length(Neuron)
+                @theta: lib.neuron.axon.angle(BaseNeuron)
+                @base_length: lib.neuron.axon.length(BaseNeuron)
                 _: console.log(Math.round(@theta * 180 / lib.PI()), Math.round(@base_length))
 
-            on Neuron.pulsed
+            on BaseNeuron.pulsed
                 @excitement: @excitement + 1
                 @decay: 0
 
@@ -65,7 +65,7 @@ Neuron
             @icon: ""
             @thoughts: 0
 
-            on Neuron.create_pulse
+            on BaseNeuron.create_pulse
                 add Pulse
                     Memory*
                         Linked: Type.Memory
@@ -86,7 +86,7 @@ Neuron
         Language
             @phoneme: ""
 
-            on Neuron.create_pulse
+            on BaseNeuron.create_pulse
                 add Pulse
                     Language*
                         Linked: Type.Language
@@ -98,7 +98,7 @@ Neuron
 
     Interaction* :: Interactions.MaybeDrag
         None*
-            on Neuron.mouse.down (event.button == 0 && event.mod.shift) -> DragOrClick
+            on BaseNeuron.mouse.down (event.button == 0 && event.mod.shift) -> DragOrClick
                 _bounds: lib.get_bounds(event.node)
                 @off_x: event.view_x - _bounds.left
                 @off_y: event.view_y - _bounds.top
@@ -136,7 +136,7 @@ Neuron
                     @elapsed: 0
             DragOrClick
                 on any.mouse.up (event.button == 0)
-                    send create_pulse to Neuron
+                    send create_pulse to BaseNeuron
                         elapsed: @elapsed
 
                 on tick
@@ -154,7 +154,7 @@ Neuron
         @path: ""
 
         on redraw
-            @path: lib.neuron.axon.path(Neuron)
+            @path: lib.neuron.axon.path(BaseNeuron)
 
         interface
             g.axon(svg=true)
@@ -200,8 +200,8 @@ Neuron
         @side: 0
 
         interface
-            _pos: lib.neuron.axon.position(@p, Neuron)
-            _deg: Math.round(lib.neuron.axon.angle(Neuron) * 180 / lib.PI()) + 90 - @side * 180
+            _pos: lib.neuron.axon.position(@p, BaseNeuron)
+            _deg: Math.round(lib.neuron.axon.angle(BaseNeuron) * 180 / lib.PI()) + 90 - @side * 180
             _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
             g.label(svg=true)
                 rect.tape(svg=true, x=_pos.x - 6, y = _pos.y - 15, width=100, height=30, transform=_transform)
@@ -210,41 +210,41 @@ Neuron
     Pulse[]
         @p: 0
         @speed: 10
-        @r: lib.ternary(lib.in(Neuron.Type.Memory), 15, 10)
+        @r: lib.ternary(lib.in(BaseNeuron.Type.Memory), 15, 10)
 
         // Used in motor puzzles
         @strength: 1
 
         on tick
-            @p: @p + @speed / lib.neuron.axon.length(Neuron)
+            @p: @p + @speed / lib.neuron.axon.length(BaseNeuron)
 
         // Outputs
-        on tick (@p >= 1 && lib.in(Neuron.Out))
-            _: lib.wait(@Neuron.Out.delay, @Neuron.Out.action, 0, "strength", @strength)
+        on tick (@p >= 1 && lib.in(BaseNeuron.Out))
+            _: lib.wait(@BaseNeuron.Out.delay, @BaseNeuron.Out.action, 0, "strength", @strength)
 
         on tick (@p >= 1)
-            _: lib.neuron.pulse.propagate(Pulse, Neuron, NeuralScreen)
-            send pulsed to Neuron
+            _: lib.neuron.pulse.propagate(Pulse, BaseNeuron, NeuralScreen)
+            send pulsed to BaseNeuron
             remove Pulse
 
         interface
-            _pos: lib.neuron.axon.position(@p, Neuron)
-            _deg: lib.neuron.axon.angle(Neuron) * 180 / lib.PI()
+            _pos: lib.neuron.axon.position(@p, BaseNeuron)
+            _deg: lib.neuron.axon.angle(BaseNeuron) * 180 / lib.PI()
             _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
-            _r: @r + lib.ternary(lib.in(Neuron.Type.Motor), @strength / 6, 0)
+            _r: @r + lib.ternary(lib.in(BaseNeuron.Type.Motor), @strength / 6, 0)
             _rx: _r * 1.2 + 4
             _ry: _r
             g.pulse(svg=true)
                 ellipse(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
 
         Memory
-            Linked references Neuron.Type.Memory
+            Linked references BaseNeuron.Type.Memory
 
-            Icon* :: Neuron.Type.Memory.Icon
+            Icon* :: BaseNeuron.Type.Memory.Icon
                 interface
-                    _pos: lib.neuron.axon.position(@p, Neuron)
+                    _pos: lib.neuron.axon.position(@p, BaseNeuron)
                     foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - 15, y=_pos.y - 15)
                         i(class="fa-{{@Linked.icon}}")
 
         Language
-            Linked references Neuron.Type.Language
+            Linked references BaseNeuron.Type.Language

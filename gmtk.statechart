@@ -190,7 +190,7 @@ App*
             Focused
                 on NeuralScreen.mouse.RMB (!lib.in(Editor.State.Enabled.Interaction.Adding)) -> Mini
 
-        Neuron[] :: App.Neuron
+        Neuron[] :: BaseNeuron
 
 SVGDefs*
     interface

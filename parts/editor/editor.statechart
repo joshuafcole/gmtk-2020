@@ -9,33 +9,45 @@ Editor*
         Enabled
             on any.keyboard.down (event.mod.alt && event.key == "E") -> Disabled
 
-            Type!*
+            Tool!*
                 on any.keyboard.down (event.key == "n") -> Normal
                 on any.keyboard.down (event.key == "m") -> Motor
                 on any.keyboard.down (event.key == "l") -> Logic
                 on any.keyboard.down (event.key == "p") -> Language
                 on any.keyboard.down (event.key == "t") -> Memory
+                on any.keyboard.down (event.key == "f") -> Flag
 
-                Normal*
+                interface
+                    tool-wrapper
+                        draw Add
+                        draw Flag
+
+                Add!*
+                    Normal*
+                        interface
+                            i.fas.fa-code-branch.tool-icon
+                    Motor
+                        interface
+                            i.fas.fa-cogs.tool-icon
+                    Logic
+                        interface
+                            i.fas.fa-magic.tool-icon
+                    Language
+                        interface
+                            i.far.fa-comment-dots.tool-icon
+                    Memory
+                        interface
+                            i.fas.fa-brain.tool-icon
+
+                Flag
                     interface
-                        i.fas.fa-code-branch.type-icon
-                Motor
-                    interface
-                        i.fas.fa-cogs.type-icon
-                Logic
-                    interface
-                        i.fas.fa-magic.type-icon
-                Language
-                    interface
-                        i.far.fa-comment-dots.type-icon
-                Memory
-                    interface
-                        i.fas.fa-brain.type-icon
+                        i.fas.fa-flag.tool-icon
+
 
             Interaction!*
                 None*
-                    on NeuralScreen.mouse.down (event.button == 0 && lib.in(NeuralScreen.View.Focused)) -> Adding
-                        add NeuralScreen.Neuron (_n)
+                    on NeuralScreen.mouse.down (event.button == 0 && lib.in(Tool.Add)) -> Adding
+                        add Neuron (_n)
                             Nucleus*
                                 @x: event.view_x
                                 @y: event.view_y
@@ -44,7 +56,18 @@ Editor*
                                 @y: event.view_y
 
                         reference _n in AddingNeuron
-                        _: lib.editor.convert_to(NeuralScreen.Neuron, Enabled.Type)
+                        _: lib.editor.convert_to(Neuron, Enabled.Tool.Add)
+
+                    on Neuron.Label.mouse.down (event.button == 0 && !event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
+                        _p: lib.editor.compute_p(Neuron, event.view_x, event.view_y)
+                        _: lib.editor.move_label(Neuron, _p)
+
+                    on Neuron.Label.mouse.down (event.button == 0 && event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
+                        remove Neuron.Label
+
+                    on NeuralScreen.Neuron.mouse.down (event.button == 0 && lib.in(Tool.Flag) && !lib.in(Neuron.Label))
+                        _p: lib.editor.compute_p(Neuron, event.view_x, event.view_y)
+                        _: lib.editor.label(Neuron, "unlabeled", _p)
 
                 Adding
                     AddingNeuron references NeuralScreen.Neuron
@@ -72,4 +95,4 @@ Editor*
                 editor-content
                     editing-notice
                         i.fas.fa-edit
-                        draw Type
+                        draw Tool
