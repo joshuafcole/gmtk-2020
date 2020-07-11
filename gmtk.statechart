@@ -36,7 +36,12 @@ App*
                 @y: 400
 
             Type!*
-                Motor*
+                Memory*
+                    @icon: "feather fas"
+                    Thought
+                        @content: "Is a ton of feathers really not lighter than a ton of bricks?"
+                    Thought
+                        @content: "I mean, it makes sense, but..."
 
 
         add Neuron

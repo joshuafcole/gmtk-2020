@@ -7,6 +7,8 @@ Neuron[]
                 draw Terminal
                 draw Pulse
                 draw Motor.TransientPulse
+            draw Memory.Icon
+            draw Pulse.Memory.Icon
             draw Label
 
     Type!*
@@ -46,11 +48,29 @@ Neuron[]
             on tick
                 @Terminal.x: @Nucleus.x + (@base_radius + @excitement) * Math.cos(@theta)
                 @Terminal.y: @Nucleus.y + (@base_radius + @excitement) * Math.sin(@theta)
+                // @NOTE: maybe try to fuse the two --
+                //        quadratically grow decay but subtract it from excitement
                 // @excitement: Math.max(0, @excitement - @decay)
                 @excitement: @excitement * Math.max((1 - @decay), 0)
                 @decay: @decay + @decay_rate
 
         Memory
+            @icon: ""
+            @thoughts: 0
+
+            Icon*
+                interface
+                    foreignObject.memory-icon(svg=true, x=@Nucleus.x - 20, y=@Nucleus.y - 20)
+                        i(class="fa-{{@icon}}")
+
+            Thought[]
+                @content: ""
+                @ix: @thoughts
+
+                on state.enter
+                    @thoughts: @thoughts + 1
+
+
         Language
         Autonomic
 
@@ -93,9 +113,15 @@ Neuron[]
                     node: event.node
                     @elapsed: 0
             DragOrClick
-                on any.mouse.up (event.button == 0)
+                on any.mouse.up (event.button == 0 && !lib.in(Type.Memory))
                     add Pulse
                         @strength: @elapsed
+
+                on any.mouse.up (event.button == 0 && lib.in(Type.Memory))
+                    add Pulse
+                        @strength: @elapsed
+                        Memory*
+                            Linked: Type.Memory
 
                 on tick
                     @elapsed: @elapsed + 1
@@ -156,6 +182,7 @@ Neuron[]
     Pulse[]
         @p: 0
         @speed: 10
+        @r: lib.ternary(lib.in(Neuron.Type.Memory), 15, 10)
 
         // Used in motor puzzles
         @strength: 1
@@ -176,7 +203,17 @@ Neuron[]
             _pos: lib.neuron.axon.position(@p, Neuron)
             _deg: lib.neuron.axon.angle(Neuron) * 180 / lib.PI()
             _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
-            _r: 10 + lib.ternary(lib.in(Neuron.Type.Motor), @strength / 6, 0)
+            _r: @r + lib.ternary(lib.in(Neuron.Type.Motor), @strength / 6, 0)
             _rx: _r * 1.2 + 4
             _ry: _r
-            ellipse.pulse(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
+            g.pulse(svg=true)
+                ellipse(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
+
+        Memory
+            Linked references Neuron.Type.Memory
+
+            Icon* :: Neuron.Type.Memory.Icon
+                interface
+                    _pos: lib.neuron.axon.position(@p, Neuron)
+                    foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - 10, y=_pos.y - 10)
+                        i(class="fa-{{@Linked.icon}}")

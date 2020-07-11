@@ -16,6 +16,15 @@ export interface Pulse {
   p: number;
 
   strength: number;
+
+  Memory?: {
+    Linked: Memory;
+    Icon: {};
+  }
+}
+
+export interface Memory {
+  icon: string;
 }
 
 const {atan2, cos, sin, round, min, max, PI} = Math;
@@ -73,9 +82,12 @@ let lib = {
         let dist = Math.hypot(dy, dx);
         if(dist < PROPAGATION_THRESHOLD) {
           // Copy current pulse
-          receivers.push(
-            other.Pulse.add({strength: pulse.strength})
-          );
+          let cur = other.Pulse.add({strength: pulse.strength});
+          receivers.push(cur);
+          if(pulse.Memory) {
+            cur.Memory = {} as any;
+            cur.Memory!.Linked = pulse.Memory.Linked;
+          }
         }
       });
 
