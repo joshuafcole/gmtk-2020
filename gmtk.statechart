@@ -75,6 +75,9 @@ App*
                 @x: 1050
                 @y: 550
 
+            Type!*
+                Logic*
+
         add Neuron
             Nucleus*
                 @x: 1100

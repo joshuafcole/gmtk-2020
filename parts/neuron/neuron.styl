@@ -1,6 +1,6 @@
 .neuron
-  --nucleus: red;
-  --axon: purple;
+  --nucleus: indigo;
+  --axon: mix(indigo, blue, 50%);
   --terminal: blue;
   --pulse: yellow;
 
@@ -8,6 +8,11 @@
     --nucleus: lawngreen;
     --axon: cyan;
     --terminal: #87CEFA
+
+  &.logic
+    --nucleus: red;
+    --axon: mix(red, orange, 50%);
+    --terminal: orange;
 
   .neuron-inner
     filter: url("#goo");

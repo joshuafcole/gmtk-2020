@@ -28,6 +28,28 @@ Neuron[]
                             ellipse.pulse.transient(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
 
         Logic
+            @decay_rate: 0.0001
+            @decay: 0
+            @excitement: 0
+            @theta: 0
+            @base_radius: 0
+
+            on state.enter
+                @theta: lib.neuron.axon.angle(Neuron)
+                @base_radius: lib.neuron.axon.length(Neuron)
+                _: console.log(Math.round(@theta * 180 / lib.PI()), Math.round(@base_radius))
+
+            on Neuron.pulsed
+                @excitement: @excitement + 1
+                @decay: 0
+
+            on tick
+                @Terminal.x: @Nucleus.x + (@base_radius + @excitement) * Math.cos(@theta)
+                @Terminal.y: @Nucleus.y + (@base_radius + @excitement) * Math.sin(@theta)
+                // @excitement: Math.max(0, @excitement - @decay)
+                @excitement: @excitement * Math.max((1 - @decay), 0)
+                @decay: @decay + @decay_rate
+
         Memory
         Language
         Autonomic
@@ -147,6 +169,7 @@ Neuron[]
 
         on tick (@p >= 1)
             _: lib.neuron.pulse.propagate(Pulse, Neuron, App)
+            send pulsed to Neuron
             remove Pulse
 
         interface
