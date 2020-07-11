@@ -72,7 +72,7 @@ Neuron[]
 
             Icon*
                 interface
-                    foreignObject.memory-icon(svg=true, x=@Nucleus.x - 20, y=@Nucleus.y - 20)
+                    foreignObject.memory-icon(svg=true, x=@Nucleus.x - 30, y=@Nucleus.y - 30)
                         i(class="fa-{{@icon}}")
 
             Thought[]
@@ -231,7 +231,7 @@ Neuron[]
             Icon* :: Neuron.Type.Memory.Icon
                 interface
                     _pos: lib.neuron.axon.position(@p, Neuron)
-                    foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - 10, y=_pos.y - 10)
+                    foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - 15, y=_pos.y - 15)
                         i(class="fa-{{@Linked.icon}}")
 
         Language
