@@ -1,6 +1,6 @@
 Neuron[]
     interface
-        g.neuron(svg=true)
+        g.neuron(svg=true, class=lib.exclusive.dashed_name(Type))
             g.neuron-inner(svg=true)
                 draw Axon
                 draw Nucleus

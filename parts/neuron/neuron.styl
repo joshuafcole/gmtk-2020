@@ -1,21 +1,31 @@
 .neuron
+  --nucleus: red;
+  --axon: purple;
+  --terminal: blue;
+  --pulse: yellow;
+
+  &.motor
+    --nucleus: lawngreen;
+    --axon: cyan;
+    --terminal: #87CEFA
+
   .neuron-inner
     filter: url("#goo");
 
   .nucleus
     circle
-      fill: red;
+      fill: var(--nucleus);
 
   .axon
     path
-      fill: purple;
+      fill: var(--axon);
 
   .terminal
     circle
-      fill: blue;
+      fill: var(--terminal);
 
   .pulse
-    fill: yellow;
+    fill: var(--pulse);
 
   .label
     .tape
