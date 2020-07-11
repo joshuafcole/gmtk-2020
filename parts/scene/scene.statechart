@@ -8,6 +8,6 @@ Scene1* :: BaseScene
 
 Scene2 :: BaseScene
     on state.enter
-        _: console.log("Entered scene 2!")
+        _: alert("Joe kicks open the door and stumbles into the pitch-dark room...")
 
     on move_arm -> Scene2

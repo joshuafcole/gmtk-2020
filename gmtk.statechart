@@ -12,6 +12,9 @@ App*
                 @x: 800
                 @y: 50
 
+            Type!*
+                Motor*
+
         add Neuron
             Nucleus*
                 @x: 300

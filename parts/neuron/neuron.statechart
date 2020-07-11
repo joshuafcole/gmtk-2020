@@ -6,7 +6,31 @@ Neuron[]
                 draw Nucleus
                 draw Terminal
                 draw Pulse
+                draw Motor.TransientPulse
             draw Label
+
+    Type!*
+        Normal*
+        Motor
+            TransientPulse*
+                interface
+                    _p: 0
+                    _strength: @Nucleus.Interaction.elapsed
+                    _pos: lib.neuron.axon.position(_p, Neuron)
+                    _deg: lib.neuron.axon.angle(Neuron) * 180 / lib.PI()
+                    _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
+                    _r: 10 + _strength / 3
+                    _rx: _r * 1.2 + 4
+                    _ry: _r
+
+                    g.transient-pulse(svg=true)
+                        if lib.in(Nucleus.Interaction.DragOrClick) && _strength > 0
+                            ellipse.pulse.transient(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
+
+        Logic
+        Memory
+        Language
+        Autonomic
 
     Interaction* :: Interactions.MaybeDrag
         None*
@@ -39,14 +63,20 @@ Neuron[]
                 circle(svg=true, cx=@x, cy=@y, r=30)
 
         Interaction* :: Interactions.MaybeDrag
+            @elapsed: 0
             None*
                 on Nucleus.mouse.down (event.button == 0 && !event.mod.shift) -> DragOrClick
                     view_x: event.view_x
                     view_y: event.view_y
                     node: event.node
+                    @elapsed: 0
             DragOrClick
                 on any.mouse.up (event.button == 0)
                     add Pulse
+                        @strength: @elapsed
+
+                on tick
+                    @elapsed: @elapsed + 1
             Dragging
                 on any.mouse.move
                     @x: event.view_x - @off_x
@@ -105,6 +135,9 @@ Neuron[]
         @p: 0
         @speed: 10
 
+        // Used in motor puzzles
+        @strength: 1
+
         on tick
             @p: @p + @speed / lib.neuron.axon.length(Neuron)
 
@@ -120,4 +153,7 @@ Neuron[]
             _pos: lib.neuron.axon.position(@p, Neuron)
             _deg: lib.neuron.axon.angle(Neuron) * 180 / lib.PI()
             _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
-            ellipse.pulse(svg=true, cx=_pos.x, cy=_pos.y, rx=15, ry=10, transform=_transform)
+            _r: 10 + lib.ternary(lib.in(Neuron.Type.Motor), @strength / 6, 0)
+            _rx: _r * 1.2 + 4
+            _ry: _r
+            ellipse.pulse(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
