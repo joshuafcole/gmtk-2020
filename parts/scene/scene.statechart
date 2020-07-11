@@ -1,0 +1,13 @@
+BaseScene
+
+Scene1* :: BaseScene
+    on state.enter
+        _: console.log("Entered scene 1!")
+
+    on move_leg -> Scene2
+
+Scene2 :: BaseScene
+    on state.enter
+        _: console.log("Entered scene 2!")
+
+    on move_arm -> Scene2

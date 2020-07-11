@@ -1,13 +1,27 @@
-g.neuron
-  g.nucleus
+.neuron
+  .neuron-inner
+    filter: url("#goo");
+
+  .nucleus
     circle
       fill: red;
 
-  g.axon
-    line
-      stroke: yellow;
-      stroke-width: 4px;
+  .axon
+    path
+      fill: purple;
 
-  g.terminal
+  .terminal
     circle
-      fill: green;
+      fill: blue;
+
+  .pulse
+    fill: yellow;
+
+  .label
+    .tape
+      fill: #fcf7dd;
+    text
+      font: 18px cursive;
+      alignment-baseline: middle;
+      pointer-events: none;
+      user-select: none;

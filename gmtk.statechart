@@ -1,8 +1,9 @@
 import "./parts/std/std.statechart"
 
 App*
-
     on state.enter
+        _: lib.start_ticking()
+
         add Neuron
             Nucleus*
                 @x: 50
@@ -11,15 +12,94 @@ App*
                 @x: 800
                 @y: 50
 
+        add Neuron
+            Nucleus*
+                @x: 300
+                @y: 300
+            Terminal*
+                @x: 325
+                @y: 350
+
+        add Neuron
+            Nucleus*
+                @x: 750
+                @y: 125
+            Terminal*
+                @x: 500
+                @y: 400
+
+        add Neuron
+            Nucleus*
+                @x: 400
+                @y: 425
+            Terminal*
+                @x: 100
+                @y: 600
+
+            Out*
+                @action: "move_leg"
+                @delay: 500
+
+            Label*
+                @content: "leg"
+                @p: 0.25
+                @side: 1
+
+        add Neuron
+            Nucleus*
+                @x: 575
+                @y: 425
+            Terminal*
+                @x: 650
+                @y: 800
+
+        add Neuron
+            Nucleus*
+                @x: 950
+                @y: 400
+            Terminal*
+                @x: 1050
+                @y: 550
+
+        add Neuron
+            Nucleus*
+                @x: 1100
+                @y: 650
+            Terminal*
+                @x: 700
+                @y: 650
+
+        add Neuron
+            Nucleus*
+                @x: 750
+                @y: 550
+            Terminal*
+                @x: 850
+                @y: 400
+
     interface
         app
             draw NeuralScreen
 
 
     import "./parts/neuron/neuron.statechart"
+    import "./parts/scene/scene.statechart"
 
     NeuralScreen*
         interface
             _window: lib.window_size()
-            svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
-                draw Neuron
+            neural-screen-wrapper
+                svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
+                    draw Neuron
+
+SVGDefs*
+    interface
+        svg.defs(svg=true, style="width: 0; height: 0")
+            draw GooFilter
+
+    GooFilter*
+        interface
+            filter(svg=true, id="goo")
+                feGaussianBlur(svg=true, in="SourceGraphic", stdDeviation="10", result="blur")
+                feColorMatrix(svg=true, in="blur", type="matrix", values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7", result="goo")
+                feBlend(svg=true, in="goo", in2="SourceGraphic")
