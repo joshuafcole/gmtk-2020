@@ -78,7 +78,7 @@ App*
                     @phoneme: "th"
 
                 Label*
-                    @content: "TH"
+                    @content: "'TH'"
                     @p: 0.33
                     @side: 1
 
