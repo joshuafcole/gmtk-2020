@@ -51,3 +51,38 @@ Components*
                 key-wrapper(class=_active)
                     key(class=@name)
                         label {{@label}}
+
+
+Interactions
+    MaybeDrag
+        @off_x: 0
+        @off_y: 0
+        @start_x: 0
+        @start_y: 0
+
+        None*
+            on mouse_down -> DragOrClick
+                _bounds: lib.get_bounds(event.node)
+                @off_x: event.view_x - _bounds.left
+                @off_y: event.view_y - _bounds.top
+
+        DragOrClick
+            @px: 0
+            @py: 0
+            @dx: 0
+            @dy: 0
+
+            on any.mouse.up (event.button == 0) -> None
+
+            on any.mouse.move
+                @dx: @dx + event.view_x - @px
+                @dy: @dy + event.view_y - @py
+                @px: event.view_x
+                @py: event.view_y
+
+            on any.mouse.move (Math.abs(@dx) + Math.abs(@dy) > 8) -> Dragging
+                @start_x: event.view_x
+                @start_y: event.view_y
+
+        Dragging
+            on any.mouse.up -> None

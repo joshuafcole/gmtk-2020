@@ -8,6 +8,25 @@ Neuron[]
                 draw Pulse
             draw Label
 
+    Interaction* :: Interactions.MaybeDrag
+        None*
+            on Neuron.mouse.down (event.button == 0 && event.mod.shift) -> DragOrClick
+                view_x: event.view_x
+                view_y: event.view_y
+                node: event.node
+        Dragging
+            @nx: @Nucleus.x
+            @ny: @Nucleus.y
+            @tx: @Terminal.x
+            @ty: @Terminal.y
+
+            on any.mouse.move
+                _dx: event.view_x - @start_x
+                _dy: event.view_y - @start_y
+                @Nucleus.x: @nx + _dx
+                @Nucleus.y: @ny + _dy
+                @Terminal.x: @tx + _dx
+                @Terminal.y: @ty + _dy
     Nucleus*
         @x: 0
         @y: 0
@@ -15,12 +34,23 @@ Neuron[]
         on (lib.changed(@x, @y))
             send redraw to Axon
 
-        on mouse.click
-            add Pulse
-
         interface
             g.nucleus(svg=true)
                 circle(svg=true, cx=@x, cy=@y, r=30)
+
+        Interaction* :: Interactions.MaybeDrag
+            None*
+                on Nucleus.mouse.down (event.button == 0 && !event.mod.shift) -> DragOrClick
+                    view_x: event.view_x
+                    view_y: event.view_y
+                    node: event.node
+            DragOrClick
+                on any.mouse.up (event.button == 0)
+                    add Pulse
+            Dragging
+                on any.mouse.move
+                    @x: event.view_x - @off_x
+                    @y: event.view_y - @off_y
 
     Axon*
         @path: ""
@@ -42,6 +72,17 @@ Neuron[]
         interface
             g.terminal(svg=true)
                 circle(svg=true, cx=@x, cy=@y, r=30)
+
+        Interaction* :: Interactions.MaybeDrag
+            None*
+                on Terminal.mouse.down (event.button == 0 && !event.mod.shift) -> DragOrClick
+                    view_x: event.view_x
+                    view_y: event.view_y
+                    node: event.node
+            Dragging
+                on any.mouse.move
+                    @x: event.view_x - @off_x
+                    @y: event.view_y - @off_y
 
     Out
         @action: ""
