@@ -5,11 +5,26 @@ import {App} from "../../gmtk";
 const PROPAGATION_THRESHOLD = 160;
 
 export interface Neuron {
-  Nucleus: {x: number, y: number},
-  Axon: {},
-  Terminal: {x: number, y: number},
+  Nucleus: {x: number, y: number};
+  Axon: {};
+  Terminal: {x: number, y: number};
 
   Pulse: PluralRef<Pulse>;
+
+  Type: {
+    Normal?: {};
+    Motor?: {};
+    Logic?: {
+      decay_rate: number;
+      decay: number;
+      excitement: number;
+      theta: number;
+      base_length: number;
+    },
+    Memory?: Memory;
+    Language?: Language;
+    Autonomic?: {}
+  }
 }
 
 export interface Pulse {
@@ -20,11 +35,24 @@ export interface Pulse {
   Memory?: {
     Linked: Memory;
     Icon: {};
-  }
+  },
+  Language?: {
+    Linked: Language;
+  },
+}
+
+export interface Language {
+  phoneme: string;
 }
 
 export interface Memory {
   icon: string;
+  Thought: PluralRef<Thought>
+}
+
+export interface Thought {
+  content: string;
+  ix: number;
 }
 
 const {atan2, cos, sin, round, min, max, PI} = Math;
@@ -84,9 +112,19 @@ let lib = {
           // Copy current pulse
           let cur = other.Pulse.add({strength: pulse.strength});
           receivers.push(cur);
-          if(pulse.Memory) {
+
+          // @NOTE: Pulsed memories should retain the earliest memory found,
+          //        NOT the latest. This is opposite of other types.
+          let memory = pulse.Memory?.Linked || other.Type.Memory;
+          if(memory) {
             cur.Memory = {} as any;
-            cur.Memory!.Linked = pulse.Memory.Linked;
+            cur.Memory!.Linked = memory;
+          }
+
+          let language = other.Type.Language || pulse.Language?.Linked;
+          if(language) {
+            cur.Language = {} as any;
+            cur.Language!.Linked = language;
           }
         }
       });

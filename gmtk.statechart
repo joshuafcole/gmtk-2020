@@ -24,7 +24,8 @@ App*
                 @y: 350
 
             Type!*
-                Motor*
+                Memory*
+                    @icon: "leaf fas"
 
 
         add Neuron
@@ -71,6 +72,15 @@ App*
             Terminal*
                 @x: 650
                 @y: 800
+
+            Type!*
+                Language*
+                    @phoneme: "th"
+
+                Label*
+                    @content: "TH"
+                    @p: 0.33
+                    @side: 1
 
         add Neuron
             Nucleus*

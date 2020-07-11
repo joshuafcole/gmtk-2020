@@ -13,7 +13,14 @@ Neuron[]
 
     Type!*
         Normal*
+            on Neuron.create_pulse
+                add Pulse
+
         Motor
+            on Neuron.create_pulse
+                add Pulse
+                    @strength: event.elapsed
+
             TransientPulse*
                 interface
                     _p: 0
@@ -29,25 +36,25 @@ Neuron[]
                         if lib.in(Nucleus.Interaction.DragOrClick) && _strength > 0
                             ellipse.pulse.transient(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
 
-        Logic
+        Logic :: Normal
             @decay_rate: 0.0001
             @decay: 0
             @excitement: 0
             @theta: 0
-            @base_radius: 0
+            @base_length: 0
 
             on state.enter
                 @theta: lib.neuron.axon.angle(Neuron)
-                @base_radius: lib.neuron.axon.length(Neuron)
-                _: console.log(Math.round(@theta * 180 / lib.PI()), Math.round(@base_radius))
+                @base_length: lib.neuron.axon.length(Neuron)
+                _: console.log(Math.round(@theta * 180 / lib.PI()), Math.round(@base_length))
 
             on Neuron.pulsed
                 @excitement: @excitement + 1
                 @decay: 0
 
             on tick
-                @Terminal.x: @Nucleus.x + (@base_radius + @excitement) * Math.cos(@theta)
-                @Terminal.y: @Nucleus.y + (@base_radius + @excitement) * Math.sin(@theta)
+                @Terminal.x: @Nucleus.x + (@base_length + @excitement) * Math.cos(@theta)
+                @Terminal.y: @Nucleus.y + (@base_length + @excitement) * Math.sin(@theta)
                 // @NOTE: maybe try to fuse the two --
                 //        quadratically grow decay but subtract it from excitement
                 // @excitement: Math.max(0, @excitement - @decay)
@@ -57,6 +64,11 @@ Neuron[]
         Memory
             @icon: ""
             @thoughts: 0
+
+            on Neuron.create_pulse
+                add Pulse
+                    Memory*
+                        Linked: Type.Memory
 
             Icon*
                 interface
@@ -72,6 +84,16 @@ Neuron[]
 
 
         Language
+            @phoneme: ""
+
+            on Neuron.create_pulse
+                add Pulse
+                    Language*
+                        Linked: Type.Language
+
+            Sound*
+                interface
+                    audio(src="/assets/phonemes/{{@phoneme}}.mp3", -autoplay=true)
         Autonomic
 
     Interaction* :: Interactions.MaybeDrag
@@ -113,15 +135,9 @@ Neuron[]
                     node: event.node
                     @elapsed: 0
             DragOrClick
-                on any.mouse.up (event.button == 0 && !lib.in(Type.Memory))
-                    add Pulse
-                        @strength: @elapsed
-
-                on any.mouse.up (event.button == 0 && lib.in(Type.Memory))
-                    add Pulse
-                        @strength: @elapsed
-                        Memory*
-                            Linked: Type.Memory
+                on any.mouse.up (event.button == 0)
+                    send create_pulse to Neuron
+                        elapsed: @elapsed
 
                 on tick
                     @elapsed: @elapsed + 1
@@ -217,3 +233,6 @@ Neuron[]
                     _pos: lib.neuron.axon.position(@p, Neuron)
                     foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - 10, y=_pos.y - 10)
                         i(class="fa-{{@Linked.icon}}")
+
+        Language
+            Linked references Neuron.Type.Language
