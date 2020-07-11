@@ -188,7 +188,7 @@ App*
                 on NeuralScreen.mouse.click -> Focused
 
             Focused
-                on NeuralScreen.mouse.RMB -> Mini
+                on NeuralScreen.mouse.RMB (!lib.in(Editor.State.Enabled.Interaction.Adding)) -> Mini
 
         Neuron[] :: App.Neuron
 

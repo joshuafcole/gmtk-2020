@@ -6,12 +6,70 @@ Editor*
     State!*
         Disabled*
             on any.keyboard.down (event.mod.alt && event.key == "E") -> Enabled
-                _: console.log("ACTIVATING")
         Enabled
-            on NeuralScreen.mouse.down (lib.in(NeuralScreen.View.Focused))
-                _: console.log("hey", @NeuralScreen.name)
+            on any.keyboard.down (event.mod.alt && event.key == "E") -> Disabled
+
+            Type!*
+                on any.keyboard.down (event.key == "n") -> Normal
+                on any.keyboard.down (event.key == "m") -> Motor
+                on any.keyboard.down (event.key == "l") -> Logic
+                on any.keyboard.down (event.key == "p") -> Language
+                on any.keyboard.down (event.key == "t") -> Memory
+
+                Normal*
+                    interface
+                        i.fas.fa-code-branch.type-icon
+                Motor
+                    interface
+                        i.fas.fa-cogs.type-icon
+                Logic
+                    interface
+                        i.fas.fa-magic.type-icon
+                Language
+                    interface
+                        i.far.fa-comment-dots.type-icon
+                Memory
+                    interface
+                        i.fas.fa-brain.type-icon
+
+            Interaction!*
+                None*
+                    on NeuralScreen.mouse.down (event.button == 0 && lib.in(NeuralScreen.View.Focused)) -> Adding
+                        add NeuralScreen.Neuron (_n)
+                            Nucleus*
+                                @x: event.view_x
+                                @y: event.view_y
+                            Terminal*
+                                @x: event.view_x
+                                @y: event.view_y
+
+                        reference _n in AddingNeuron
+                        _: lib.editor.convert_to(NeuralScreen.Neuron, Enabled.Type)
+
+                Adding
+                    AddingNeuron references NeuralScreen.Neuron
+
+                    on any.mouse.down (event.button == 0) -> None
+                        dereference AddingNeuron in AddingNeuron
+
+                    on any.mouse.move
+                        @AddingNeuron.Terminal.x: event.view_x
+                        @AddingNeuron.Terminal.y: event.view_y
+
+                    on any.mouse.move (lib.in(AddingNeuron.Type.Logic))
+                        _x2: @AddingNeuron.Terminal.x
+                        _y2: @AddingNeuron.Terminal.y
+                        _x1: @AddingNeuron.Nucleus.x
+                        _y1: @AddingNeuron.Nucleus.y
+                        @AddingNeuron.Type.Logic.theta: Math.atan2(_y2 - _y1, _x2 - _x1)
+                        @AddingNeuron.Type.Logic.base_length: Math.hypot(_y2 - _y1, _x2 - _x1)
+
+                    on NeuralScreen.mouse.RMB -> None
+                        remove AddingNeuron
+                        dereference AddingNeuron in AddingNeuron
 
             interface
                 editor-content
                     editing-notice
                         i.fas.fa-edit
+                        draw Type

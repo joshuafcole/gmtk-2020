@@ -2,6 +2,7 @@ import {Ref, PluralRef} from "./parts/std/types";
 
 import std from "./parts/std/std";
 import neuron, {Neuron} from "./parts/neuron/neuron";
+import editor from "./parts/editor/editor";
 
 export interface App {
   Neuron: PluralRef<Neuron>;
@@ -10,6 +11,7 @@ export interface App {
 export let lib = {
   ...std,
   neuron,
+  editor,
 
   //----------------------------------------------------------------------------
   // UI
