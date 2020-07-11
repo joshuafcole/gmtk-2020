@@ -2,6 +2,7 @@
 @import "./base.styl";
 @import "./parts/std/std.styl";
 @import "./parts/neuron/neuron.styl";
+@import "./parts/editor/editor.styl";
 
 html, body
   display: flex;
@@ -25,12 +26,83 @@ div.__root, div.sc_root
   flex: 1;
 
 
+app
+  screen-layer
+    overlay();
+    flex-direction: row;
+    perspective: 500px;
+    perspective-origin: 50% 33%;
+    transform-style: preserve-3d;
+    overflow: hidden;
+
 //------------------------------------------------------------------------------
 // Neural Screen
 //------------------------------------------------------------------------------
 
 neural-screen-wrapper
-  background: gray;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  align-items: center;
+  justify-content: flex-start;
+
+  $w = 320px;
+
+  neural-screen-inner
+    position: relative;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    transform-origin: inherit;
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, #444 0%, #999, 90%, #666 100%);
+    border: 2px solid silver;
+
+  &.focused
+    z-index: 10;
+
+    neural-screen-inner
+      top: -200px;
+      width: 100vw;
+      height: 100vh;
+
+  position: relative;
+  width: $w;
+  height: $w;
+  transform-origin: 50% 50%;
+  transition: transform 0.4s ease;
+  pointer-events: auto;
+
+  &.Motor
+    top: 200px;
+    transform: translate3d(-50px, 0, -125px) rotateY(30deg);
+
+    &.focused neural-screen-inner
+      // transform: rotateY(-30deg) translate3d(50px, 0, 125px) translate3d(0, 0, 225px) translateX(65px);
+      transform: rotateY(-30deg) translate3d(50px, 0, 125px) translate3d(1.5 * $w, 0, 0);
+
+  &.Logic
+    top: 200px;
+    transform: translate3d(-25px, 0, -250px) rotateY(10deg);
+
+    &.focused neural-screen-inner
+      transform: rotateY(-10deg) translate3d(25px, 0, 250px) translate3d(0.5 * $w, 0, 0)
+
+  &.Language
+    top: 200px;
+    transform: translate3d(25px, 0, -250px) rotateY(-10deg);
+
+    &.focused neural-screen-inner
+      transform: rotateY(10deg) translate3d(-25px, 0, 250px) translate3d(-0.5 * $w, 0, 0)
+
+  &.Memory
+    top: 200px;
+    transform: translate3d(50px, 0, -125px) rotateY(-30deg);
+
+    &.focused neural-screen-inner
+      transform: rotateY(30deg) translate3d(-50px, 0, 125px) translate3d(-1.5 * $w, 0, 0)
+
+
 
   svg.neural-screen
-    // filter: url("#goo");
+    // pointer-events: auto;

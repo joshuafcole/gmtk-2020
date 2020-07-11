@@ -1,0 +1,17 @@
+Editor*
+    interface
+        editor(class=lib.exclusive.dashed_name(State))
+            draw State.Enabled
+
+    State!*
+        Disabled*
+            on any.keyboard.down (event.mod.alt && event.key == "E") -> Enabled
+                _: console.log("ACTIVATING")
+        Enabled
+            on NeuralScreen.mouse.down (lib.in(NeuralScreen.View.Focused))
+                _: console.log("hey", @NeuralScreen.name)
+
+            interface
+                editor-content
+                    editing-notice
+                        i.fas.fa-edit

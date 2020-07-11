@@ -7,6 +7,21 @@ App*
         add NeuralScreen
             @name: "Motor"
 
+            // Transform*
+            //     @ox: "right"
+            //     @oy: "50%"
+            //     @x: -450
+            //     @y: -350
+            //     @z: -375
+            //     @r: 10
+
+            Transform*
+                @ox: "right"
+                @x: -400
+                @y: -500
+                @z: -300
+                @r: 15
+
             Neuron
                 Nucleus*
                     @x: 50
@@ -41,6 +56,14 @@ App*
         add NeuralScreen
             @name: "Logic"
 
+            Transform*
+                @ox: "left"
+                @oy: "50%"
+                @x: -200
+                @y: -350
+                @z: -500
+                @r: 2
+
             Neuron
                 Nucleus*
                     @x: 950
@@ -71,6 +94,14 @@ App*
 
         add NeuralScreen
             @name: "Language"
+
+            Transform*
+                @ox: "right"
+                @oy: "50%"
+                @x: 0
+                @y: -400
+                @z: -650
+                @r: -4
 
             Neuron
                 Nucleus*
@@ -125,7 +156,8 @@ App*
 
     interface
         app
-            draw NeuralScreen
+            screen-layer
+                draw NeuralScreen
 
 
     import "./parts/neuron/neuron.statechart"
@@ -135,9 +167,28 @@ App*
         @name: ""
         interface
             _window: lib.window_size()
-            neural-screen-wrapper
-                svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
-                    draw Neuron
+            _view: lib.exclusive.dashed_name(View)
+            neural-screen-wrapper(class="{{_view}} {{@name}}", style=@Transform.string)
+                neural-screen-inner
+                    svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
+                        draw Neuron
+
+        Transform*
+            @ox: "left"
+            @oy: "50%"
+            @x: 0
+            @y: 0
+            @z: 0
+            @r: 0
+
+            bind @string: "--tx: {{@x}}px; --ty: {{@y}}px; --tz: {{@z}}px; --tr: {{@r}}deg"
+
+        View!*
+            Mini*
+                on NeuralScreen.mouse.click -> Focused
+
+            Focused
+                on NeuralScreen.mouse.RMB -> Mini
 
         Neuron[] :: App.Neuron
 
@@ -152,3 +203,5 @@ SVGDefs*
                 feGaussianBlur(svg=true, in="SourceGraphic", stdDeviation="10", result="blur")
                 feColorMatrix(svg=true, in="blur", type="matrix", values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7", result="goo")
                 feBlend(svg=true, in="goo", in2="SourceGraphic")
+
+import "./parts/editor/editor.statechart"
