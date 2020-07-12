@@ -5,13 +5,13 @@ import {App} from "../../gmtk";
 const PROPAGATION_THRESHOLD = 160;
 
 export interface Neuron {
-  Nucleus: {x: number, y: number};
-  Axon: {};
-  Terminal: {x: number, y: number};
+  Nucleus: {x: number, y: number, Interaction: any}&Ref;
+  Axon: {}&Ref;
+  Terminal: {x: number, y: number, Interaction: any}&Ref;
 
   Pulse: PluralRef<Pulse>;
-  Out?: {action: string, delay: number};
-  Label?: {content: string, p: number, side: number};
+  Out?: {action: string, delay: number}&Ref;
+  Label?: {content: string, p: number, side: number}&Ref;
 
   Type: {
     Normal?: {};
@@ -26,7 +26,9 @@ export interface Neuron {
     Memory?: Memory;
     Language?: Language;
     Autonomic?: {}
-  }
+  };
+
+  Interaction: any;
 }
 
 export interface NeuronContainer {

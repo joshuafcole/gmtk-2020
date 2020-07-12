@@ -9,6 +9,11 @@ Editor*
         Enabled
             on any.keyboard.down (event.mod.alt && event.key == "E") -> Disabled
 
+            on NeuralScreen.mouse.RMB (!lib.in(Interaction.Adding)) -> Disabled
+
+            on any.keyboard.down (event.mod.control && event.key == "s")
+                _: lib.editor.save_focused(App, event.prevent)
+
             Tool!*
                 on any.keyboard.down (event.key == "n") -> Normal
                 on any.keyboard.down (event.key == "m") -> Motor
@@ -45,15 +50,23 @@ Editor*
 
 
             Interaction!*
+                @off_x: 0
+                @off_y: 0
+
                 None*
                     on NeuralScreen.mouse.down (event.button == 0 && lib.in(Tool.Add)) -> Adding
+                        _bounds: lib.get_bounds(lib.editor.nth_child(event.node, 1))
+                        _x: event.view_x - _bounds.left
+                        _y: event.view_y - _bounds.top
+                        @off_x: _bounds.left
+                        @off_y: _bounds.top
                         add Neuron (_n)
                             Nucleus*
-                                @x: event.view_x
-                                @y: event.view_y
+                                @x: _x
+                                @y: _y
                             Terminal*
-                                @x: event.view_x
-                                @y: event.view_y
+                                @x: _x
+                                @y: _y
 
                         reference _n in AddingNeuron
                         _: lib.editor.convert_to(Neuron, Enabled.Tool.Add)
@@ -76,8 +89,8 @@ Editor*
                         dereference AddingNeuron in AddingNeuron
 
                     on any.mouse.move
-                        @AddingNeuron.Terminal.x: event.view_x
-                        @AddingNeuron.Terminal.y: event.view_y
+                        @AddingNeuron.Terminal.x: event.view_x - @off_x
+                        @AddingNeuron.Terminal.y: event.view_y - @off_y
 
                     on any.mouse.move (lib.in(AddingNeuron.Type.Logic))
                         _x2: @AddingNeuron.Terminal.x

@@ -7,21 +7,6 @@ App*
         add NeuralScreen
             @name: "Motor"
 
-            // Transform*
-            //     @ox: "right"
-            //     @oy: "50%"
-            //     @x: -450
-            //     @y: -350
-            //     @z: -375
-            //     @r: 10
-
-            Transform*
-                @ox: "right"
-                @x: -400
-                @y: -500
-                @z: -300
-                @r: 15
-
             Neuron
                 Nucleus*
                     @x: 50
@@ -56,14 +41,6 @@ App*
         add NeuralScreen
             @name: "Logic"
 
-            Transform*
-                @ox: "left"
-                @oy: "50%"
-                @x: -200
-                @y: -350
-                @z: -500
-                @r: 2
-
             Neuron
                 Nucleus*
                     @x: 950
@@ -94,14 +71,6 @@ App*
 
         add NeuralScreen
             @name: "Language"
-
-            Transform*
-                @ox: "right"
-                @oy: "50%"
-                @x: 0
-                @y: -400
-                @z: -650
-                @r: -4
 
             Neuron
                 Nucleus*
@@ -154,6 +123,8 @@ App*
                         Thought
                             @content: "I mean, it makes sense, but..."
 
+        _: lib.editor.load_all(App)
+
     interface
         app
             control-room-background
@@ -168,25 +139,13 @@ App*
     NeuralScreen[]
         @name: ""
         interface
-            _window: lib.window_size()
             _view: lib.exclusive.dashed_name(View)
-            neural-screen-wrapper(class="{{_view}} {{@name}}", style=@Transform.string)
+            neural-screen-wrapper(class="{{_view}} {{@name}}")
                 neural-screen-placeholder
                     h3 {{@name}}
                 neural-screen-inner
-                    // svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
                     svg.neural-screen(svg=true, postRender=lib.resize_svg, w=1000, h=900)
                         draw Neuron
-
-        Transform*
-            @ox: "left"
-            @oy: "50%"
-            @x: 0
-            @y: 0
-            @z: 0
-            @r: 0
-
-            bind @string: "--tx: {{@x}}px; --ty: {{@y}}px; --tz: {{@z}}px; --tr: {{@r}}deg"
 
         View!*
             Mini*

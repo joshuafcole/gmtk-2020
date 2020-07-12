@@ -1,0 +1,31 @@
+[
+  {
+    "id": 5,
+    "Type": {
+      "id": 5,
+      "Language": {
+        "id": 5,
+        "phoneme": "th",
+        "Sound": {
+          "id": 5
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 5,
+      "x": 575,
+      "y": 425
+    },
+    "Terminal": {
+      "id": 5,
+      "x": 650,
+      "y": 800
+    },
+    "Label": {
+      "id": 5,
+      "content": "'TH'",
+      "p": 0.33,
+      "side": 1
+    }
+  }
+]

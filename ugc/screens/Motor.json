@@ -1,0 +1,57 @@
+[
+  {
+    "id": 8,
+    "Type": {
+      "id": 8,
+      "Motor": {
+        "id": 8,
+        "TransientPulse": {
+          "id": 8
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 8,
+      "x": 259,
+      "y": 130
+    },
+    "Terminal": {
+      "id": 8,
+      "x": 459,
+      "y": 318
+    }
+  },
+  {
+    "id": 9,
+    "Type": {
+      "id": 9,
+      "Motor": {
+        "id": 9,
+        "TransientPulse": {
+          "id": 9
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 9,
+      "x": 446,
+      "y": 437
+    },
+    "Terminal": {
+      "id": 9,
+      "x": 304,
+      "y": 723
+    },
+    "Out": {
+      "id": 9,
+      "action": "move_leg",
+      "delay": 500
+    },
+    "Label": {
+      "id": 9,
+      "content": "leg",
+      "p": 0.25,
+      "side": 1
+    }
+  }
+]

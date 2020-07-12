@@ -1,0 +1,69 @@
+[
+  {
+    "id": 11,
+    "Type": {
+      "id": 11,
+      "Memory": {
+        "id": 11,
+        "icon": "cog fas",
+        "thoughts": 1,
+        "Icon": {
+          "id": 11
+        },
+        "Thought": [
+          {
+            "id": 2,
+            "content": "I wonder how many gears Big Ben contains...",
+            "ix": 0
+          }
+        ]
+      }
+    },
+    "Nucleus": {
+      "id": 11,
+      "x": 300,
+      "y": 300
+    },
+    "Terminal": {
+      "id": 11,
+      "x": 325,
+      "y": 350
+    }
+  },
+  {
+    "id": 12,
+    "Type": {
+      "id": 12,
+      "Memory": {
+        "id": 12,
+        "icon": "feather fas",
+        "thoughts": 2,
+        "Icon": {
+          "id": 12
+        },
+        "Thought": [
+          {
+            "id": 1,
+            "content": "Is a ton of feathers really not lighter than a ton of bricks?",
+            "ix": 0
+          },
+          {
+            "id": 0,
+            "content": "I mean, it makes sense, but...",
+            "ix": 1
+          }
+        ]
+      }
+    },
+    "Nucleus": {
+      "id": 12,
+      "x": 711,
+      "y": 584
+    },
+    "Terminal": {
+      "id": 12,
+      "x": 500,
+      "y": 400
+    }
+  }
+]

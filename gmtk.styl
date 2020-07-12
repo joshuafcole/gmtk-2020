@@ -105,9 +105,16 @@ neural-screen-wrapper
     z-index: 2;
     pointer-events: auto;
 
+  &.mini
+    .neuron
+      pointer-events: none;
+
   &.focused
     z-index: 10;
     transition: transform $a ease, z-index $a step-start;
+
+    .neuron
+      pointer-events: auto;
 
     neural-screen-inner
       top: - $t;

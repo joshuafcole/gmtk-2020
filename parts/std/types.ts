@@ -12,6 +12,7 @@ export type Ref = {
 export type PluralRef<T> = {
   add(holes: Partial<T>): T;
   each(cb: (instance: T & Ref) => any): void;
+  to_json(): any;
 };
 
 export type Target = { state: number; instance: number };

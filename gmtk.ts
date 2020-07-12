@@ -4,8 +4,17 @@ import std from "./parts/std/std";
 import neuron, {Neuron} from "./parts/neuron/neuron";
 import editor from "./parts/editor/editor";
 
-export interface App {
+export interface NeuralScreen {
+  name: string;
+  View: {
+    Mini?: {};
+    Focused?: {};
+  };
   Neuron: PluralRef<Neuron>;
+}
+
+export interface App {
+  NeuralScreen: PluralRef<NeuralScreen>;
 }
 
 export let lib = {
