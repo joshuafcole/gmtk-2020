@@ -1,14 +1,17 @@
 BaseScene
+    @name: ""
+
+    on state.enter
+        @App.active_scene: @name
+
+        _first: lib.dialog.load_script(Dialog, @name)
+        send goto to Dialog
+            message: _first
+
 
 SceneWrapper!*
-    Scene1* :: BaseScene
-        on state.enter
-            _: console.log("Entered scene 1!")
-
-        on move_leg -> Scene2
+    Tutorial* :: BaseScene
+        @name: "tutorial"
 
     Scene2 :: BaseScene
-        on state.enter
-            _: alert("Joe kicks open the door and stumbles into the pitch-dark room...")
-
-        on move_arm -> Scene2
+        @name: "day2"

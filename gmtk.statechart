@@ -1,6 +1,8 @@
 import "./parts/std/std.statechart"
 
 App*
+    @active_scene: ""
+
     on state.enter
         _: lib.start_ticking()
 
@@ -32,18 +34,15 @@ App*
                 draw Dialog
 
     import "./parts/neuron/neuron.statechart"
-    import "./parts/scene/scene.statechart"
     import "./parts/dialog/dialog.statechart"
+    import "./parts/scene/scene.statechart"
 
     NeuralScreen[]
         @name: ""
 
-        on flash (event.screen == @name) -> Flash
-
-
         interface
             _view: lib.exclusive.dashed_name(View)
-            _flash: lib.ternary(lib.in(Flash), "flashing", "")
+            _flash: lib.ternary(lib.in(Flash.On), "flashing", "")
             neural-screen-wrapper(class="{{_view}} {{@name}} {{_flash}}")
                 // img.neural-screen-panel(src="./assets/control-panel.svg")
                 neural-screen-placeholder
@@ -52,11 +51,9 @@ App*
                     svg.neural-screen(svg=true, postRender=lib.resize_svg, w=1000, h=900)
                         draw Neuron
 
-        Flash
-            on state.enter
-                _: lib.wait(2000, "stop_flashing", Flash)
-
-            on stop_flashing -> NeuralScreen
+        Flash* :: FlasherBase
+            Off*
+                on flash (event.screen == @name) -> On
 
         View!*
             Mini*

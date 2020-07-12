@@ -1,9 +1,4 @@
 Dialog*
-    on state.enter
-        _first: lib.dialog.load_script(Dialog, "test")
-        send goto to Dialog
-            message: _first
-
     on goto
         reference event.message in ActiveMessage
 

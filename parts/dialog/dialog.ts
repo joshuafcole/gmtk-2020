@@ -1,5 +1,7 @@
 import { Ref, PluralRef} from "../std/types";
-import std from "../std/std";
+import std, {get_program} from "../std/std";
+
+import cached_scripts from "../../ugc/scripts.bundle.json";
 
 interface Dialog {
   Message: PluralRef<Message>;
@@ -176,7 +178,9 @@ globalThis.parse_script = parse_script;
 
 let lib = {
   load_script(dialog:Dialog, script_name:string) {
-    let parsed = parse_script(test, script_name);
+    let script = cached_scripts[script_name];
+    if(!script) return console.warn("Unable to load script...", script_name);
+    let parsed = parse_script(script, script_name);
     let messages:Message[] = [];
 
     dialog.Message.each((msg) => msg.remove());
@@ -285,8 +289,3 @@ export default lib;
 //   console.dir(parse_script(test, name));
 //   console.groupEnd();
 // }
-
-
-import test from "../../ugc/scripts/tutorial.txt";
-import { get_program } from "../std/std";
-console.log(parse_script(test, "test"));
