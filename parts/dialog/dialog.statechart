@@ -31,7 +31,7 @@ Dialog*
             dereference Message in ActiveMessage
 
         interface
-            dialog-message
+            dialog-message(class="author-{{lib.dash(@author)}}")
                 author {{@author}}
                 content {{@says}}
 
@@ -71,6 +71,31 @@ Dialog*
                 ThinkOther
                     @idea: ""
                     on think (lib.is(Message, ActiveMessage) && event.idea != @idea)
+                        send goto to Dialog
+                            message: Then
+
+                Wait
+                    @delay: 0
+                    on Dialog.goto (lib.is(event.message, Message))
+                        _: lib.wait(@delay, "goto", Dialog, "message", Then)
+
+                MotorStepUnder
+                    on motor_step_under (lib.is(Message, ActiveMessage))
+                        send goto to Dialog
+                            message: Then
+
+                MotorStepOver
+                    on motor_step_over (lib.is(Message, ActiveMessage))
+                        send goto to Dialog
+                            message: Then
+
+                MotorStepTimeout
+                    on motor_step_timeout (lib.is(Message, ActiveMessage))
+                        send goto to Dialog
+                            message: Then
+
+                MotorStepSuccess
+                    on motor_step_success (lib.is(Message, ActiveMessage))
                         send goto to Dialog
                             message: Then
 

@@ -16,6 +16,7 @@ export interface Neuron {
   Type: {
     Normal?: {};
     Motor?: {
+      part?: string;
       pulse_radius: number;
       pulse_growth: number;
     };

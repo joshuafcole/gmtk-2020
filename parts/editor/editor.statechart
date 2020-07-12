@@ -7,6 +7,14 @@ Editor*
         Disabled*
             on any.keyboard.down (event.mod.alt && event.key == "E") -> Enabled
         Enabled
+            on state.enter
+                reference Dialog.ActiveMessage in HeldMessage
+                dereference Dialog.ActiveMessage in Dialog.ActiveMessage
+
+            on state.leave
+                reference HeldMessage in Dialog.ActiveMessage
+                dereference HeldMessage in HeldMessage
+
             on any.keyboard.down (event.mod.alt && event.key == "E") -> Disabled
 
             on NeuralScreen.mouse.RMB (!lib.in(Interaction.Adding)) -> Disabled
@@ -21,6 +29,8 @@ Editor*
                         draw Tool
 
                     draw Interaction.Editing.Properties
+
+            HeldMessage references Dialog.Message
 
             Tool!*
                 on any.keyboard.down (event.key == "N") -> Normal

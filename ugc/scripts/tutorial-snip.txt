@@ -1,0 +1,63 @@
+Foreman: Might want to label this one, actually, it’s the “right leg”
+
+! next_task
+
+Foreman: walkin’ here will require alternating medium pulses to the left and right leg respectively.
+
+Foreman: Tappin’ a muscle neuron won’t do much — you’re gonna need to hold it down to charge it to the size of pulse ya want.
+
+Foreman: Go 'head and try to get those feet movin'.
+
+> MotorStepUnder
+Foreman: That's a bit light. Dave's gonna need more oomph to get movin'.
+<
+
+> MotorStepOver
+Foreman: Whoah, careful! Ya nearly sprained an ankle there.
+<
+
+> MotorStepTimeout
+Foreman: You sleepin' in the job already? Try holdin' and then releasing some neurons to get those legs moving.
+<
+
+> MotorStepSuccess
+Foreman: Very nice, just like that.
+<
+
+
+Foreman: Two steps to go...
+
+
+> MotorStepUnder
+Foreman: Seriously, hold down the neuron to give it some gas.
+<
+
+> MotorStepOver
+Foreman: You been investin' in insurance companies lately? Go easy on Dave, he just woke up.
+<
+
+> MotorStepTimeout
+Foreman: If we didn't have a union you'd be out the door already. Make sure you're getting those movements in by the deadline!
+<
+
+> MotorStepSuccess
+Foreman: Perfect, keep it up.
+<
+
+Foreman: Alright champ, one more.
+
+> MotorStepUnder
+Foreman: That's a bit light. Dave's gonna need more oomph to get movin'.
+<
+
+> MotorStepOver
+Foreman: Whoah, careful! Ya nearly sprained an ankle there.
+<
+
+> MotorStepTimeout
+Foreman: You sleepin' in the job already? Try holdin' and then releasing some neurons to get those legs moving.
+<
+
+> MotorStepSuccess
+Foreman: Very nice, just like that.
+<

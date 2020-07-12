@@ -18,6 +18,10 @@ export interface App {
   active_scene: string;
 
   NeuralScreen: PluralRef<NeuralScreen>;
+  MotorScreen: NeuralScreen;
+  LogicScreen: NeuralScreen;
+  LanguageScreen: NeuralScreen;
+  MemoryScreen: NeuralScreen;
 }
 
 export let lib = {

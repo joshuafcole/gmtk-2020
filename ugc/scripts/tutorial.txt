@@ -17,17 +17,13 @@ Foreman: Let’s start by running some memory queries. Go ahead and click on the
 ! flash screen:Memory
 
 > OpenOther screen:Memory
-
 Foreman: All right, wise guy. You can back out of this console and try again by clicking the back button in the top left, there.
-
 <^
 
 > Open screen:Memory
-
 Foreman: Yep, that's the one.
 
 ! stop_flashing
-
 <
 
 Foreman: What you’re seein’ here is a standard neural mesh. I happened to organize Dave’s memories myself, so I can vouch for how easy the system is to use.
@@ -39,9 +35,7 @@ Foreman: Go ahead and pull the instructions for usin’ the memory console now �
 ! flash idea:memory
 
 > Think idea:memory
-
 Sensory Crew: Uh oh, boss, looks like Dave’s thinking about the act of thinking again. Completely lost his train of thought.
-
 <
 
 Foreman: Uhh, right. Good... attempt, but, uhh I think _you_ forgot about the part where I said you _definitely_ gotta disconnect the memory network from Dave’s conscious before runnin’ queries you don’t mean to send to him.
@@ -55,21 +49,48 @@ Foreman: The other three ideas attached to the question mark are notes on runnin
 Foreman: Let’s get outta here and take Dave for a quick walk, eh? Go ahead and check out the motor console.
 
 > OpenOther screen:Motor
-
 Foreman: Ya either got real lucky the first time or you're messin' with me. Either way I'm docking your pay.
-
 <^
 
 > Open screen:Motor
-
 Foreman: I’m gonna level with you. Pete was never much for organization, and he used to manage most of the motor stuff.
+<
 
 Foreman: If you’ve got the inclination, you can use the tape over their to label neurons as you figure ‘em out.
 
-Foreman: Might want to label this one, actually, it’s the “right leg”
-
 Foreman: If you look up at the top of the screen, you can see the sequence of pulses to certain muscles Dave needs to get the current job done.
 
-Foreman: walkin’ here will require alternating medium pulses to the left and right leg respectively.
+Narrator: This puzzle type doesn't work yet, sorry. :(
 
-Foreman: Tappin’ a muscle neuron won’t do much — you’re gonna need to hold it down to charge it to the size of pulse ya want.
+Sensory Crew:  ‘ey Boss! We’ve got Jeff at 12 o’clock!
+
+Foreman: Sounds like we oughtta say hello! Head on over to the language console.
+
+> Open screen:Language
+Foreman: Dave’s usually got a pretty good idea of what he wants to say, but every once in a while he’ll need reminded ‘bout a word or two.
+<
+
+Foreman: All ya’ gotta do is take the patch wires here and hook up the right sounds to each blank.
+
+Foreman: Let’s start simple here — 2 pulses of vowel and a pulse of “L” from ‘L D’ will give us “Hello”.
+
+Foreman: No need to stress over order, just the right combos hitting each blank will do the job.
+
+Foreman: Once time runs out or you pulse the “speak!” neuron, Dave’ll put words to your masterpiece.
+
+Narrator: This puzzle type is even less complete, somehow.
+
+Developer: ...
+
+Developer: That's the end of the demo.
+
+Developer: I bit off so much more than I could chew.
+
+Developer: All of this was made from _scratch_ in a brand new programming language.
+           That was built over the past couple months.
+
+Developer: Ah well, much like Dave's hypothetical out of control life,
+           these things sometimes get away from us.
+
+Developer: If you're curious about the code, you can find it at:
+           < https://github.com/joshuafcole/gmtk-2020 >

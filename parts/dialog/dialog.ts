@@ -169,7 +169,7 @@ function parse_script(script:string, name: string) {
 
     msg_ix += 1;
   }
-
+  console.log(messages);
   return messages;
 }
 

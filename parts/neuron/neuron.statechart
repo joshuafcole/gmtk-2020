@@ -23,8 +23,11 @@ BaseNeuron
                 add Pulse
 
         Motor
+            @part: ""
+
             @pulse_radius: @base_size / 24
             @pulse_growth: 1 / 4
+
             on BaseNeuron.create_pulse
                 add Pulse
                     @strength: event.elapsed
@@ -47,6 +50,10 @@ BaseNeuron
                 @name: "Motor"
                 @target: lib.editor.as_proxy(Motor)
                 on state.enter
+                    add Prop
+                        @name: "part"
+                        @type: "string"
+                        @default: "leg_left"
                     add Prop
                         @name: "pulse_radius"
                         @default: @base_size / 6
@@ -328,7 +335,7 @@ BaseNeuron
 
         // Outputs
         on tick (@p >= 1 && lib.in(BaseNeuron.Out))
-            _: lib.wait(@BaseNeuron.Out.delay, @BaseNeuron.Out.action, 0, "strength", @strength, "memory", Memory.Linked, "language", Language.Linked)
+            _: lib.wait(@BaseNeuron.Out.delay, @BaseNeuron.Out.action, 0, "strength", @strength, "memory", Memory.Linked, "language", Language.Linked, "part", @Motor.part)
 
         on tick (@p >= 1)
             _: lib.neuron.pulse.propagate(Pulse, BaseNeuron, NeuralScreen)

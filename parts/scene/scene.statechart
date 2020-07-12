@@ -14,5 +14,30 @@ SceneWrapper!*
     Tutorial* :: BaseScene
         @name: "tutorial"
 
+        Task!*
+            None*
+                on next_task -> Walk
+
+            Walk
+                on state.enter
+                    _: console.log(MotorScreen)
+                    add MotorScreen.MotorTask
+                        Step
+                            @part: "leg_left"
+                            @by: 5
+                            @min: 4
+                            @max: 16
+                        Step
+                            @part: "leg_right"
+                            @by: 10
+                            @min: 4
+                            @max: 16
+                        Step
+                            @part: "leg_left"
+                            @by: 15
+                            @min: 4
+                            @max: 16
+
+
     Scene2 :: BaseScene
         @name: "day2"

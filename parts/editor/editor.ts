@@ -5,8 +5,6 @@ import {Neuron, Thought} from "../neuron/neuron";
 
 import cached_screens from "../../ugc/screens.bundle.json";
 
-console.log(cached_screens);
-
 export interface EditorType {
   Normal?: {},
   Motor?: {},
@@ -96,8 +94,6 @@ let lib = {
       }
     }
 
-    console.log(raw);
-
     fetch(`/ugc/screens/${scene}/${screen.name}.json`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -107,12 +103,15 @@ let lib = {
   },
   load_all(app: App, scene: string) {
     app.NeuralScreen.each((screen) => screen.remove());
-    app.NeuralScreen.add({name: "Motor"});
-    app.NeuralScreen.add({name: "Logic"});
-    app.NeuralScreen.add({name: "Language"});
-    app.NeuralScreen.add({name: "Memory"});
+    app.MotorScreen =
+      app.NeuralScreen.add({name: "Motor"});
+    app.LogicScreen =
+      app.NeuralScreen.add({name: "Logic"});
+    app.LanguageScreen =
+      app.NeuralScreen.add({name: "Language"});
+    app.MemoryScreen =
+      app.NeuralScreen.add({name: "Memory"});
     app.NeuralScreen.each((screen) => {
-      console.log("YO", scene, screen.name);
       lib.load(screen, scene);
     });
   },
@@ -174,8 +173,8 @@ let lib = {
     if(type.Normal) {
       neuron.Type.Normal = {};
     } else if(type.Motor) {
-      let {pulse_radius, pulse_growth} = type.Motor;
-      neuron.Type.Motor = {pulse_radius, pulse_growth};
+      let {pulse_radius, pulse_growth, part} = type.Motor;
+      neuron.Type.Motor = {pulse_radius, pulse_growth, part};
     } else if(type.Logic) {
       neuron.Type.Logic = {} as any;
     } else if(type.Language) {

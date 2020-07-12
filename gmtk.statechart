@@ -6,15 +6,6 @@ App*
     on state.enter
         _: lib.start_ticking()
 
-        // add NeuralScreen
-        //     @name: "Motor"
-        // add NeuralScreen
-        //     @name: "Logic"
-        // add NeuralScreen
-        //     @name: "Language"
-        // add NeuralScreen
-        //     @name: "Memory"
-
     on think_sub
         send think
             idea: event.memory.idea
@@ -48,6 +39,10 @@ App*
                 neural-screen-inner
                     svg.neural-screen(svg=true, postRender=lib.resize_svg, w=1000, h=900)
                         draw Neuron
+                    task-layer
+                        draw NeuralScreen.MotorTask
+
+                    draw Focused.BackButton
 
         Flash* :: FlasherBase
             Off*
@@ -68,7 +63,67 @@ App*
 
                 on NeuralScreen.mouse.RMB (!lib.in(Editor.State.Enabled.Interaction.Adding)) -> Mini
 
+                BackButton*
+                    on mouse.click -> Mini
+
+                    interface
+                        back-button
+                            i.fas.fa-angle-double-left
+
+
         Neuron[] :: BaseNeuron
+
+
+        MotorTask[]
+            @elapsed: 0
+            @viewport: 5
+
+            on tick
+                @elapsed: @elapsed + 1 / 60
+
+            Step[]
+                // body part / action
+                @part: "leg_left"
+                // seconds
+                @by: 20
+
+                // pulse strength
+                @min: 1
+                @max: 20
+
+
+                Incomplete*
+                    on use (event.part == @part && event.strength < @min) -> Complete
+                        _: console.log("UNDER")
+                        send motor_step_under
+                    on use (event.part == @part && event.strength > @max) -> Complete
+                        _: console.log("OVER")
+                        send motor_step_over
+                    on use (event.part == @part && @min < event.strength && event.strength < @max) -> Complete
+                        _: console.log("SUCCESS")
+                        send motor_step_success
+
+                    on tick (@elapsed > @by) -> Complete
+                        _: console.log("TIMEOUT")
+                        send motor_step_timeout
+
+                Complete
+                    on tick (@elapsed > @by + @viewport * 0.05)
+                        remove Step
+
+                interface
+                    motor-task-step(style="--by: {{@by}}; --vp: {{@viewport}};")
+                        {{@part}}
+
+            interface
+                motor-task(style="--elapsed: {{@elapsed}}")
+                    draw Step
+
+    MotorScreen references NeuralScreen
+    LogicScreen references NeuralScreen
+    LanguageScreen references NeuralScreen
+    MemoryScreen references NeuralScreen
+
 
 SVGDefs*
     on state.enter
