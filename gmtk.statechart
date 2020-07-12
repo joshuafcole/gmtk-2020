@@ -152,6 +152,12 @@ App*
                 on NeuralScreen.mouse.click -> Focused
 
             Focused
+                on state.enter
+                    send close_other_screens
+                        @from: NeuralScreen
+
+                on close_other_screens (!lib.is(event.from, NeuralScreen)) -> Mini
+
                 on NeuralScreen.mouse.RMB (!lib.in(Editor.State.Enabled.Interaction.Adding)) -> Mini
 
         Neuron[] :: BaseNeuron

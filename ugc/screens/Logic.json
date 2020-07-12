@@ -1,64 +1,361 @@
 [
   {
-    "id": 8,
+    "id": 25,
+    "base_size": 30,
     "Type": {
-      "id": 8,
+      "id": 25,
       "Logic": {
-        "id": 8,
-        "decay_rate": 0.0001,
-        "decay": 0.05780000000000063,
-        "excitement": 0.000003633828731450344,
-        "theta": 0.6968233285270147,
-        "base_length": 332.897234040687
+        "id": 25,
+        "decay_rate": 0.01,
+        "excite_rate": 3,
+        "decay": 305.8699999998668,
+        "excitement": 0,
+        "theta": 0.6968233285270148,
+        "base_length": 332.8972378970265,
+        "pulse_radius": 5,
+        "pulse_growth": 0,
+        "Properties": {
+          "id": 25,
+          "name": "Logic",
+          "target": {
+            "__state": 838,
+            "__instance": 25,
+            "state_name": "Logic",
+            "id": 25
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 1,
+              "name": "decay_rate",
+              "type": "number",
+              "default": 0.01,
+              "State": {
+                "id": 1,
+                "Normal": {
+                  "id": 1
+                }
+              }
+            },
+            {
+              "id": 0,
+              "name": "excite_rate",
+              "type": "number",
+              "default": 3,
+              "State": {
+                "id": 0,
+                "Normal": {
+                  "id": 0
+                }
+              }
+            }
+          ]
+        }
       }
     },
     "Nucleus": {
-      "id": 8,
+      "id": 25,
       "x": 544,
       "y": 372
     },
     "Terminal": {
-      "id": 8,
+      "id": 25,
       "x": 799.2938292722703,
       "y": 585.6483834129582
     }
   },
   {
-    "id": 9,
+    "id": 26,
+    "base_size": 30,
     "Type": {
-      "id": 9,
+      "id": 26,
       "Normal": {
-        "id": 9
+        "id": 26,
+        "pulse_radius": 5,
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 9,
+      "id": 26,
       "x": 699,
       "y": 649
     },
     "Terminal": {
-      "id": 9,
+      "id": 26,
       "x": 299,
       "y": 649
     }
   },
   {
-    "id": 10,
+    "id": 27,
+    "base_size": 30,
     "Type": {
-      "id": 10,
+      "id": 27,
       "Normal": {
-        "id": 10
+        "id": 27,
+        "pulse_radius": 5,
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 10,
+      "id": 27,
       "x": 253,
       "y": 555
     },
     "Terminal": {
-      "id": 10,
+      "id": 27,
       "x": 468,
       "y": 326
+    }
+  },
+  {
+    "id": 28,
+    "base_size": 30,
+    "Type": {
+      "id": 28,
+      "Normal": {
+        "id": 28,
+        "pulse_radius": 5,
+        "pulse_growth": 0
+      }
+    },
+    "Nucleus": {
+      "id": 28,
+      "x": 110.5,
+      "y": 182.5
+    },
+    "Terminal": {
+      "id": 28,
+      "x": -1.5,
+      "y": 133.5
+    },
+    "Out": {
+      "id": 28,
+      "action": "affirmative",
+      "delay": 100,
+      "Properties": {
+        "id": 28,
+        "name": "Out",
+        "target": {
+          "__state": 1245,
+          "__instance": 28,
+          "state_name": "Out",
+          "id": 28
+        },
+        "class": "",
+        "Removable": {
+          "id": 28
+        },
+        "Prop": [
+          {
+            "id": 18,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 18,
+              "Normal": {
+                "id": 18
+              }
+            }
+          },
+          {
+            "id": 19,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 19,
+              "Normal": {
+                "id": 19
+              }
+            }
+          }
+        ]
+      }
+    },
+    "Label": {
+      "id": 28,
+      "content": "+",
+      "p": 0.33,
+      "side": 1,
+      "Properties": {
+        "id": 28,
+        "name": "Label",
+        "target": {
+          "__state": 1301,
+          "__instance": 28,
+          "state_name": "Label",
+          "id": 28
+        },
+        "class": "",
+        "Removable": {
+          "id": 28
+        },
+        "Prop": [
+          {
+            "id": 21,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 21,
+              "Normal": {
+                "id": 21
+              }
+            }
+          },
+          {
+            "id": 22,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 22,
+              "Normal": {
+                "id": 22
+              }
+            }
+          },
+          {
+            "id": 23,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 23,
+              "Normal": {
+                "id": 23
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 29,
+    "base_size": 30,
+    "Type": {
+      "id": 29,
+      "Normal": {
+        "id": 29,
+        "pulse_radius": 5,
+        "pulse_growth": 0
+      }
+    },
+    "Nucleus": {
+      "id": 29,
+      "x": 108.5,
+      "y": 251.5
+    },
+    "Terminal": {
+      "id": 29,
+      "x": -5.5,
+      "y": 223.5
+    },
+    "Out": {
+      "id": 29,
+      "action": "negative",
+      "delay": 100,
+      "Properties": {
+        "id": 29,
+        "name": "Out",
+        "target": {
+          "__state": 1245,
+          "__instance": 29,
+          "state_name": "Out",
+          "id": 29
+        },
+        "class": "",
+        "Removable": {
+          "id": 29
+        },
+        "Prop": [
+          {
+            "id": 20,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 20,
+              "Normal": {
+                "id": 20
+              }
+            }
+          },
+          {
+            "id": 21,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 21,
+              "Normal": {
+                "id": 21
+              }
+            }
+          }
+        ]
+      }
+    },
+    "Label": {
+      "id": 29,
+      "content": "-",
+      "p": 0.33,
+      "side": 1,
+      "Properties": {
+        "id": 29,
+        "name": "Label",
+        "target": {
+          "__state": 1301,
+          "__instance": 29,
+          "state_name": "Label",
+          "id": 29
+        },
+        "class": "",
+        "Removable": {
+          "id": 29
+        },
+        "Prop": [
+          {
+            "id": 12,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 12,
+              "Normal": {
+                "id": 12
+              }
+            }
+          },
+          {
+            "id": 13,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 13,
+              "Normal": {
+                "id": 13
+              }
+            }
+          },
+          {
+            "id": 14,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 14,
+              "Normal": {
+                "id": 14
+              }
+            }
+          }
+        ]
+      }
     }
   }
 ]

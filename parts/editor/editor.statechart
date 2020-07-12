@@ -23,17 +23,15 @@ Editor*
                     draw Interaction.Editing.Properties
 
             Tool!*
-                on any.keyboard.down (event.key == "n") -> Normal
-                on any.keyboard.down (event.key == "m") -> Motor
-                on any.keyboard.down (event.key == "l") -> Logic
-                on any.keyboard.down (event.key == "p") -> Language
-                on any.keyboard.down (event.key == "t") -> Memory
-                on any.keyboard.down (event.key == "f") -> Flag
+                on any.keyboard.down (event.key == "N") -> Normal
+                on any.keyboard.down (event.key == "M") -> Motor
+                on any.keyboard.down (event.key == "L") -> Logic
+                on any.keyboard.down (event.key == "P") -> Language
+                on any.keyboard.down (event.key == "T") -> Memory
 
                 interface
                     tool-wrapper
                         draw Add
-                        draw Flag
 
                 Add!*
                     Normal*
@@ -44,18 +42,13 @@ Editor*
                             i.fas.fa-cogs.tool-icon
                     Logic
                         interface
-                            i.fas.fa-magic.tool-icon
+                            i.fas.fa-square-root-alt.tool-icon
                     Language
                         interface
                             i.far.fa-comment-dots.tool-icon
                     Memory
                         interface
-                            i.fas.fa-brain.tool-icon
-
-                Flag
-                    interface
-                        i.fas.fa-flag.tool-icon
-
+                            i.fas.fa-sd-card.tool-icon
 
             Interaction!*
                 @off_x: 0
@@ -132,16 +125,8 @@ Editor*
                         send select to Editor
                             neuron: Neuron
 
-                    // on Neuron.Label.mouse.down (event.button == 0 && !event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
-                    //     _p: lib.editor.compute_p(Neuron, event.view_x- @off_x, event.view_y - @off_y)
-                    //     _: lib.editor.move_label(Neuron, _p)
-
-                    // on Neuron.Label.mouse.down (event.button == 0 && event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
-                    //     remove Neuron.Label
-
-                    // on Neuron.mouse.down (event.button == 0 && lib.in(Tool.Flag) && !lib.in(Neuron.Label))
-                    //     _p: lib.editor.compute_p(Neuron, event.view_x - @off_x, event.view_y - @off_y)
-                    //     _: lib.editor.label(Neuron, "unlabeled", _p)
+                    on any.keyboard.down (event.key == "Delete") -> None
+                        remove SelectedNeuron
 
                     SelectedNeuron references Neuron
 

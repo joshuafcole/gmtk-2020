@@ -105,7 +105,7 @@ BaseNeuron
 
             Icon*
                 interface
-                    foreignObject.memory-icon(svg=true, x=@Nucleus.x - 30, y=@Nucleus.y - 30)
+                    foreignObject.memory-icon(svg=true, x=@Nucleus.x - @base_size / 2, y=@Nucleus.y - @base_size / 2)
                         i(class="fa-{{@icon}}")
 
             Thought[]
@@ -334,13 +334,11 @@ BaseNeuron
             Icon* :: BaseNeuron.Type.Memory.Icon
                 interface
                     _pos: lib.neuron.axon.position(@p, BaseNeuron)
-                    foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - 15, y=_pos.y - 15)
+                    foreignObject.memory-icon.pulse-icon(svg=true, x=_pos.x - @base_size / 4, y=_pos.y - @base_size / 4)
                         i(class="fa-{{@Linked.icon}}")
 
         Language
             Linked references BaseNeuron.Type.Language
-
-
 
 
 PropertiesBase

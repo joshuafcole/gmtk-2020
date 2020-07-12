@@ -31,20 +31,22 @@
       position: relative;
       width: $base_size;
       height: $base_size;
-      font-size: @width * 0.8;
+      font-size: @width * 0.75;
       pointer-events: none;
 
       i
         overlay();
         display: flex;
+        width: inherit;
+        height: inherit;
         align-items: center;
         justify-content: center;
         line-height: 1;
         color: black;
 
       &.pulse-icon
-        width: $base_size / 2;
-        height: $base_size / 2;
+        width: ($base_size / 2);
+        height: ($base_size / 2);
         font-size: @width * 0.8;
 
   &.language

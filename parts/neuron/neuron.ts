@@ -2,7 +2,7 @@ import {Ref, PluralRef} from "../std/types";
 import std from "../std/std";
 import {App} from "../../gmtk";
 
-const PROPAGATION_THRESHOLD = 160;
+const PROPAGATION_THRESHOLD = 80;
 
 export interface Neuron {
   Nucleus: {x: number, y: number, Interaction: any}&Ref;

@@ -15,7 +15,7 @@
           "id": 8,
           "name": "Motor",
           "target": {
-            "__state": 782,
+            "__state": 776,
             "__instance": 8,
             "state_name": "Motor",
             "id": 8
@@ -52,26 +52,25 @@
     },
     "Nucleus": {
       "id": 8,
-      "x": 259,
-      "y": 130
+      "x": 228,
+      "y": 800
     },
     "Terminal": {
       "id": 8,
-      "x": 582,
-      "y": 270
+      "x": 319,
+      "y": 907
     },
-    "Label": {
+    "Out": {
       "id": 8,
-      "content": "",
-      "p": 0.33,
-      "side": 1,
+      "action": "leg_left",
+      "delay": 100,
       "Properties": {
         "id": 8,
-        "name": "Label",
+        "name": "Out",
         "target": {
-          "__state": 1298,
+          "__state": 1236,
           "__instance": 8,
-          "state_name": "Label",
+          "state_name": "Out",
           "id": 8
         },
         "class": "",
@@ -80,38 +79,26 @@
         },
         "Prop": [
           {
-            "id": 6,
-            "name": "content",
+            "id": 1,
+            "name": "action",
             "type": "string",
-            "default": "label me",
+            "default": "do_something",
             "State": {
-              "id": 6,
+              "id": 1,
               "Normal": {
-                "id": 6
+                "id": 1
               }
             }
           },
           {
-            "id": 7,
-            "name": "p",
+            "id": 0,
+            "name": "delay",
             "type": "number",
-            "default": 0.33,
+            "default": 100,
             "State": {
-              "id": 7,
+              "id": 0,
               "Normal": {
-                "id": 7
-              }
-            }
-          },
-          {
-            "id": 8,
-            "name": "side",
-            "type": "number",
-            "default": 0,
-            "State": {
-              "id": 8,
-              "Normal": {
-                "id": 8
+                "id": 0
               }
             }
           }
@@ -135,7 +122,7 @@
           "id": 9,
           "name": "Motor",
           "target": {
-            "__state": 782,
+            "__state": 776,
             "__instance": 9,
             "state_name": "Motor",
             "id": 9
@@ -172,13 +159,58 @@
     },
     "Nucleus": {
       "id": 9,
-      "x": 486,
-      "y": 460
+      "x": 181,
+      "y": 800
     },
     "Terminal": {
       "id": 9,
-      "x": 206,
-      "y": 994
+      "x": 128,
+      "y": 911
+    },
+    "Out": {
+      "id": 9,
+      "action": "leg_right",
+      "delay": 100,
+      "Properties": {
+        "id": 9,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 9,
+          "state_name": "Out",
+          "id": 9
+        },
+        "class": "",
+        "Removable": {
+          "id": 9
+        },
+        "Prop": [
+          {
+            "id": 2,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 2,
+              "Normal": {
+                "id": 2
+              }
+            }
+          },
+          {
+            "id": 3,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 3,
+              "Normal": {
+                "id": 3
+              }
+            }
+          }
+        ]
+      }
     },
     "Label": {
       "id": 9,
@@ -189,7 +221,7 @@
         "id": 9,
         "name": "Label",
         "target": {
-          "__state": 1298,
+          "__state": 1292,
           "__instance": 9,
           "state_name": "Label",
           "id": 9
@@ -237,6 +269,1367 @@
           }
         ]
       }
+    }
+  },
+  {
+    "id": 10,
+    "base_size": 30,
+    "Type": {
+      "id": 10,
+      "Motor": {
+        "id": 10,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 10
+        },
+        "Properties": {
+          "id": 10,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 10,
+            "state_name": "Motor",
+            "id": 10
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 4,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 4,
+                "Normal": {
+                  "id": 4
+                }
+              }
+            },
+            {
+              "id": 5,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 5,
+                "Normal": {
+                  "id": 5
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 10,
+      "x": 374.5,
+      "y": 790.5
+    },
+    "Terminal": {
+      "id": 10,
+      "x": 427.5,
+      "y": 906.5
+    },
+    "Out": {
+      "id": 10,
+      "action": "foot_left",
+      "delay": 100,
+      "Properties": {
+        "id": 10,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 10,
+          "state_name": "Out",
+          "id": 10
+        },
+        "class": "",
+        "Removable": {
+          "id": 10
+        },
+        "Prop": [
+          {
+            "id": 4,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 4,
+              "Normal": {
+                "id": 4
+              }
+            }
+          },
+          {
+            "id": 5,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 5,
+              "Normal": {
+                "id": 5
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 11,
+    "base_size": 30,
+    "Type": {
+      "id": 11,
+      "Motor": {
+        "id": 11,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 11
+        },
+        "Properties": {
+          "id": 11,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 11,
+            "state_name": "Motor",
+            "id": 11
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 6,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 6,
+                "Normal": {
+                  "id": 6
+                }
+              }
+            },
+            {
+              "id": 7,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 7,
+                "Normal": {
+                  "id": 7
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 11,
+      "x": 419.5,
+      "y": 778.5
+    },
+    "Terminal": {
+      "id": 11,
+      "x": 476.5,
+      "y": 901.5
+    },
+    "Out": {
+      "id": 11,
+      "action": "foot_right",
+      "delay": 100,
+      "Properties": {
+        "id": 11,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 11,
+          "state_name": "Out",
+          "id": 11
+        },
+        "class": "",
+        "Removable": {
+          "id": 11
+        },
+        "Prop": [
+          {
+            "id": 6,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 6,
+              "Normal": {
+                "id": 6
+              }
+            }
+          },
+          {
+            "id": 7,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 7,
+              "Normal": {
+                "id": 7
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 12,
+    "base_size": 30,
+    "Type": {
+      "id": 12,
+      "Motor": {
+        "id": 12,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 12
+        },
+        "Properties": {
+          "id": 12,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 12,
+            "state_name": "Motor",
+            "id": 12
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 8,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 8,
+                "Normal": {
+                  "id": 8
+                }
+              }
+            },
+            {
+              "id": 9,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 9,
+                "Normal": {
+                  "id": 9
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 12,
+      "x": 85.5,
+      "y": 794.5
+    },
+    "Terminal": {
+      "id": 12,
+      "x": 37.5,
+      "y": 906.5
+    },
+    "Out": {
+      "id": 12,
+      "action": "hand_left",
+      "delay": 100,
+      "Properties": {
+        "id": 12,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 12,
+          "state_name": "Out",
+          "id": 12
+        },
+        "class": "",
+        "Removable": {
+          "id": 12
+        },
+        "Prop": [
+          {
+            "id": 8,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 8,
+              "Normal": {
+                "id": 8
+              }
+            }
+          },
+          {
+            "id": 9,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 9,
+              "Normal": {
+                "id": 9
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 19,
+    "base_size": 30,
+    "Type": {
+      "id": 19,
+      "Motor": {
+        "id": 19,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 19
+        },
+        "Properties": {
+          "id": 19,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 19,
+            "state_name": "Motor",
+            "id": 19
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 10,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 10,
+                "Normal": {
+                  "id": 10
+                }
+              }
+            },
+            {
+              "id": 11,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 11,
+                "Normal": {
+                  "id": 11
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 19,
+      "x": 68.5,
+      "y": 224.5
+    },
+    "Terminal": {
+      "id": 19,
+      "x": -1.5,
+      "y": 336.5
+    },
+    "Out": {
+      "id": 19,
+      "action": "arm_left",
+      "delay": 100,
+      "Properties": {
+        "id": 19,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 19,
+          "state_name": "Out",
+          "id": 19
+        },
+        "class": "",
+        "Removable": {
+          "id": 19
+        },
+        "Prop": [
+          {
+            "id": 10,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 10,
+              "Normal": {
+                "id": 10
+              }
+            }
+          },
+          {
+            "id": 11,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 11,
+              "Normal": {
+                "id": 11
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 20,
+    "base_size": 30,
+    "Type": {
+      "id": 20,
+      "Motor": {
+        "id": 20,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 20
+        },
+        "Properties": {
+          "id": 20,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 20,
+            "state_name": "Motor",
+            "id": 20
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 12,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 12,
+                "Normal": {
+                  "id": 12
+                }
+              }
+            },
+            {
+              "id": 13,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 13,
+                "Normal": {
+                  "id": 13
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 20,
+      "x": 862.5,
+      "y": 305.5
+    },
+    "Terminal": {
+      "id": 20,
+      "x": 1003.5,
+      "y": 307.5
+    },
+    "Out": {
+      "id": 20,
+      "action": "arm_right",
+      "delay": 100,
+      "Properties": {
+        "id": 20,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 20,
+          "state_name": "Out",
+          "id": 20
+        },
+        "class": "",
+        "Removable": {
+          "id": 20
+        },
+        "Prop": [
+          {
+            "id": 12,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 12,
+              "Normal": {
+                "id": 12
+              }
+            }
+          },
+          {
+            "id": 13,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 13,
+              "Normal": {
+                "id": 13
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 21,
+    "base_size": 30,
+    "Type": {
+      "id": 21,
+      "Motor": {
+        "id": 21,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 21
+        },
+        "Properties": {
+          "id": 21,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 21,
+            "state_name": "Motor",
+            "id": 21
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 14,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 14,
+                "Normal": {
+                  "id": 14
+                }
+              }
+            },
+            {
+              "id": 15,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 15,
+                "Normal": {
+                  "id": 15
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 21,
+      "x": 883.5,
+      "y": 230.5
+    },
+    "Terminal": {
+      "id": 21,
+      "x": 1004.5,
+      "y": 411.5
+    },
+    "Out": {
+      "id": 21,
+      "action": "hand_right",
+      "delay": 100,
+      "Properties": {
+        "id": 21,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 21,
+          "state_name": "Out",
+          "id": 21
+        },
+        "class": "",
+        "Removable": {
+          "id": 21
+        },
+        "Prop": [
+          {
+            "id": 14,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 14,
+              "Normal": {
+                "id": 14
+              }
+            }
+          },
+          {
+            "id": 15,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 15,
+              "Normal": {
+                "id": 15
+              }
+            }
+          }
+        ]
+      }
+    },
+    "Label": {
+      "id": 21,
+      "content": "right",
+      "p": 0.33,
+      "side": 1,
+      "Properties": {
+        "id": 21,
+        "name": "Label",
+        "target": {
+          "__state": 1292,
+          "__instance": 21,
+          "state_name": "Label",
+          "id": 21
+        },
+        "class": "",
+        "Removable": {
+          "id": 21
+        },
+        "Prop": [
+          {
+            "id": 6,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 6,
+              "Normal": {
+                "id": 6
+              }
+            }
+          },
+          {
+            "id": 7,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 7,
+              "Normal": {
+                "id": 7
+              }
+            }
+          },
+          {
+            "id": 8,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 8,
+              "Normal": {
+                "id": 8
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 22,
+    "base_size": 30,
+    "Type": {
+      "id": 22,
+      "Motor": {
+        "id": 22,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 22
+        },
+        "Properties": {
+          "id": 22,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 22,
+            "state_name": "Motor",
+            "id": 22
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 16,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 16,
+                "Normal": {
+                  "id": 16
+                }
+              }
+            },
+            {
+              "id": 17,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 17,
+                "Normal": {
+                  "id": 17
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 22,
+      "x": 52.5,
+      "y": 155.5
+    },
+    "Terminal": {
+      "id": 22,
+      "x": 295.5,
+      "y": 0.5
+    },
+    "Out": {
+      "id": 22,
+      "action": "wink",
+      "delay": 400,
+      "Properties": {
+        "id": 22,
+        "name": "Out",
+        "target": {
+          "__state": 1236,
+          "__instance": 22,
+          "state_name": "Out",
+          "id": 22
+        },
+        "class": "",
+        "Removable": {
+          "id": 22
+        },
+        "Prop": [
+          {
+            "id": 16,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 16,
+              "Normal": {
+                "id": 16
+              }
+            }
+          },
+          {
+            "id": 17,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 17,
+              "Normal": {
+                "id": 17
+              }
+            }
+          }
+        ]
+      }
+    },
+    "Label": {
+      "id": 22,
+      "content": "o.o",
+      "p": 0.5,
+      "side": 1,
+      "Properties": {
+        "id": 22,
+        "name": "Label",
+        "target": {
+          "__state": 1292,
+          "__instance": 22,
+          "state_name": "Label",
+          "id": 22
+        },
+        "class": "",
+        "Removable": {
+          "id": 22
+        },
+        "Prop": [
+          {
+            "id": 9,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 9,
+              "Normal": {
+                "id": 9
+              }
+            }
+          },
+          {
+            "id": 10,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 10,
+              "Normal": {
+                "id": 10
+              }
+            }
+          },
+          {
+            "id": 11,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 11,
+              "Normal": {
+                "id": 11
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 23,
+    "base_size": 30,
+    "Type": {
+      "id": 23,
+      "Motor": {
+        "id": 23,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 23
+        },
+        "Properties": {
+          "id": 23,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 23,
+            "state_name": "Motor",
+            "id": 23
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 18,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 18,
+                "Normal": {
+                  "id": 18
+                }
+              }
+            },
+            {
+              "id": 19,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 19,
+                "Normal": {
+                  "id": 19
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 23,
+      "x": 348.5,
+      "y": 288.5
+    },
+    "Terminal": {
+      "id": 23,
+      "x": 104.5,
+      "y": 189.5
+    }
+  },
+  {
+    "id": 24,
+    "base_size": 30,
+    "Type": {
+      "id": 24,
+      "Motor": {
+        "id": 24,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 24
+        },
+        "Properties": {
+          "id": 24,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 24,
+            "state_name": "Motor",
+            "id": 24
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 20,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 20,
+                "Normal": {
+                  "id": 20
+                }
+              }
+            },
+            {
+              "id": 21,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 21,
+                "Normal": {
+                  "id": 21
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 24,
+      "x": 604.5,
+      "y": 262.5
+    },
+    "Terminal": {
+      "id": 24,
+      "x": 832.5,
+      "y": 346.5
+    }
+  },
+  {
+    "id": 25,
+    "base_size": 30,
+    "Type": {
+      "id": 25,
+      "Motor": {
+        "id": 25,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 25
+        },
+        "Properties": {
+          "id": 25,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 25,
+            "state_name": "Motor",
+            "id": 25
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 22,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 22,
+                "Normal": {
+                  "id": 22
+                }
+              }
+            },
+            {
+              "id": 23,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 23,
+                "Normal": {
+                  "id": 23
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 25,
+      "x": 794.5,
+      "y": 304.5
+    },
+    "Terminal": {
+      "id": 25,
+      "x": 872.5,
+      "y": 176.5
+    }
+  },
+  {
+    "id": 26,
+    "base_size": 30,
+    "Type": {
+      "id": 26,
+      "Motor": {
+        "id": 26,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 26
+        },
+        "Properties": {
+          "id": 26,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 26,
+            "state_name": "Motor",
+            "id": 26
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 24,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 24,
+                "Normal": {
+                  "id": 24
+                }
+              }
+            },
+            {
+              "id": 25,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 25,
+                "Normal": {
+                  "id": 25
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 26,
+      "x": 212.5,
+      "y": 503.5
+    },
+    "Terminal": {
+      "id": 26,
+      "x": 269.5,
+      "y": 583.5
+    }
+  },
+  {
+    "id": 27,
+    "base_size": 30,
+    "Type": {
+      "id": 27,
+      "Motor": {
+        "id": 27,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 27
+        },
+        "Properties": {
+          "id": 27,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 27,
+            "state_name": "Motor",
+            "id": 27
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 26,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 26,
+                "Normal": {
+                  "id": 26
+                }
+              }
+            },
+            {
+              "id": 27,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 27,
+                "Normal": {
+                  "id": 27
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 27,
+      "x": 250.5,
+      "y": 618.5
+    },
+    "Terminal": {
+      "id": 27,
+      "x": 179.5,
+      "y": 758.5
+    }
+  },
+  {
+    "id": 28,
+    "base_size": 30,
+    "Type": {
+      "id": 28,
+      "Motor": {
+        "id": 28,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 28
+        },
+        "Properties": {
+          "id": 28,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 28,
+            "state_name": "Motor",
+            "id": 28
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 28,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 28,
+                "Normal": {
+                  "id": 28
+                }
+              }
+            },
+            {
+              "id": 29,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 29,
+                "Normal": {
+                  "id": 29
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 28,
+      "x": 303.5,
+      "y": 606.5
+    },
+    "Terminal": {
+      "id": 28,
+      "x": 334.5,
+      "y": 763.5
+    }
+  },
+  {
+    "id": 29,
+    "base_size": 30,
+    "Type": {
+      "id": 29,
+      "Motor": {
+        "id": 29,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 29
+        },
+        "Properties": {
+          "id": 29,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 29,
+            "state_name": "Motor",
+            "id": 29
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 30,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 30,
+                "Normal": {
+                  "id": 30
+                }
+              }
+            },
+            {
+              "id": 31,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 31,
+                "Normal": {
+                  "id": 31
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 29,
+      "x": 389.5,
+      "y": 508.5
+    },
+    "Terminal": {
+      "id": 29,
+      "x": 351.5,
+      "y": 593.5
+    }
+  },
+  {
+    "id": 30,
+    "base_size": 30,
+    "Type": {
+      "id": 30,
+      "Motor": {
+        "id": 30,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
+        "TransientPulse": {
+          "id": 30
+        },
+        "Properties": {
+          "id": 30,
+          "name": "Motor",
+          "target": {
+            "__state": 776,
+            "__instance": 30,
+            "state_name": "Motor",
+            "id": 30
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 32,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 32,
+                "Normal": {
+                  "id": 32
+                }
+              }
+            },
+            {
+              "id": 33,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 33,
+                "Normal": {
+                  "id": 33
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 30,
+      "x": 388.5,
+      "y": 614.5
+    },
+    "Terminal": {
+      "id": 30,
+      "x": 265.5,
+      "y": 754.5
     }
   }
 ]
