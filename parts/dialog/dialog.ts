@@ -287,6 +287,6 @@ export default lib;
 // }
 
 
-import test from "../../assets/scripts/tutorial.txt";
+import test from "../../ugc/scripts/tutorial.txt";
 import { get_program } from "../std/std";
 console.log(parse_script(test, "test"));

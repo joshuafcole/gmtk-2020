@@ -5,6 +5,9 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@types/mz": "^2.7.1",
+    "@types/node": "^14.0.22",
+    "mz": "^2.7.0",
     "typescript": "^4.0.0-beta"
   },
   "scripts": {
