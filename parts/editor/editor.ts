@@ -100,11 +100,24 @@ let lib = {
     return std.is(neuron, editor.State.Enabled?.Interaction.Editing?.SelectedNeuron);
   },
 
+  set_prop(target:any, prop:string, value:any, type = "number") {
+    if(type === "number") target[prop] = +value;
+    else target[prop] = value;
+  },
+  get_prop(target:any, prop:string) {
+    return target[prop];
+  },
+
+  as_proxy(target:any) {
+    return target;
+  },
+
   convert_to(neuron: Neuron, type: Partial<Neuron["Type"]>) {
     if(type.Normal) {
       neuron.Type.Normal = {};
     } else if(type.Motor) {
-      neuron.Type.Motor = {};
+      let {pulse_radius, pulse_growth} = type.Motor;
+      neuron.Type.Motor = {pulse_radius, pulse_growth};
     } else if(type.Logic) {
       neuron.Type.Logic = {} as any;
     } else if(type.Language) {
@@ -138,6 +151,10 @@ let lib = {
     let s = neuron.Label!.side;
     neuron.Label!.side = s == 0 ? 1 : 0;
     neuron.Label!.p = p;
+  },
+
+  out(neuron: Neuron, action: string, delay: number) {
+    neuron.Out = {action, delay} as any;
   },
 
   compute_p(neuron: Neuron, px: number, py: number) {

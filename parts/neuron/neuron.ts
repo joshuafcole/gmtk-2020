@@ -15,7 +15,10 @@ export interface Neuron {
 
   Type: {
     Normal?: {};
-    Motor?: {};
+    Motor?: {
+      pulse_radius: number;
+      pulse_growth: number;
+    };
     Logic?: {
       decay_rate: number;
       decay: number;

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 @import "./util.styl";
 @import "./base.styl";
 @import "./parts/std/std.styl";
@@ -21,6 +23,15 @@ html, body
 
 head *
   display: none;
+
+body
+  font-family: Nunito;
+
+h1, h2, h3, h4, h5, h6
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: inherit;
 
 div.__root, div.sc_root
   flex: 1;

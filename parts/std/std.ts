@@ -24,6 +24,14 @@ let lib = {
     _program = program;
   },
 
+  call(fn:Function, ...args:any[]) {
+    return fn(...args);
+  },
+
+  call_as(fn:Function, self: any, ...args:any[]) {
+    return fn.apply(self, args);
+  },
+
   //----------------------------------------------------------------------------
   // Math
   //----------------------------------------------------------------------------
@@ -38,6 +46,10 @@ let lib = {
 
   is_number(x: any) {
     return x !== undefined && !isNaN(x as any) && !isNaN(parseFloat(x));
+  },
+
+  to_number(x: any) {
+    return +x;
   },
 
   geom: {

@@ -43,8 +43,20 @@ BaseNeuron
                         if lib.in(Nucleus.Interaction.DragOrClick) && _strength > 0
                             ellipse.pulse.transient(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
 
+            Properties* :: PropertiesBase
+                @name: "Motor"
+                @target: lib.editor.as_proxy(Motor)
+                on state.enter
+                    add Prop
+                        @name: "pulse_radius"
+                        @default: @base_size / 6
+                    add Prop
+                        @name: "pulse_growth"
+                        @default: 1 / 4
+
         Logic :: Normal
-            @decay_rate: 0.0001
+            @decay_rate: 0.01
+            @excite_rate: 3
             @decay: 0
             @excitement: 0
             @theta: 0
@@ -56,7 +68,7 @@ BaseNeuron
                 _: console.log(Math.round(@theta * 180 / lib.PI()), Math.round(@base_length))
 
             on BaseNeuron.pulsed
-                @excitement: @excitement + 1
+                @excitement: @excitement + @excite_rate
                 @decay: 0
 
             on tick
@@ -65,8 +77,19 @@ BaseNeuron
                 // @NOTE: maybe try to fuse the two --
                 //        quadratically grow decay but subtract it from excitement
                 // @excitement: Math.max(0, @excitement - @decay)
-                @excitement: @excitement * Math.max((1 - @decay), 0)
+                @excitement: Math.max(0, @excitement - Math.pow(@decay, 2))
                 @decay: @decay + @decay_rate
+
+            Properties* :: PropertiesBase
+                @name: "Logic"
+                @target: lib.editor.as_proxy(Logic)
+                on state.enter
+                    add Prop
+                        @name: "decay_rate"
+                        @default: 0.01
+                    add Prop
+                        @name: "excite_rate"
+                        @default: 3
 
         Memory
             @icon: ""
@@ -92,6 +115,14 @@ BaseNeuron
                 on state.enter
                     @thoughts: @thoughts + 1
 
+            Properties* :: PropertiesBase
+                @name: "Memory"
+                @target: lib.editor.as_proxy(Memory)
+                on state.enter
+                    add Prop
+                        @name: "icon"
+                        @type: "string"
+                        @default: "leaf fas"
 
         Language :: Normal
             @phoneme: ""
@@ -104,6 +135,15 @@ BaseNeuron
             Sound*
                 interface
                     audio(src="/assets/phonemes/{{@phoneme}}.mp3", -autoplay=true)
+
+            Properties* :: PropertiesBase
+                @name: "Language"
+                @target: lib.editor.as_proxy(Language)
+                on state.enter
+                    add Prop
+                        @name: "phoneme"
+                        @type: "string"
+                        @default: "th"
 
         Autonomic :: Normal
 
@@ -207,6 +247,23 @@ BaseNeuron
         @action: ""
         @delay: 100
 
+        Properties* :: PropertiesBase
+            @name: "Out"
+            @target: lib.editor.as_proxy(Out)
+            on state.enter
+                add Prop
+                    @name: "action"
+                    @type: "string"
+                    @default: "do_something"
+                add Prop
+                    @name: "delay"
+                    @type: "number"
+                    @default: 100
+
+            Removable*
+                on remove
+                    remove Out
+
     Label
         @content: ""
         @p: 0
@@ -219,6 +276,27 @@ BaseNeuron
             g.label(svg=true)
                 rect.tape(svg=true, x=_pos.x - 6, y = _pos.y - 15, width=100, height=30, transform=_transform)
                 text(svg=true, x=_pos.x + 10, y=_pos.y, transform=_transform) {{@content}}
+
+        Properties* :: PropertiesBase
+            @name: "Label"
+            @target: lib.editor.as_proxy(Label)
+            on state.enter
+                add Prop
+                    @name: "content"
+                    @type: "string"
+                    @default: "label me"
+                add Prop
+                    @name: "p"
+                    @type: "number"
+                    @default: 0.33
+                add Prop
+                    @name: "side"
+                    @type: "number"
+                    @default: 0
+
+            Removable*
+                on remove
+                    remove Label
 
     Pulse[]
         @p: 0
@@ -261,3 +339,50 @@ BaseNeuron
 
         Language
             Linked references BaseNeuron.Type.Language
+
+
+
+
+PropertiesBase
+    @name: "Properties"
+    @class: ""
+    @target: lib.editor.as_proxy(Motor)
+
+    interface
+        property-grid(class=@class)
+            h3 {{@name}}
+                spacer
+                draw Removable
+            draw Prop
+
+    Removable
+        interface
+            button.remove(click="remove")
+                i.fas.fa-times
+
+    Prop[]
+        @name: "prop_name"
+        @type: "number"
+        @default: ""
+
+        State!*
+            Normal*
+                on Prop.focused -> Editing
+
+            Editing
+                @value: ""
+
+                on Prop.changed
+                    @value: event.value
+
+                on Prop.blurred -> Normal
+                    _: lib.editor.set_prop(@target, @name, @value, @type)
+
+                on Prop.keyboard.down (event.key == "Enter")
+                    _: lib.editor.set_prop(@target, @name, @value, @type)
+                    _: lib.call(event.prevent)
+
+        interface
+            label
+                name {{@name}}
+                value(contentEditable=true, placeholder=@default, input="changed", focus="focused", blur="blurred") {{lib.editor.get_prop(@target, @name)}}

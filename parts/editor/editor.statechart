@@ -20,6 +20,8 @@ Editor*
                         i.fas.fa-edit
                         draw Tool
 
+                    draw Interaction.Editing.Properties
+
             Tool!*
                 on any.keyboard.down (event.key == "n") -> Normal
                 on any.keyboard.down (event.key == "m") -> Motor
@@ -77,16 +79,6 @@ Editor*
                         reference _n in AddingNeuron
                         _: lib.editor.convert_to(Neuron, Enabled.Tool.Add)
 
-                    on Neuron.Label.mouse.down (event.button == 0 && !event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
-                        _p: lib.editor.compute_p(Neuron, event.view_x, event.view_y)
-                        _: lib.editor.move_label(Neuron, _p)
-
-                    on Neuron.Label.mouse.down (event.button == 0 && event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
-                        remove Neuron.Label
-
-                    on Neuron.mouse.down (event.button == 0 && lib.in(Tool.Flag) && !lib.in(Neuron.Label))
-                        _p: lib.editor.compute_p(Neuron, event.view_x, event.view_y)
-                        _: lib.editor.label(Neuron, "unlabeled", _p)
 
                     on Neuron.mouse.down -> Editing
                         send select to Editor
@@ -140,4 +132,43 @@ Editor*
                         send select to Editor
                             neuron: Neuron
 
+                    // on Neuron.Label.mouse.down (event.button == 0 && !event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
+                    //     _p: lib.editor.compute_p(Neuron, event.view_x- @off_x, event.view_y - @off_y)
+                    //     _: lib.editor.move_label(Neuron, _p)
+
+                    // on Neuron.Label.mouse.down (event.button == 0 && event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
+                    //     remove Neuron.Label
+
+                    // on Neuron.mouse.down (event.button == 0 && lib.in(Tool.Flag) && !lib.in(Neuron.Label))
+                    //     _p: lib.editor.compute_p(Neuron, event.view_x - @off_x, event.view_y - @off_y)
+                    //     _: lib.editor.label(Neuron, "unlabeled", _p)
+
                     SelectedNeuron references Neuron
+
+                    Properties*
+                        on add_label
+                            _: lib.editor.label(SelectedNeuron, "", 0.33)
+
+                        on add_out
+                            _: lib.editor.out(SelectedNeuron, "", 100)
+
+                        interface
+                            editor-properties
+                                if lib.in(SelectedNeuron.Label)
+                                    draw SelectedNeuron.Label.Properties
+                                else
+                                    property-grid
+                                        h3 Label
+                                        button(click="add_label")
+                                            i.fas.fa-plus
+                                if lib.in(SelectedNeuron.Out)
+                                    draw SelectedNeuron.Out.Properties
+                                else
+                                    property-grid
+                                        h3 Out
+                                        button(click="add_out")
+                                            i.fas.fa-plus
+                                draw SelectedNeuron.Type.Motor.Properties
+                                draw SelectedNeuron.Type.Logic.Properties
+                                draw SelectedNeuron.Type.Memory.Properties
+                                draw SelectedNeuron.Type.Language.Properties

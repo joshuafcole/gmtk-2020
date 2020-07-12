@@ -1,12 +1,52 @@
 [
   {
     "id": 8,
+    "base_size": 30,
     "Type": {
       "id": 8,
       "Motor": {
         "id": 8,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
         "TransientPulse": {
           "id": 8
+        },
+        "Properties": {
+          "id": 8,
+          "name": "Motor",
+          "target": {
+            "__state": 782,
+            "__instance": 8,
+            "state_name": "Motor",
+            "id": 8
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 3,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 3,
+                "Normal": {
+                  "id": 3
+                }
+              }
+            },
+            {
+              "id": 2,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 2,
+                "Normal": {
+                  "id": 2
+                }
+              }
+            }
+          ]
         }
       }
     },
@@ -17,41 +57,186 @@
     },
     "Terminal": {
       "id": 8,
-      "x": 459,
-      "y": 318
+      "x": 582,
+      "y": 270
+    },
+    "Label": {
+      "id": 8,
+      "content": "",
+      "p": 0.33,
+      "side": 1,
+      "Properties": {
+        "id": 8,
+        "name": "Label",
+        "target": {
+          "__state": 1298,
+          "__instance": 8,
+          "state_name": "Label",
+          "id": 8
+        },
+        "class": "",
+        "Removable": {
+          "id": 8
+        },
+        "Prop": [
+          {
+            "id": 6,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 6,
+              "Normal": {
+                "id": 6
+              }
+            }
+          },
+          {
+            "id": 7,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 7,
+              "Normal": {
+                "id": 7
+              }
+            }
+          },
+          {
+            "id": 8,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 8,
+              "Normal": {
+                "id": 8
+              }
+            }
+          }
+        ]
+      }
     }
   },
   {
     "id": 9,
+    "base_size": 30,
     "Type": {
       "id": 9,
       "Motor": {
         "id": 9,
+        "pulse_radius": 1.25,
+        "pulse_growth": 0.25,
         "TransientPulse": {
           "id": 9
+        },
+        "Properties": {
+          "id": 9,
+          "name": "Motor",
+          "target": {
+            "__state": 782,
+            "__instance": 9,
+            "state_name": "Motor",
+            "id": 9
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 1,
+              "name": "pulse_radius",
+              "type": "number",
+              "default": 5,
+              "State": {
+                "id": 1,
+                "Normal": {
+                  "id": 1
+                }
+              }
+            },
+            {
+              "id": 0,
+              "name": "pulse_growth",
+              "type": "number",
+              "default": 0.25,
+              "State": {
+                "id": 0,
+                "Normal": {
+                  "id": 0
+                }
+              }
+            }
+          ]
         }
       }
     },
     "Nucleus": {
       "id": 9,
-      "x": 446,
-      "y": 437
+      "x": 486,
+      "y": 460
     },
     "Terminal": {
       "id": 9,
-      "x": 304,
-      "y": 723
-    },
-    "Out": {
-      "id": 9,
-      "action": "move_leg",
-      "delay": 500
+      "x": 206,
+      "y": 994
     },
     "Label": {
       "id": 9,
       "content": "leg",
       "p": 0.25,
-      "side": 1
+      "side": 1,
+      "Properties": {
+        "id": 9,
+        "name": "Label",
+        "target": {
+          "__state": 1298,
+          "__instance": 9,
+          "state_name": "Label",
+          "id": 9
+        },
+        "class": "",
+        "Removable": {
+          "id": 9
+        },
+        "Prop": [
+          {
+            "id": 2,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 2,
+              "Normal": {
+                "id": 2
+              }
+            }
+          },
+          {
+            "id": 1,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 1,
+              "Normal": {
+                "id": 1
+              }
+            }
+          },
+          {
+            "id": 0,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 0,
+              "Normal": {
+                "id": 0
+              }
+            }
+          }
+        ]
+      }
     }
   }
 ]
