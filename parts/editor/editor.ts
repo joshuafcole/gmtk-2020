@@ -41,11 +41,11 @@ let lib = {
   save_focused(app: App, prevent?:() => void) {
     app.NeuralScreen.each((screen) => {
       if(!screen.View.Focused) return;
-      lib.save(screen);
+      lib.save(screen, app.active_scene);
     });
     if(prevent) prevent();
   },
-  save(screen: NeuralScreen, prevent?: () => void) {
+  save(screen: NeuralScreen, scene: string, prevent?: () => void) {
     let raw = screen.Neuron.to_json() as Partial<Neuron>[];
     for(let neuron of raw) {
       let n = neuron as any;
@@ -60,6 +60,16 @@ let lib = {
       delete n.Terminal.Flash;
       delete n.Terminal.id;
       delete n.Axon;
+
+      if(n.Out) {
+        delete n.Out.id;
+        delete n.Out.Properties;
+      }
+
+      if(n.Label) {
+        delete n.Label.id;
+        delete n.Label.Properties;
+      }
 
       delete n.Type.id;
       if(n.Type.Normal) {
@@ -86,7 +96,9 @@ let lib = {
       }
     }
 
-    fetch(`/ugc/screens/${screen.name}.json`, {
+    console.log(raw);
+
+    fetch(`/ugc/screens/${scene}/${screen.name}.json`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(raw)
@@ -134,7 +146,7 @@ let lib = {
           neuron.Out = {action, delay} as any;
         }
 
-        lib.convert_to(neuron, raw_neuron.Type);
+        if(raw_neuron.Type) lib.convert_to(neuron, raw_neuron.Type);
       }
     } catch(err) {
       console.warn("Unable to load screen file! Please try reloading.");

@@ -1,744 +1,202 @@
 [
   {
-    "id": 63,
     "base_size": 30,
     "Type": {
-      "id": 63,
       "Language": {
-        "id": 63,
         "phoneme": "th",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 63
-        },
-        "Properties": {
-          "id": 63,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 63,
-            "state_name": "Language",
-            "id": 63
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 0,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 0,
-                "Normal": {
-                  "id": 0
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 63,
       "x": 247,
       "y": 884
     },
     "Terminal": {
-      "id": 63,
       "x": 274,
       "y": 747
     },
     "Label": {
-      "id": 63,
       "content": "'TH'",
       "p": 0.33,
-      "side": 0,
-      "Properties": {
-        "id": 63,
-        "name": "Label",
-        "target": {
-          "__state": 1301,
-          "__instance": 63,
-          "state_name": "Label",
-          "id": 63
-        },
-        "class": "",
-        "Removable": {
-          "id": 63
-        },
-        "Prop": [
-          {
-            "id": 5,
-            "name": "content",
-            "type": "string",
-            "default": "label me",
-            "State": {
-              "id": 5,
-              "Normal": {
-                "id": 5
-              }
-            }
-          },
-          {
-            "id": 4,
-            "name": "p",
-            "type": "number",
-            "default": 0.33,
-            "State": {
-              "id": 4,
-              "Normal": {
-                "id": 4
-              }
-            }
-          },
-          {
-            "id": 3,
-            "name": "side",
-            "type": "number",
-            "default": 0,
-            "State": {
-              "id": 3,
-              "Normal": {
-                "id": 3
-              }
-            }
-          }
-        ]
-      }
+      "side": 0
     }
   },
   {
-    "id": 64,
     "base_size": 30,
     "Type": {
-      "id": 64,
       "Language": {
-        "id": 64,
         "phoneme": "f v",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 64
-        },
-        "Properties": {
-          "id": 64,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 64,
-            "state_name": "Language",
-            "id": 64
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 1,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 1,
-                "Normal": {
-                  "id": 1
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 64,
       "x": 148.5,
       "y": 863.5
     },
     "Terminal": {
-      "id": 64,
       "x": 191.5,
       "y": 669.5
     }
   },
   {
-    "id": 65,
     "base_size": 30,
     "Type": {
-      "id": 65,
       "Language": {
-        "id": 65,
         "phoneme": "n t",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 65
-        },
-        "Properties": {
-          "id": 65,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 65,
-            "state_name": "Language",
-            "id": 65
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 2,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 2,
-                "Normal": {
-                  "id": 2
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 65,
       "x": 383.5,
       "y": 865.5
     },
     "Terminal": {
-      "id": 65,
       "x": 395.5,
       "y": 690.5
     }
   },
   {
-    "id": 66,
     "base_size": 30,
     "Type": {
-      "id": 66,
       "Language": {
-        "id": 66,
         "phoneme": "p b",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 66
-        },
-        "Properties": {
-          "id": 66,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 66,
-            "state_name": "Language",
-            "id": 66
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 3,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 3,
-                "Normal": {
-                  "id": 3
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 66,
       "x": 47.5,
       "y": 880.5
     },
     "Terminal": {
-      "id": 66,
       "x": 60.5,
       "y": 776.5
     }
   },
   {
-    "id": 67,
     "base_size": 30,
     "Type": {
-      "id": 67,
       "Language": {
-        "id": 67,
         "phoneme": "l d",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 67
-        },
-        "Properties": {
-          "id": 67,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 67,
-            "state_name": "Language",
-            "id": 67
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 4,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 4,
-                "Normal": {
-                  "id": 4
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 67,
       "x": 494.5,
       "y": 869.5
     },
     "Terminal": {
-      "id": 67,
       "x": 498.5,
       "y": 732.5
     }
   },
   {
-    "id": 68,
     "base_size": 30,
     "Type": {
-      "id": 68,
       "Language": {
-        "id": 68,
         "phoneme": "s z",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 68
-        },
-        "Properties": {
-          "id": 68,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 68,
-            "state_name": "Language",
-            "id": 68
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 5,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 5,
-                "Normal": {
-                  "id": 5
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 68,
       "x": 588.5,
       "y": 804.5
     },
     "Terminal": {
-      "id": 68,
       "x": 575.5,
       "y": 618.5
     }
   },
   {
-    "id": 69,
     "base_size": 30,
     "Type": {
-      "id": 69,
       "Language": {
-        "id": 69,
         "phoneme": "sh ch",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 69
-        },
-        "Properties": {
-          "id": 69,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 69,
-            "state_name": "Language",
-            "id": 69
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 6,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 6,
-                "Normal": {
-                  "id": 6
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 69,
       "x": 691.5,
       "y": 840.5
     },
     "Terminal": {
-      "id": 69,
       "x": 676.5,
       "y": 680.5
     },
     "Label": {
-      "id": 69,
       "content": "'SHH'",
       "p": 0.63,
-      "side": 0,
-      "Properties": {
-        "id": 69,
-        "name": "Label",
-        "target": {
-          "__state": 1301,
-          "__instance": 69,
-          "state_name": "Label",
-          "id": 69
-        },
-        "class": "",
-        "Removable": {
-          "id": 69
-        },
-        "Prop": [
-          {
-            "id": 12,
-            "name": "content",
-            "type": "string",
-            "default": "label me",
-            "State": {
-              "id": 12,
-              "Normal": {
-                "id": 12
-              }
-            }
-          },
-          {
-            "id": 13,
-            "name": "p",
-            "type": "number",
-            "default": 0.33,
-            "State": {
-              "id": 13,
-              "Normal": {
-                "id": 13
-              }
-            }
-          },
-          {
-            "id": 14,
-            "name": "side",
-            "type": "number",
-            "default": 0,
-            "State": {
-              "id": 14,
-              "Normal": {
-                "id": 14
-              }
-            }
-          }
-        ]
-      }
+      "side": 0
     }
   },
   {
-    "id": 70,
     "base_size": 30,
     "Type": {
-      "id": 70,
       "Language": {
-        "id": 70,
         "phoneme": "ra ja",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 70
-        },
-        "Properties": {
-          "id": 70,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 70,
-            "state_name": "Language",
-            "id": 70
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 7,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 7,
-                "Normal": {
-                  "id": 7
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 70,
       "x": 798.5,
       "y": 790.5
     },
     "Terminal": {
-      "id": 70,
       "x": 751.5,
       "y": 613.5
     }
   },
   {
-    "id": 71,
     "base_size": 30,
     "Type": {
-      "id": 71,
       "Language": {
-        "id": 71,
         "phoneme": "g x w",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 71
-        },
-        "Properties": {
-          "id": 71,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 71,
-            "state_name": "Language",
-            "id": 71
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 8,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 8,
-                "Normal": {
-                  "id": 8
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 71,
       "x": 910.5,
       "y": 801.5
     },
     "Terminal": {
-      "id": 71,
       "x": 880.5,
       "y": 652.5
     },
     "Label": {
-      "id": 71,
       "content": "??",
       "p": 0.33,
-      "side": 0,
-      "Properties": {
-        "id": 71,
-        "name": "Label",
-        "target": {
-          "__state": 1301,
-          "__instance": 71,
-          "state_name": "Label",
-          "id": 71
-        },
-        "class": "",
-        "Removable": {
-          "id": 71
-        },
-        "Prop": [
-          {
-            "id": 15,
-            "name": "content",
-            "type": "string",
-            "default": "label me",
-            "State": {
-              "id": 15,
-              "Normal": {
-                "id": 15
-              }
-            }
-          },
-          {
-            "id": 16,
-            "name": "p",
-            "type": "number",
-            "default": 0.33,
-            "State": {
-              "id": 16,
-              "Normal": {
-                "id": 16
-              }
-            }
-          },
-          {
-            "id": 17,
-            "name": "side",
-            "type": "number",
-            "default": 0,
-            "State": {
-              "id": 17,
-              "Normal": {
-                "id": 17
-              }
-            }
-          }
-        ]
-      }
+      "side": 0
     }
   },
   {
-    "id": 77,
     "base_size": 30,
     "Type": {
-      "id": 77,
       "Language": {
-        "id": 77,
         "phoneme": "a e i o u",
         "pulse_radius": 5,
-        "pulse_growth": 0,
-        "Sound": {
-          "id": 77
-        },
-        "Properties": {
-          "id": 77,
-          "name": "Language",
-          "target": {
-            "__state": 949,
-            "__instance": 77,
-            "state_name": "Language",
-            "id": 77
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 9,
-              "name": "phoneme",
-              "type": "string",
-              "default": "th",
-              "State": {
-                "id": 9,
-                "Normal": {
-                  "id": 9
-                }
-              }
-            }
-          ]
-        }
+        "pulse_growth": 0
       }
     },
     "Nucleus": {
-      "id": 77,
       "x": 11.5,
       "y": 453
     },
     "Terminal": {
-      "id": 77,
       "x": 171.5,
       "y": 383
     },
     "Label": {
-      "id": 77,
       "content": "vowel",
       "p": 0.33,
-      "side": 0,
-      "Properties": {
-        "id": 77,
-        "name": "Label",
-        "target": {
-          "__state": 1301,
-          "__instance": 77,
-          "state_name": "Label",
-          "id": 77
-        },
-        "class": "",
-        "Removable": {
-          "id": 77
-        },
-        "Prop": [
-          {
-            "id": 24,
-            "name": "content",
-            "type": "string",
-            "default": "label me",
-            "State": {
-              "id": 24,
-              "Normal": {
-                "id": 24
-              }
-            }
-          },
-          {
-            "id": 25,
-            "name": "p",
-            "type": "number",
-            "default": 0.33,
-            "State": {
-              "id": 25,
-              "Normal": {
-                "id": 25
-              }
-            }
-          },
-          {
-            "id": 26,
-            "name": "side",
-            "type": "number",
-            "default": 0,
-            "State": {
-              "id": 26,
-              "Normal": {
-                "id": 26
-              }
-            }
-          }
-        ]
-      }
+      "side": 0
     }
   }
 ]

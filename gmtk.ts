@@ -15,6 +15,8 @@ export interface NeuralScreen {
 }
 
 export interface App {
+  active_scene: string;
+
   NeuralScreen: PluralRef<NeuralScreen>;
 }
 
