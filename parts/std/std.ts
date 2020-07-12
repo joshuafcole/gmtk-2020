@@ -81,7 +81,7 @@ let lib = {
       if(kvs.length % 2 !== 0) throw new Error("Odd number of key value pairs provided as wait event props");
       props = {};
       for(let ix = 0; ix < kvs.length; ix += 2) {
-        props[kvs[ix]] = props[kvs[ix + 1]];
+        props[kvs[ix]] = kvs[ix + 1];
       }
     }
     return setTimeout(

@@ -1,86 +1,34 @@
 [
   {
-    "id": 39,
+    "id": 17,
     "base_size": 30,
     "Type": {
-      "id": 39,
+      "id": 17,
       "Memory": {
-        "id": 39,
+        "id": 17,
         "icon": "users fas",
+        "idea": "",
         "thoughts": 1,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 39
+          "id": 17
         },
         "Thought": [
           {
-            "id": 2,
+            "id": 0,
             "content": "I wonder how many gears Big Ben contains...",
             "ix": 0
           }
         ],
         "Properties": {
-          "id": 39,
+          "id": 17,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 39,
+            "__state": 967,
+            "__instance": 17,
             "state_name": "Memory",
-            "id": 39
-          },
-          "class": "",
-          "Prop": [
-            {
-              "id": 1,
-              "name": "icon",
-              "type": "string",
-              "default": "leaf fas",
-              "State": {
-                "id": 1,
-                "Normal": {
-                  "id": 1
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 39,
-      "x": 160,
-      "y": 776
-    },
-    "Terminal": {
-      "id": 39,
-      "x": 282,
-      "y": 624
-    }
-  },
-  {
-    "id": 40,
-    "base_size": 30,
-    "Type": {
-      "id": 40,
-      "Memory": {
-        "id": 40,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 40
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 40,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 40,
-            "state_name": "Memory",
-            "id": 40
+            "id": 17
           },
           "class": "",
           "Prop": [
@@ -95,45 +43,58 @@
                   "id": 0
                 }
               }
+            },
+            {
+              "id": 1,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 1,
+                "Normal": {
+                  "id": 1
+                }
+              }
             }
           ]
         }
       }
     },
     "Nucleus": {
-      "id": 40,
-      "x": 451.5,
-      "y": 136.5
+      "id": 17,
+      "x": 160,
+      "y": 776
     },
     "Terminal": {
-      "id": 40,
-      "x": 447.5,
-      "y": -3.5
+      "id": 17,
+      "x": 282,
+      "y": 624
     }
   },
   {
-    "id": 41,
+    "id": 18,
     "base_size": 30,
     "Type": {
-      "id": 41,
+      "id": 18,
       "Memory": {
-        "id": 41,
+        "id": 18,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 41
+          "id": 18
         },
         "Thought": [],
         "Properties": {
-          "id": 41,
+          "id": 18,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 41,
+            "__state": 967,
+            "__instance": 18,
             "state_name": "Memory",
-            "id": 41
+            "id": 18
           },
           "class": "",
           "Prop": [
@@ -148,53 +109,12 @@
                   "id": 2
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 41,
-      "x": 525.5,
-      "y": 74.5
-    },
-    "Terminal": {
-      "id": 41,
-      "x": 603.5,
-      "y": 5.5
-    }
-  },
-  {
-    "id": 42,
-    "base_size": 30,
-    "Type": {
-      "id": 42,
-      "Memory": {
-        "id": 42,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 42
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 42,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 42,
-            "state_name": "Memory",
-            "id": 42
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 3,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 3,
                 "Normal": {
@@ -207,39 +127,40 @@
       }
     },
     "Nucleus": {
-      "id": 42,
-      "x": 67.5,
-      "y": 678.5
+      "id": 18,
+      "x": 451.5,
+      "y": 136.5
     },
     "Terminal": {
-      "id": 42,
-      "x": 122.5,
-      "y": 745.5
+      "id": 18,
+      "x": 447.5,
+      "y": -3.5
     }
   },
   {
-    "id": 43,
+    "id": 19,
     "base_size": 30,
     "Type": {
-      "id": 43,
+      "id": 19,
       "Memory": {
-        "id": 43,
+        "id": 19,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 43
+          "id": 19
         },
         "Thought": [],
         "Properties": {
-          "id": 43,
+          "id": 19,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 43,
+            "__state": 967,
+            "__instance": 19,
             "state_name": "Memory",
-            "id": 43
+            "id": 19
           },
           "class": "",
           "Prop": [
@@ -254,53 +175,12 @@
                   "id": 4
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 43,
-      "x": 28.5,
-      "y": 795.5
-    },
-    "Terminal": {
-      "id": 43,
-      "x": 108.5,
-      "y": 793.5
-    }
-  },
-  {
-    "id": 44,
-    "base_size": 30,
-    "Type": {
-      "id": 44,
-      "Memory": {
-        "id": 44,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 44
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 44,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 44,
-            "state_name": "Memory",
-            "id": 44
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 5,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 5,
                 "Normal": {
@@ -313,39 +193,143 @@
       }
     },
     "Nucleus": {
-      "id": 44,
-      "x": 108.5,
-      "y": 878.5
+      "id": 19,
+      "x": 525.5,
+      "y": 74.5
     },
     "Terminal": {
-      "id": 44,
-      "x": 144.5,
-      "y": 821.5
+      "id": 19,
+      "x": 603.5,
+      "y": 5.5
+    },
+    "Out": {
+      "id": 19,
+      "action": "think_sub",
+      "delay": 100,
+      "Properties": {
+        "id": 19,
+        "name": "Out",
+        "target": {
+          "__state": 1317,
+          "__instance": 19,
+          "state_name": "Out",
+          "id": 19
+        },
+        "class": "",
+        "Removable": {
+          "id": 19
+        },
+        "Prop": [
+          {
+            "id": 18,
+            "name": "action",
+            "type": "string",
+            "default": "do_something",
+            "State": {
+              "id": 18,
+              "Normal": {
+                "id": 18
+              }
+            }
+          },
+          {
+            "id": 19,
+            "name": "delay",
+            "type": "number",
+            "default": 100,
+            "State": {
+              "id": 19,
+              "Normal": {
+                "id": 19
+              }
+            }
+          }
+        ]
+      }
+    },
+    "Label": {
+      "id": 19,
+      "content": "sub",
+      "p": 0.5,
+      "side": 0,
+      "Properties": {
+        "id": 19,
+        "name": "Label",
+        "target": {
+          "__state": 1373,
+          "__instance": 19,
+          "state_name": "Label",
+          "id": 19
+        },
+        "class": "",
+        "Removable": {
+          "id": 19
+        },
+        "Prop": [
+          {
+            "id": 9,
+            "name": "content",
+            "type": "string",
+            "default": "label me",
+            "State": {
+              "id": 9,
+              "Normal": {
+                "id": 9
+              }
+            }
+          },
+          {
+            "id": 10,
+            "name": "p",
+            "type": "number",
+            "default": 0.33,
+            "State": {
+              "id": 10,
+              "Normal": {
+                "id": 10
+              }
+            }
+          },
+          {
+            "id": 11,
+            "name": "side",
+            "type": "number",
+            "default": 0,
+            "State": {
+              "id": 11,
+              "Normal": {
+                "id": 11
+              }
+            }
+          }
+        ]
+      }
     }
   },
   {
-    "id": 45,
+    "id": 20,
     "base_size": 30,
     "Type": {
-      "id": 45,
+      "id": 20,
       "Memory": {
-        "id": 45,
+        "id": 20,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 45
+          "id": 20
         },
         "Thought": [],
         "Properties": {
-          "id": 45,
+          "id": 20,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 45,
+            "__state": 967,
+            "__instance": 20,
             "state_name": "Memory",
-            "id": 45
+            "id": 20
           },
           "class": "",
           "Prop": [
@@ -360,53 +344,12 @@
                   "id": 6
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 45,
-      "x": 214.5,
-      "y": 873.5
-    },
-    "Terminal": {
-      "id": 45,
-      "x": 193.5,
-      "y": 811.5
-    }
-  },
-  {
-    "id": 46,
-    "base_size": 30,
-    "Type": {
-      "id": 46,
-      "Memory": {
-        "id": 46,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 46
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 46,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 46,
-            "state_name": "Memory",
-            "id": 46
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 7,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 7,
                 "Normal": {
@@ -419,39 +362,40 @@
       }
     },
     "Nucleus": {
-      "id": 46,
-      "x": 270.5,
-      "y": 788.5
+      "id": 20,
+      "x": 67.5,
+      "y": 678.5
     },
     "Terminal": {
-      "id": 46,
-      "x": 204.5,
-      "y": 762.5
+      "id": 20,
+      "x": 122.5,
+      "y": 745.5
     }
   },
   {
-    "id": 47,
+    "id": 21,
     "base_size": 30,
     "Type": {
-      "id": 47,
+      "id": 21,
       "Memory": {
-        "id": 47,
+        "id": 21,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 47
+          "id": 21
         },
         "Thought": [],
         "Properties": {
-          "id": 47,
+          "id": 21,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 47,
+            "__state": 967,
+            "__instance": 21,
             "state_name": "Memory",
-            "id": 47
+            "id": 21
           },
           "class": "",
           "Prop": [
@@ -466,53 +410,12 @@
                   "id": 8
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 47,
-      "x": 178.5,
-      "y": 647.5
-    },
-    "Terminal": {
-      "id": 47,
-      "x": 161.5,
-      "y": 723.5
-    }
-  },
-  {
-    "id": 48,
-    "base_size": 30,
-    "Type": {
-      "id": 48,
-      "Memory": {
-        "id": 48,
-        "icon": "map-marker-alt fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 48
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 48,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 48,
-            "state_name": "Memory",
-            "id": 48
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 9,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 9,
                 "Normal": {
@@ -525,39 +428,40 @@
       }
     },
     "Nucleus": {
-      "id": 48,
-      "x": 484.5,
-      "y": 777.5
+      "id": 21,
+      "x": 28.5,
+      "y": 795.5
     },
     "Terminal": {
-      "id": 48,
-      "x": 331.5,
-      "y": 622.5
+      "id": 21,
+      "x": 108.5,
+      "y": 793.5
     }
   },
   {
-    "id": 49,
+    "id": 22,
     "base_size": 30,
     "Type": {
-      "id": 49,
+      "id": 22,
       "Memory": {
-        "id": 49,
-        "icon": "briefcase fas",
+        "id": 22,
+        "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 49
+          "id": 22
         },
         "Thought": [],
         "Properties": {
-          "id": 49,
+          "id": 22,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 49,
+            "__state": 967,
+            "__instance": 22,
             "state_name": "Memory",
-            "id": 49
+            "id": 22
           },
           "class": "",
           "Prop": [
@@ -572,53 +476,12 @@
                   "id": 10
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 49,
-      "x": 378.5,
-      "y": 765.5
-    },
-    "Terminal": {
-      "id": 49,
-      "x": 445.5,
-      "y": 783.5
-    }
-  },
-  {
-    "id": 50,
-    "base_size": 30,
-    "Type": {
-      "id": 50,
-      "Memory": {
-        "id": 50,
-        "icon": "utensils fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 50
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 50,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 50,
-            "state_name": "Memory",
-            "id": 50
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 11,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 11,
                 "Normal": {
@@ -631,39 +494,40 @@
       }
     },
     "Nucleus": {
-      "id": 50,
-      "x": 596.5,
-      "y": 763.5
+      "id": 22,
+      "x": 108.5,
+      "y": 878.5
     },
     "Terminal": {
-      "id": 50,
-      "x": 521.5,
-      "y": 781.5
+      "id": 22,
+      "x": 144.5,
+      "y": 821.5
     }
   },
   {
-    "id": 51,
+    "id": 23,
     "base_size": 30,
     "Type": {
-      "id": 51,
+      "id": 23,
       "Memory": {
-        "id": 51,
-        "icon": "home fas",
+        "id": 23,
+        "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 51
+          "id": 23
         },
         "Thought": [],
         "Properties": {
-          "id": 51,
+          "id": 23,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 51,
+            "__state": 967,
+            "__instance": 23,
             "state_name": "Memory",
-            "id": 51
+            "id": 23
           },
           "class": "",
           "Prop": [
@@ -678,53 +542,12 @@
                   "id": 12
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 51,
-      "x": 488.5,
-      "y": 666.5
-    },
-    "Terminal": {
-      "id": 51,
-      "x": 489.5,
-      "y": 740.5
-    }
-  },
-  {
-    "id": 52,
-    "base_size": 30,
-    "Type": {
-      "id": 52,
-      "Memory": {
-        "id": 52,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 52
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 52,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 52,
-            "state_name": "Memory",
-            "id": 52
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 13,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 13,
                 "Normal": {
@@ -737,39 +560,40 @@
       }
     },
     "Nucleus": {
-      "id": 52,
-      "x": 558.5,
-      "y": 878.5
+      "id": 23,
+      "x": 214.5,
+      "y": 873.5
     },
     "Terminal": {
-      "id": 52,
-      "x": 508.5,
-      "y": 817.5
+      "id": 23,
+      "x": 193.5,
+      "y": 811.5
     }
   },
   {
-    "id": 53,
+    "id": 24,
     "base_size": 30,
     "Type": {
-      "id": 53,
+      "id": 24,
       "Memory": {
-        "id": 53,
+        "id": 24,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 53
+          "id": 24
         },
         "Thought": [],
         "Properties": {
-          "id": 53,
+          "id": 24,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 53,
+            "__state": 967,
+            "__instance": 24,
             "state_name": "Memory",
-            "id": 53
+            "id": 24
           },
           "class": "",
           "Prop": [
@@ -784,53 +608,12 @@
                   "id": 14
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 53,
-      "x": 429.5,
-      "y": 877.5
-    },
-    "Terminal": {
-      "id": 53,
-      "x": 471.5,
-      "y": 821.5
-    }
-  },
-  {
-    "id": 54,
-    "base_size": 30,
-    "Type": {
-      "id": 54,
-      "Memory": {
-        "id": 54,
-        "icon": "tasks fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 54
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 54,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 54,
-            "state_name": "Memory",
-            "id": 54
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 15,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 15,
                 "Normal": {
@@ -843,39 +626,40 @@
       }
     },
     "Nucleus": {
-      "id": 54,
-      "x": 813.5,
-      "y": 662.5
+      "id": 24,
+      "x": 270.5,
+      "y": 788.5
     },
     "Terminal": {
-      "id": 54,
-      "x": 370.5,
-      "y": 588.5
+      "id": 24,
+      "x": 204.5,
+      "y": 762.5
     }
   },
   {
-    "id": 55,
+    "id": 25,
     "base_size": 30,
     "Type": {
-      "id": 55,
+      "id": 25,
       "Memory": {
-        "id": 55,
+        "id": 25,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 55
+          "id": 25
         },
         "Thought": [],
         "Properties": {
-          "id": 55,
+          "id": 25,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 55,
+            "__state": 967,
+            "__instance": 25,
             "state_name": "Memory",
-            "id": 55
+            "id": 25
           },
           "class": "",
           "Prop": [
@@ -890,53 +674,12 @@
                   "id": 16
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 55,
-      "x": 423.5,
-      "y": 364.5
-    },
-    "Terminal": {
-      "id": 55,
-      "x": 498.5,
-      "y": 114.5
-    }
-  },
-  {
-    "id": 56,
-    "base_size": 30,
-    "Type": {
-      "id": 56,
-      "Memory": {
-        "id": 56,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 56
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 56,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 56,
-            "state_name": "Memory",
-            "id": 56
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 17,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 17,
                 "Normal": {
@@ -949,39 +692,40 @@
       }
     },
     "Nucleus": {
-      "id": 56,
-      "x": 801.5,
-      "y": 327.5
+      "id": 25,
+      "x": 178.5,
+      "y": 647.5
     },
     "Terminal": {
-      "id": 56,
-      "x": 801.5,
-      "y": 421.5
+      "id": 25,
+      "x": 161.5,
+      "y": 723.5
     }
   },
   {
-    "id": 57,
+    "id": 26,
     "base_size": 30,
     "Type": {
-      "id": 57,
+      "id": 26,
       "Memory": {
-        "id": 57,
-        "icon": "",
+        "id": 26,
+        "icon": "map-marker-alt fas",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 57
+          "id": 26
         },
         "Thought": [],
         "Properties": {
-          "id": 57,
+          "id": 26,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 57,
+            "__state": 967,
+            "__instance": 26,
             "state_name": "Memory",
-            "id": 57
+            "id": 26
           },
           "class": "",
           "Prop": [
@@ -996,53 +740,12 @@
                   "id": 18
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 57,
-      "x": 800.5,
-      "y": 807.5
-    },
-    "Terminal": {
-      "id": 57,
-      "x": 800.5,
-      "y": 701.5
-    }
-  },
-  {
-    "id": 58,
-    "base_size": 30,
-    "Type": {
-      "id": 58,
-      "Memory": {
-        "id": 58,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 58
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 58,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 58,
-            "state_name": "Memory",
-            "id": 58
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 19,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 19,
                 "Normal": {
@@ -1055,39 +758,40 @@
       }
     },
     "Nucleus": {
-      "id": 58,
-      "x": 925.5,
-      "y": 364.5
+      "id": 26,
+      "x": 484.5,
+      "y": 777.5
     },
     "Terminal": {
-      "id": 58,
-      "x": 855.5,
-      "y": 367.5
+      "id": 26,
+      "x": 331.5,
+      "y": 622.5
     }
   },
   {
-    "id": 59,
+    "id": 27,
     "base_size": 30,
     "Type": {
-      "id": 59,
+      "id": 27,
       "Memory": {
-        "id": 59,
-        "icon": "",
+        "id": 27,
+        "icon": "briefcase fas",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 59
+          "id": 27
         },
         "Thought": [],
         "Properties": {
-          "id": 59,
+          "id": 27,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 59,
+            "__state": 967,
+            "__instance": 27,
             "state_name": "Memory",
-            "id": 59
+            "id": 27
           },
           "class": "",
           "Prop": [
@@ -1102,53 +806,12 @@
                   "id": 20
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 59,
-      "x": 903.5,
-      "y": 457.5
-    },
-    "Terminal": {
-      "id": 59,
-      "x": 850.5,
-      "y": 457.5
-    }
-  },
-  {
-    "id": 60,
-    "base_size": 30,
-    "Type": {
-      "id": 60,
-      "Memory": {
-        "id": 60,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 60
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 60,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 60,
-            "state_name": "Memory",
-            "id": 60
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 21,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 21,
                 "Normal": {
@@ -1161,39 +824,40 @@
       }
     },
     "Nucleus": {
-      "id": 60,
-      "x": 956.5,
-      "y": 525.5
+      "id": 27,
+      "x": 378.5,
+      "y": 765.5
     },
     "Terminal": {
-      "id": 60,
-      "x": 852.5,
-      "y": 527.5
+      "id": 27,
+      "x": 445.5,
+      "y": 783.5
     }
   },
   {
-    "id": 61,
+    "id": 28,
     "base_size": 30,
     "Type": {
-      "id": 61,
+      "id": 28,
       "Memory": {
-        "id": 61,
-        "icon": "",
+        "id": 28,
+        "icon": "utensils fas",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 61
+          "id": 28
         },
         "Thought": [],
         "Properties": {
-          "id": 61,
+          "id": 28,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 61,
+            "__state": 967,
+            "__instance": 28,
             "state_name": "Memory",
-            "id": 61
+            "id": 28
           },
           "class": "",
           "Prop": [
@@ -1208,53 +872,12 @@
                   "id": 22
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 61,
-      "x": 957.5,
-      "y": 603.5
-    },
-    "Terminal": {
-      "id": 61,
-      "x": 853.5,
-      "y": 599.5
-    }
-  },
-  {
-    "id": 62,
-    "base_size": 30,
-    "Type": {
-      "id": 62,
-      "Memory": {
-        "id": 62,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 62
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 62,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 62,
-            "state_name": "Memory",
-            "id": 62
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 23,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 23,
                 "Normal": {
@@ -1267,39 +890,40 @@
       }
     },
     "Nucleus": {
-      "id": 62,
-      "x": 974.5,
-      "y": 729.5
+      "id": 28,
+      "x": 596.5,
+      "y": 763.5
     },
     "Terminal": {
-      "id": 62,
-      "x": 853.5,
-      "y": 730.5
+      "id": 28,
+      "x": 521.5,
+      "y": 781.5
     }
   },
   {
-    "id": 63,
+    "id": 29,
     "base_size": 30,
     "Type": {
-      "id": 63,
+      "id": 29,
       "Memory": {
-        "id": 63,
-        "icon": "",
+        "id": 29,
+        "icon": "home fas",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 63
+          "id": 29
         },
         "Thought": [],
         "Properties": {
-          "id": 63,
+          "id": 29,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 63,
+            "__state": 967,
+            "__instance": 29,
             "state_name": "Memory",
-            "id": 63
+            "id": 29
           },
           "class": "",
           "Prop": [
@@ -1314,53 +938,12 @@
                   "id": 24
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 63,
-      "x": 950.5,
-      "y": 800.5
-    },
-    "Terminal": {
-      "id": 63,
-      "x": 859.5,
-      "y": 799.5
-    }
-  },
-  {
-    "id": 64,
-    "base_size": 30,
-    "Type": {
-      "id": 64,
-      "Memory": {
-        "id": 64,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 64
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 64,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 64,
-            "state_name": "Memory",
-            "id": 64
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 25,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 25,
                 "Normal": {
@@ -1373,39 +956,40 @@
       }
     },
     "Nucleus": {
-      "id": 64,
-      "x": 937.5,
-      "y": 860.5
+      "id": 29,
+      "x": 488.5,
+      "y": 666.5
     },
     "Terminal": {
-      "id": 64,
-      "x": 859.5,
-      "y": 861.5
+      "id": 29,
+      "x": 489.5,
+      "y": 740.5
     }
   },
   {
-    "id": 65,
+    "id": 30,
     "base_size": 30,
     "Type": {
-      "id": 65,
+      "id": 30,
       "Memory": {
-        "id": 65,
+        "id": 30,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 65
+          "id": 30
         },
         "Thought": [],
         "Properties": {
-          "id": 65,
+          "id": 30,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 65,
+            "__state": 967,
+            "__instance": 30,
             "state_name": "Memory",
-            "id": 65
+            "id": 30
           },
           "class": "",
           "Prop": [
@@ -1420,53 +1004,12 @@
                   "id": 26
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 65,
-      "x": 801.5,
-      "y": 484.5
-    },
-    "Terminal": {
-      "id": 65,
-      "x": 803.5,
-      "y": 621.5
-    }
-  },
-  {
-    "id": 66,
-    "base_size": 30,
-    "Type": {
-      "id": 66,
-      "Memory": {
-        "id": 66,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 66
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 66,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 66,
-            "state_name": "Memory",
-            "id": 66
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 27,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 27,
                 "Normal": {
@@ -1479,39 +1022,40 @@
       }
     },
     "Nucleus": {
-      "id": 66,
-      "x": 928.5,
-      "y": 665.5
+      "id": 30,
+      "x": 558.5,
+      "y": 878.5
     },
     "Terminal": {
-      "id": 66,
-      "x": 854.5,
-      "y": 666.5
+      "id": 30,
+      "x": 508.5,
+      "y": 817.5
     }
   },
   {
-    "id": 67,
+    "id": 31,
     "base_size": 30,
     "Type": {
-      "id": 67,
+      "id": 31,
       "Memory": {
-        "id": 67,
+        "id": 31,
         "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 67
+          "id": 31
         },
         "Thought": [],
         "Properties": {
-          "id": 67,
+          "id": 31,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 67,
+            "__state": 967,
+            "__instance": 31,
             "state_name": "Memory",
-            "id": 67
+            "id": 31
           },
           "class": "",
           "Prop": [
@@ -1526,53 +1070,12 @@
                   "id": 28
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 67,
-      "x": 932.5,
-      "y": 282.5
-    },
-    "Terminal": {
-      "id": 67,
-      "x": 848.5,
-      "y": 282.5
-    }
-  },
-  {
-    "id": 68,
-    "base_size": 30,
-    "Type": {
-      "id": 68,
-      "Memory": {
-        "id": 68,
-        "icon": "",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 68
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 68,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 68,
-            "state_name": "Memory",
-            "id": 68
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 29,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 29,
                 "Normal": {
@@ -1585,39 +1088,40 @@
       }
     },
     "Nucleus": {
-      "id": 68,
-      "x": 313.5,
-      "y": 577.5
+      "id": 31,
+      "x": 429.5,
+      "y": 877.5
     },
     "Terminal": {
-      "id": 68,
-      "x": 426.5,
-      "y": 410.5
+      "id": 31,
+      "x": 471.5,
+      "y": 821.5
     }
   },
   {
-    "id": 69,
+    "id": 32,
     "base_size": 30,
     "Type": {
-      "id": 69,
+      "id": 32,
       "Memory": {
-        "id": 69,
-        "icon": "question fas",
+        "id": 32,
+        "icon": "tasks fas",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 69
+          "id": 32
         },
         "Thought": [],
         "Properties": {
-          "id": 69,
+          "id": 32,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 69,
+            "__state": 967,
+            "__instance": 32,
             "state_name": "Memory",
-            "id": 69
+            "id": 32
           },
           "class": "",
           "Prop": [
@@ -1632,53 +1136,12 @@
                   "id": 30
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 69,
-      "x": 166.5,
-      "y": 325.5
-    },
-    "Terminal": {
-      "id": 69,
-      "x": 374.5,
-      "y": 390.5
-    }
-  },
-  {
-    "id": 70,
-    "base_size": 30,
-    "Type": {
-      "id": 70,
-      "Memory": {
-        "id": 70,
-        "icon": "cogs fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 70
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 70,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 70,
-            "state_name": "Memory",
-            "id": 70
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 31,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 31,
                 "Normal": {
@@ -1691,39 +1154,40 @@
       }
     },
     "Nucleus": {
-      "id": 70,
-      "x": 43.5,
-      "y": 172.5
+      "id": 32,
+      "x": 813.5,
+      "y": 662.5
     },
     "Terminal": {
-      "id": 70,
-      "x": 138.5,
-      "y": 291.5
+      "id": 32,
+      "x": 370.5,
+      "y": 588.5
     }
   },
   {
-    "id": 71,
+    "id": 33,
     "base_size": 30,
     "Type": {
-      "id": 71,
+      "id": 33,
       "Memory": {
-        "id": 71,
-        "icon": "square-root-alt fas",
+        "id": 33,
+        "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 71
+          "id": 33
         },
         "Thought": [],
         "Properties": {
-          "id": 71,
+          "id": 33,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 71,
+            "__state": 967,
+            "__instance": 33,
             "state_name": "Memory",
-            "id": 71
+            "id": 33
           },
           "class": "",
           "Prop": [
@@ -1738,53 +1202,12 @@
                   "id": 32
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 71,
-      "x": 134.5,
-      "y": 483.5
-    },
-    "Terminal": {
-      "id": 71,
-      "x": 145.5,
-      "y": 357.5
-    }
-  },
-  {
-    "id": 72,
-    "base_size": 30,
-    "Type": {
-      "id": 72,
-      "Memory": {
-        "id": 72,
-        "icon": "comment-dots fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 72
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 72,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 72,
-            "state_name": "Memory",
-            "id": 72
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 33,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 33,
                 "Normal": {
@@ -1797,39 +1220,40 @@
       }
     },
     "Nucleus": {
-      "id": 72,
-      "x": 197.5,
-      "y": 152.5
+      "id": 33,
+      "x": 423.5,
+      "y": 364.5
     },
     "Terminal": {
-      "id": 72,
-      "x": 181.5,
-      "y": 288.5
+      "id": 33,
+      "x": 498.5,
+      "y": 114.5
     }
   },
   {
-    "id": 73,
+    "id": 34,
     "base_size": 30,
     "Type": {
-      "id": 73,
+      "id": 34,
       "Memory": {
-        "id": 73,
-        "icon": "sd-card fas",
+        "id": 34,
+        "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 73
+          "id": 34
         },
         "Thought": [],
         "Properties": {
-          "id": 73,
+          "id": 34,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 73,
+            "__state": 967,
+            "__instance": 34,
             "state_name": "Memory",
-            "id": 73
+            "id": 34
           },
           "class": "",
           "Prop": [
@@ -1844,53 +1268,12 @@
                   "id": 34
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 73,
-      "x": 265.5,
-      "y": 460.5
-    },
-    "Terminal": {
-      "id": 73,
-      "x": 191.5,
-      "y": 361.5
-    }
-  },
-  {
-    "id": 74,
-    "base_size": 30,
-    "Type": {
-      "id": 74,
-      "Memory": {
-        "id": 74,
-        "icon": "hamburger fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 74
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 74,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 74,
-            "state_name": "Memory",
-            "id": 74
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 35,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 35,
                 "Normal": {
@@ -1903,39 +1286,40 @@
       }
     },
     "Nucleus": {
-      "id": 74,
-      "x": 676.5,
-      "y": 680.5
+      "id": 34,
+      "x": 801.5,
+      "y": 327.5
     },
     "Terminal": {
-      "id": 74,
-      "x": 626.5,
-      "y": 728.5
+      "id": 34,
+      "x": 801.5,
+      "y": 421.5
     }
   },
   {
-    "id": 75,
+    "id": 35,
     "base_size": 30,
     "Type": {
-      "id": 75,
+      "id": 35,
       "Memory": {
-        "id": 75,
-        "icon": "pizza-slice fas",
+        "id": 35,
+        "icon": "",
+        "idea": "",
         "thoughts": 0,
         "pulse_radius": 10,
         "pulse_growth": 0,
         "Icon": {
-          "id": 75
+          "id": 35
         },
         "Thought": [],
         "Properties": {
-          "id": 75,
+          "id": 35,
           "name": "Memory",
           "target": {
-            "__state": 896,
-            "__instance": 75,
+            "__state": 967,
+            "__instance": 35,
             "state_name": "Memory",
-            "id": 75
+            "id": 35
           },
           "class": "",
           "Prop": [
@@ -1950,53 +1334,12 @@
                   "id": 36
                 }
               }
-            }
-          ]
-        }
-      }
-    },
-    "Nucleus": {
-      "id": 75,
-      "x": 704.5,
-      "y": 766.5
-    },
-    "Terminal": {
-      "id": 75,
-      "x": 635.5,
-      "y": 765.5
-    }
-  },
-  {
-    "id": 76,
-    "base_size": 30,
-    "Type": {
-      "id": 76,
-      "Memory": {
-        "id": 76,
-        "icon": "air-freshener fas",
-        "thoughts": 0,
-        "pulse_radius": 10,
-        "pulse_growth": 0,
-        "Icon": {
-          "id": 76
-        },
-        "Thought": [],
-        "Properties": {
-          "id": 76,
-          "name": "Memory",
-          "target": {
-            "__state": 896,
-            "__instance": 76,
-            "state_name": "Memory",
-            "id": 76
-          },
-          "class": "",
-          "Prop": [
+            },
             {
               "id": 37,
-              "name": "icon",
+              "name": "idea",
               "type": "string",
-              "default": "leaf fas",
+              "default": "name",
               "State": {
                 "id": 37,
                 "Normal": {
@@ -2009,12 +1352,1266 @@
       }
     },
     "Nucleus": {
-      "id": 76,
+      "id": 35,
+      "x": 800.5,
+      "y": 807.5
+    },
+    "Terminal": {
+      "id": 35,
+      "x": 800.5,
+      "y": 701.5
+    }
+  },
+  {
+    "id": 36,
+    "base_size": 30,
+    "Type": {
+      "id": 36,
+      "Memory": {
+        "id": 36,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 36
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 36,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 36,
+            "state_name": "Memory",
+            "id": 36
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 38,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 38,
+                "Normal": {
+                  "id": 38
+                }
+              }
+            },
+            {
+              "id": 39,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 39,
+                "Normal": {
+                  "id": 39
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 36,
+      "x": 925.5,
+      "y": 364.5
+    },
+    "Terminal": {
+      "id": 36,
+      "x": 855.5,
+      "y": 367.5
+    }
+  },
+  {
+    "id": 37,
+    "base_size": 30,
+    "Type": {
+      "id": 37,
+      "Memory": {
+        "id": 37,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 37
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 37,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 37,
+            "state_name": "Memory",
+            "id": 37
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 40,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 40,
+                "Normal": {
+                  "id": 40
+                }
+              }
+            },
+            {
+              "id": 41,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 41,
+                "Normal": {
+                  "id": 41
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 37,
+      "x": 903.5,
+      "y": 457.5
+    },
+    "Terminal": {
+      "id": 37,
+      "x": 850.5,
+      "y": 457.5
+    }
+  },
+  {
+    "id": 38,
+    "base_size": 30,
+    "Type": {
+      "id": 38,
+      "Memory": {
+        "id": 38,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 38
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 38,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 38,
+            "state_name": "Memory",
+            "id": 38
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 42,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 42,
+                "Normal": {
+                  "id": 42
+                }
+              }
+            },
+            {
+              "id": 43,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 43,
+                "Normal": {
+                  "id": 43
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 38,
+      "x": 956.5,
+      "y": 525.5
+    },
+    "Terminal": {
+      "id": 38,
+      "x": 852.5,
+      "y": 527.5
+    }
+  },
+  {
+    "id": 39,
+    "base_size": 30,
+    "Type": {
+      "id": 39,
+      "Memory": {
+        "id": 39,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 39
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 39,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 39,
+            "state_name": "Memory",
+            "id": 39
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 44,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 44,
+                "Normal": {
+                  "id": 44
+                }
+              }
+            },
+            {
+              "id": 45,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 45,
+                "Normal": {
+                  "id": 45
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 39,
+      "x": 957.5,
+      "y": 603.5
+    },
+    "Terminal": {
+      "id": 39,
+      "x": 853.5,
+      "y": 599.5
+    }
+  },
+  {
+    "id": 40,
+    "base_size": 30,
+    "Type": {
+      "id": 40,
+      "Memory": {
+        "id": 40,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 40
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 40,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 40,
+            "state_name": "Memory",
+            "id": 40
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 46,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 46,
+                "Normal": {
+                  "id": 46
+                }
+              }
+            },
+            {
+              "id": 47,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 47,
+                "Normal": {
+                  "id": 47
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 40,
+      "x": 974.5,
+      "y": 729.5
+    },
+    "Terminal": {
+      "id": 40,
+      "x": 853.5,
+      "y": 730.5
+    }
+  },
+  {
+    "id": 41,
+    "base_size": 30,
+    "Type": {
+      "id": 41,
+      "Memory": {
+        "id": 41,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 41
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 41,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 41,
+            "state_name": "Memory",
+            "id": 41
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 48,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 48,
+                "Normal": {
+                  "id": 48
+                }
+              }
+            },
+            {
+              "id": 49,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 49,
+                "Normal": {
+                  "id": 49
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 41,
+      "x": 950.5,
+      "y": 800.5
+    },
+    "Terminal": {
+      "id": 41,
+      "x": 859.5,
+      "y": 799.5
+    }
+  },
+  {
+    "id": 42,
+    "base_size": 30,
+    "Type": {
+      "id": 42,
+      "Memory": {
+        "id": 42,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 42
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 42,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 42,
+            "state_name": "Memory",
+            "id": 42
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 50,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 50,
+                "Normal": {
+                  "id": 50
+                }
+              }
+            },
+            {
+              "id": 51,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 51,
+                "Normal": {
+                  "id": 51
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 42,
+      "x": 937.5,
+      "y": 860.5
+    },
+    "Terminal": {
+      "id": 42,
+      "x": 859.5,
+      "y": 861.5
+    }
+  },
+  {
+    "id": 43,
+    "base_size": 30,
+    "Type": {
+      "id": 43,
+      "Memory": {
+        "id": 43,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 43
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 43,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 43,
+            "state_name": "Memory",
+            "id": 43
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 52,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 52,
+                "Normal": {
+                  "id": 52
+                }
+              }
+            },
+            {
+              "id": 53,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 53,
+                "Normal": {
+                  "id": 53
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 43,
+      "x": 801.5,
+      "y": 484.5
+    },
+    "Terminal": {
+      "id": 43,
+      "x": 803.5,
+      "y": 621.5
+    }
+  },
+  {
+    "id": 44,
+    "base_size": 30,
+    "Type": {
+      "id": 44,
+      "Memory": {
+        "id": 44,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 44
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 44,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 44,
+            "state_name": "Memory",
+            "id": 44
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 54,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 54,
+                "Normal": {
+                  "id": 54
+                }
+              }
+            },
+            {
+              "id": 55,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 55,
+                "Normal": {
+                  "id": 55
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 44,
+      "x": 928.5,
+      "y": 665.5
+    },
+    "Terminal": {
+      "id": 44,
+      "x": 854.5,
+      "y": 666.5
+    }
+  },
+  {
+    "id": 45,
+    "base_size": 30,
+    "Type": {
+      "id": 45,
+      "Memory": {
+        "id": 45,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 45
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 45,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 45,
+            "state_name": "Memory",
+            "id": 45
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 56,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 56,
+                "Normal": {
+                  "id": 56
+                }
+              }
+            },
+            {
+              "id": 57,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 57,
+                "Normal": {
+                  "id": 57
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 45,
+      "x": 932.5,
+      "y": 282.5
+    },
+    "Terminal": {
+      "id": 45,
+      "x": 848.5,
+      "y": 282.5
+    }
+  },
+  {
+    "id": 46,
+    "base_size": 30,
+    "Type": {
+      "id": 46,
+      "Memory": {
+        "id": 46,
+        "icon": "",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 46
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 46,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 46,
+            "state_name": "Memory",
+            "id": 46
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 58,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 58,
+                "Normal": {
+                  "id": 58
+                }
+              }
+            },
+            {
+              "id": 59,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 59,
+                "Normal": {
+                  "id": 59
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 46,
+      "x": 313.5,
+      "y": 577.5
+    },
+    "Terminal": {
+      "id": 46,
+      "x": 426.5,
+      "y": 410.5
+    }
+  },
+  {
+    "id": 47,
+    "base_size": 30,
+    "Type": {
+      "id": 47,
+      "Memory": {
+        "id": 47,
+        "icon": "question fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 47
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 47,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 47,
+            "state_name": "Memory",
+            "id": 47
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 60,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 60,
+                "Normal": {
+                  "id": 60
+                }
+              }
+            },
+            {
+              "id": 61,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 61,
+                "Normal": {
+                  "id": 61
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 47,
+      "x": 166.5,
+      "y": 325.5
+    },
+    "Terminal": {
+      "id": 47,
+      "x": 374.5,
+      "y": 390.5
+    }
+  },
+  {
+    "id": 48,
+    "base_size": 30,
+    "Type": {
+      "id": 48,
+      "Memory": {
+        "id": 48,
+        "icon": "cogs fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 48
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 48,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 48,
+            "state_name": "Memory",
+            "id": 48
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 62,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 62,
+                "Normal": {
+                  "id": 62
+                }
+              }
+            },
+            {
+              "id": 63,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 63,
+                "Normal": {
+                  "id": 63
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 48,
+      "x": 43.5,
+      "y": 172.5
+    },
+    "Terminal": {
+      "id": 48,
+      "x": 138.5,
+      "y": 291.5
+    }
+  },
+  {
+    "id": 49,
+    "base_size": 30,
+    "Type": {
+      "id": 49,
+      "Memory": {
+        "id": 49,
+        "icon": "square-root-alt fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 49
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 49,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 49,
+            "state_name": "Memory",
+            "id": 49
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 64,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 64,
+                "Normal": {
+                  "id": 64
+                }
+              }
+            },
+            {
+              "id": 65,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 65,
+                "Normal": {
+                  "id": 65
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 49,
+      "x": 134.5,
+      "y": 483.5
+    },
+    "Terminal": {
+      "id": 49,
+      "x": 145.5,
+      "y": 357.5
+    }
+  },
+  {
+    "id": 50,
+    "base_size": 30,
+    "Type": {
+      "id": 50,
+      "Memory": {
+        "id": 50,
+        "icon": "comment-dots fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 50
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 50,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 50,
+            "state_name": "Memory",
+            "id": 50
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 66,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 66,
+                "Normal": {
+                  "id": 66
+                }
+              }
+            },
+            {
+              "id": 67,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 67,
+                "Normal": {
+                  "id": 67
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 50,
+      "x": 197.5,
+      "y": 152.5
+    },
+    "Terminal": {
+      "id": 50,
+      "x": 181.5,
+      "y": 288.5
+    }
+  },
+  {
+    "id": 51,
+    "base_size": 30,
+    "Type": {
+      "id": 51,
+      "Memory": {
+        "id": 51,
+        "icon": "sd-card fas",
+        "idea": "memory",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 51
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 51,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 51,
+            "state_name": "Memory",
+            "id": 51
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 68,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 68,
+                "Normal": {
+                  "id": 68
+                }
+              }
+            },
+            {
+              "id": 69,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 69,
+                "Normal": {
+                  "id": 69
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 51,
+      "x": 265.5,
+      "y": 460.5
+    },
+    "Terminal": {
+      "id": 51,
+      "x": 191.5,
+      "y": 361.5
+    }
+  },
+  {
+    "id": 52,
+    "base_size": 30,
+    "Type": {
+      "id": 52,
+      "Memory": {
+        "id": 52,
+        "icon": "hamburger fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 52
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 52,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 52,
+            "state_name": "Memory",
+            "id": 52
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 70,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 70,
+                "Normal": {
+                  "id": 70
+                }
+              }
+            },
+            {
+              "id": 71,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 71,
+                "Normal": {
+                  "id": 71
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 52,
+      "x": 676.5,
+      "y": 680.5
+    },
+    "Terminal": {
+      "id": 52,
+      "x": 626.5,
+      "y": 728.5
+    }
+  },
+  {
+    "id": 53,
+    "base_size": 30,
+    "Type": {
+      "id": 53,
+      "Memory": {
+        "id": 53,
+        "icon": "pizza-slice fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 53
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 53,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 53,
+            "state_name": "Memory",
+            "id": 53
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 72,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 72,
+                "Normal": {
+                  "id": 72
+                }
+              }
+            },
+            {
+              "id": 73,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 73,
+                "Normal": {
+                  "id": 73
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 53,
+      "x": 704.5,
+      "y": 766.5
+    },
+    "Terminal": {
+      "id": 53,
+      "x": 635.5,
+      "y": 765.5
+    }
+  },
+  {
+    "id": 54,
+    "base_size": 30,
+    "Type": {
+      "id": 54,
+      "Memory": {
+        "id": 54,
+        "icon": "air-freshener fas",
+        "idea": "",
+        "thoughts": 0,
+        "pulse_radius": 10,
+        "pulse_growth": 0,
+        "Icon": {
+          "id": 54
+        },
+        "Thought": [],
+        "Properties": {
+          "id": 54,
+          "name": "Memory",
+          "target": {
+            "__state": 967,
+            "__instance": 54,
+            "state_name": "Memory",
+            "id": 54
+          },
+          "class": "",
+          "Prop": [
+            {
+              "id": 74,
+              "name": "icon",
+              "type": "string",
+              "default": "leaf fas",
+              "State": {
+                "id": 74,
+                "Normal": {
+                  "id": 74
+                }
+              }
+            },
+            {
+              "id": 75,
+              "name": "idea",
+              "type": "string",
+              "default": "name",
+              "State": {
+                "id": 75,
+                "Normal": {
+                  "id": 75
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Nucleus": {
+      "id": 54,
       "x": 680.5,
       "y": 847.5
     },
     "Terminal": {
-      "id": 76,
+      "id": 54,
       "x": 615.5,
       "y": 798.5
     }

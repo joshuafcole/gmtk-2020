@@ -1,0 +1,82 @@
+Dialog*
+    on state.enter
+        _first: lib.dialog.load_script(Dialog, "test")
+        send goto to Dialog
+            message: _first
+
+    on goto
+        reference event.message in ActiveMessage
+
+    on goto (lib.in(event.message.Effect))
+        send trigger to event.message.Effect
+
+    interface
+        dialog-box
+            if lib.in(ActiveMessage)
+                draw ActiveMessage
+
+    ActiveMessage references Message
+
+    Message[]
+        @author: "Narrator"
+        @says: "Hello, world!"
+
+        on mouse.click (lib.in(Next))
+            send goto to Dialog
+                message: Next
+
+        on any.keyboard.down ((event.key == " " || event.key == "Enter") && lib.in(Next) && !lib.in(Editor.State.Enabled))
+            send goto to Dialog
+                message: Next
+
+        on mouse.click (lib.in(End))
+            dereference Message in ActiveMessage
+
+        on any.keyboard.down ((event.key == " " || event.key == "Enter") && lib.in(End) && !lib.in(Editor.State.Enabled))
+            dereference Message in ActiveMessage
+
+        interface
+            dialog-message
+                author {{@author}}
+                content {{@says}}
+
+        Next references Message
+
+        Effect
+            @action: ""
+            @args: 0
+
+            on trigger
+                _: lib.dialog.effect(@action, @args)
+
+        Branch[]
+            Then references Message
+
+            Event!*
+                Open
+                    @screen: ""
+
+                    on open (lib.is(Message, ActiveMessage) && event.screen == @screen)
+                        send goto to Dialog
+                            message: Then
+
+                OpenOther
+                    @screen: ""
+                    on open (lib.is(Message, ActiveMessage) && event.screen != @screen)
+                        send goto to Dialog
+                            message: Then
+
+                Think
+                    @idea: ""
+                    on think
+                    on think (lib.is(Message, ActiveMessage) && event.idea == @idea)
+                        send goto to Dialog
+                            message: Then
+
+                ThinkOther
+                    @idea: ""
+                    on think (lib.is(Message, ActiveMessage) && event.idea != @idea)
+                        send goto to Dialog
+                            message: Then
+
+        End

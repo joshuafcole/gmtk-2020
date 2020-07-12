@@ -124,9 +124,9 @@ let lib = {
       let {phoneme} = type.Language;
       neuron.Type.Language = {phoneme} as any;
     } else if(type.Memory) {
-      let {icon, Thought} = type.Memory;
+      let {icon, idea, Thought} = type.Memory;
       let thoughts:Thought[] = Thought as any; // the type is actually a raw neuron here...
-      neuron.Type.Memory = {icon} as any;
+      neuron.Type.Memory = {icon, idea} as any;
       if(thoughts && thoughts.length) {
         for(let thought of thoughts) {
           let {content, ix} = thought;

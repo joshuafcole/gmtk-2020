@@ -1,0 +1,75 @@
+Narrator: Today is your first day on the job, champ!
+
+Narrator: All those years of studying Brain Control Theory have finally landed your dream job — a cushy desk job.
+          Better not keep your boss waiting!
+
+Foreman: Finally decided to show up, rookie? You know what they say — if you’re on time you’re late, and if you’re late you get “promoted” to short term memory.
+
+Foreman: Let’s get you situated at your desk… What’ve you got under your arm there?
+
+Foreman: Oh, no son. Those instruction manuals are for the new machines we’re planning to install in Dave’s kids...
+         Dave’s still running on Ol’ Reliable here.
+
+Foreman: You’ve never seen this model before? Well, I’ll show you the ropes then.
+
+Foreman: Let’s start by running some memory queries. Go ahead and click on the Memory Console.
+
+! flash screen:Memory
+
+> OpenOther screen:Memory
+
+Foreman: All right, wise guy. You can back out of this console and try again by clicking the back button in the top left, there.
+
+<^
+
+> Open screen:Memory
+
+Foreman: Yep, that's the one.
+
+! stop_flashing
+
+<
+
+Foreman: What you’re seein’ here is a standard neural mesh. I happened to organize Dave’s memories myself, so I can vouch for how easy the system is to use.
+
+Foreman: All ya gotta do to run a query is click on the neuron that’s holdin’ a relevant idea to retrieve the thoughts attached to it.
+
+Foreman: Go ahead and pull the instructions for usin’ the memory console now — It’s the little node on the left side of the screen that looks like an SD card.
+
+! flash idea:memory
+
+> Think idea:memory
+
+Sensory Crew: Uh oh, boss, looks like Dave’s thinking about the act of thinking again. Completely lost his train of thought.
+
+<
+
+Foreman: Uhh, right. Good... attempt, but, uhh I think _you_ forgot about the part where I said you _definitely_ gotta disconnect the memory network from Dave’s conscious before runnin’ queries you don’t mean to send to him.
+
+Foreman: Easy mistake. You’ll learn in no time. Like right now. Go ahead and grab a hold of the pulsing neuron’s terminal and move it to the glowing target.
+
+Foreman: Now you can query to your heart’s content… Mostly anyway. Make sure to reconnect it before too long. Dave really freaks out when he realizes he can’t remember anything.
+
+Foreman: The other three ideas attached to the question mark are notes on running the other consoles.
+
+Foreman: Let’s get outta here and take Dave for a quick walk, eh? Go ahead and check out the motor console.
+
+> OpenOther screen:Motor
+
+Foreman: Ya either got real lucky the first time or you're messin' with me. Either way I'm docking your pay.
+
+<^
+
+> Open screen:Motor
+
+Foreman: I’m gonna level with you. Pete was never much for organization, and he used to manage most of the motor stuff.
+
+Foreman: If you’ve got the inclination, you can use the tape over their to label neurons as you figure ‘em out.
+
+Foreman: Might want to label this one, actually, it’s the “right leg”
+
+Foreman: If you look up at the top of the screen, you can see the sequence of pulses to certain muscles Dave needs to get the current job done.
+
+Foreman: walkin’ here will require alternating medium pulses to the left and right leg respectively.
+
+Foreman: Tappin’ a muscle neuron won’t do much — you’re gonna need to hold it down to charge it to the size of pulse ya want.

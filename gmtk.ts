@@ -3,6 +3,7 @@ import {Ref, PluralRef} from "./parts/std/types";
 import std from "./parts/std/std";
 import neuron, {Neuron} from "./parts/neuron/neuron";
 import editor from "./parts/editor/editor";
+import dialog from "./parts/dialog/dialog";
 
 export interface NeuralScreen {
   name: string;
@@ -21,6 +22,7 @@ export let lib = {
   ...std,
   neuron,
   editor,
+  dialog,
 
   color_to_matrix(color:string) {
     let [r, g, b, a] = [

@@ -81,3 +81,11 @@ Interactions
 
         Dragging
             on any.mouse.up -> None
+
+FlasherBase!
+    Off*
+    On
+        on state.enter
+            _: lib.wait(2000, "stop_flashing", FlasherBase)
+
+        on stop_flashing -> Off

@@ -65,7 +65,6 @@ BaseNeuron
             on state.enter
                 @theta: lib.neuron.axon.angle(BaseNeuron)
                 @base_length: lib.neuron.axon.length(BaseNeuron)
-                _: console.log(Math.round(@theta * 180 / lib.PI()), Math.round(@base_length))
 
             on BaseNeuron.pulsed
                 @excitement: @excitement + @excite_rate
@@ -93,6 +92,7 @@ BaseNeuron
 
         Memory
             @icon: ""
+            @idea: ""
             @thoughts: 0
 
             @pulse_radius: @base_size / 3
@@ -102,6 +102,9 @@ BaseNeuron
                 add Pulse
                     Memory*
                         Linked: Type.Memory
+
+            on flash (event.idea == @idea)
+                send start_flash to Neuron.Nucleus
 
             Icon*
                 interface
@@ -123,6 +126,10 @@ BaseNeuron
                         @name: "icon"
                         @type: "string"
                         @default: "leaf fas"
+                    add Prop
+                        @name: "idea"
+                        @type: "string"
+                        @default: "name"
 
         Language :: Normal
             @phoneme: ""
@@ -174,9 +181,14 @@ BaseNeuron
             send redraw to Axon
 
         interface
-            g.nucleus(svg=true)
+            _flash: lib.ternary(lib.in(Flash.On), "flashing", "")
+            g.nucleus(svg=true, class=_flash)
                 circle.halo(svg=true, cx=@x, cy=@y, r=@base_size / 2 + 10)
                 circle.real(svg=true, cx=@x, cy=@y, r=@base_size / 2)
+
+        Flash!* :: FlasherBase
+            Off*
+                on Nucleus.start_flash -> On
 
         Interaction* :: Interactions.MaybeDrag
             @elapsed: 0
@@ -220,9 +232,14 @@ BaseNeuron
             send redraw to Axon
 
         interface
-            g.terminal(svg=true)
+            _flash: lib.ternary(lib.in(Flash.On), "flashing", "")
+            g.terminal(svg=true, class=_flash)
                 circle.halo(svg=true, cx=@x, cy=@y, r=@base_size / 2 + 10)
                 circle.real(svg=true, cx=@x, cy=@y, r=@base_size / 2)
+
+        Flash* :: FlasherBase
+            Off*
+                on Terminal.start_flash -> On
 
         Interaction* :: Interactions.MaybeDrag
             None*
@@ -311,7 +328,7 @@ BaseNeuron
 
         // Outputs
         on tick (@p >= 1 && lib.in(BaseNeuron.Out))
-            _: lib.wait(@BaseNeuron.Out.delay, @BaseNeuron.Out.action, 0, "strength", @strength)
+            _: lib.wait(@BaseNeuron.Out.delay, @BaseNeuron.Out.action, 0, "strength", @strength, "memory", Memory.Linked, "language", Language.Linked)
 
         on tick (@p >= 1)
             _: lib.neuron.pulse.propagate(Pulse, BaseNeuron, NeuralScreen)

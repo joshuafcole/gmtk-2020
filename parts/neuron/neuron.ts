@@ -58,6 +58,7 @@ export interface Language {
 
 export interface Memory {
   icon: string;
+  idea: string;
   Thought: PluralRef<Thought>
 }
 

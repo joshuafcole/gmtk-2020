@@ -5,6 +5,8 @@
 @import "./parts/std/std.styl";
 @import "./parts/neuron/neuron.styl";
 @import "./parts/editor/editor.styl";
+@import "./parts/dialog/dialog.styl";
+@import "./parts/scene/scene.styl";
 
 html, body
   display: flex;
@@ -73,6 +75,7 @@ neural-screen-wrapper
   position: relative;
   top: $t;
 
+  opacity: 1;
   transform-origin: 50% 50%;
   transition: transform $a ease, z-index $a step-end;
   z-index: 1;
@@ -105,6 +108,11 @@ neural-screen-wrapper
       text-align: left;
       padding-left: 75px;
 
+  .neural-screen-panel
+    position: absolute;
+    top: 0;
+    opacity: 1;
+
   neural-screen-inner
     position: relative;
     top: 0;
@@ -120,18 +128,21 @@ neural-screen-wrapper
     &:after
       content: "";
       overlay();
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-      background-size: 100% 2px, 3px 100%;
+      scanline();
       z-index: 12;
       pointer-events: none;
       transition: opacity 0.1s ease 0.1s;
+
+  &.flashing
+    neural-screen-inner, neural-screen-placeholder
+      animation: flash 0.5s 4;
 
   &.mini
     .neuron
       pointer-events: none;
 
     neural-screen-inner:after
-      opacity: 0;
+      opacity: 0.1;
       transition: opacity 0.1s;
 
   &.focused
@@ -153,17 +164,36 @@ neural-screen-wrapper
     &.focused neural-screen-inner
       transform: translate3d(- $ix * $w, 0, 0);
 
+  panel($dx, $dy, $dz, $r)
+    .neural-screen-panel
+      transform: translate3d($dx, $dy, $dz) rotateY($r) rotateX(88deg);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+
   &.Motor
     screen(120px, -1000px, 45deg, -1.5);
+    // panel(470px, $h, -1100px, 50deg);
 
   &.Logic
     screen(-5px, -1600px, 22deg, -0.5);
+    // panel(-5px, 0, -1600px, 22deg);
 
   &.Language
     screen(10px, -1600px, -22deg, 0.5);
+    // panel(10px, 0, -1600px, -22deg);
 
   &.Memory
     screen(-115px, -1000px, -45deg, 1.5);
+    // panel(-115px, 0, -1000px, -45deg);
 
   svg.neural-screen
     // pointer-events: auto;
+
+
+@keyframes flash
+  0%
+    opacity: 1;
+  50%
+    opacity: 0.5;
+  100%
+    opacity: 1;
