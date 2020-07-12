@@ -26,7 +26,7 @@ let lib = {
       delete neuron.Terminal!.Interaction;
       delete neuron.Axon;
     }
-    console.log(raw);
+
     fetch(`/ugc/screens/${screen.name}.json`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -36,19 +36,16 @@ let lib = {
   },
   load_all(app: App) {
     app.NeuralScreen.each((screen) => {
-      console.log("EY GURL", screen.name);
       lib.load(screen);
     });
   },
   async load(screen: NeuralScreen) {
-    console.log("GOT", screen.name);
     try {
       let res = await fetch(`/ugc/screens/${screen.name}.json`);
       let raw:Neuron[] = await res.json();
 
       screen.Neuron.each((neuron) => neuron.remove());
 
-      console.log("LOADING", screen.name);
       for(let raw_neuron of raw) {
         let neuron = screen.Neuron.add({});
         neuron.Nucleus.x = raw_neuron.Nucleus.x;

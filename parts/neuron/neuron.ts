@@ -89,14 +89,15 @@ let lib = {
       return {x: x1 + dx * p, y: y1 + dy * p};
     },
 
-    path(neuron: Neuron) {
+    path(neuron: Neuron, thick = 5) {
       let {Nucleus:{x:x1, y:y1}, Terminal:{x:x2, y:y2}} = neuron;
       let theta = lib.axon.angle(neuron);
 
-      let dax = 5 * cos(theta + HALF_PI);
-      let day = 5 * sin(theta + HALF_PI);
-      let dbx = 5 * cos(theta - HALF_PI);
-      let dby = 5 * sin(theta - HALF_PI);
+      let ht = thick / 2;
+      let dax = ht * cos(theta + HALF_PI);
+      let day = ht * sin(theta + HALF_PI);
+      let dbx = ht * cos(theta - HALF_PI);
+      let dby = ht * sin(theta - HALF_PI);
 
       return `
         M ${x1 + dax} ${y1 + day}

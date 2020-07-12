@@ -165,7 +165,7 @@ SVGDefs*
     GooFilter*
         interface
             filter(svg=true, id="goo")
-                feGaussianBlur(svg=true, in="SourceGraphic", stdDeviation="10", result="blur")
+                feGaussianBlur(svg=true, in="SourceGraphic", stdDeviation="5", result="blur")
                 feColorMatrix(svg=true, in="blur", type="matrix", values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7", result="goo")
                 feBlend(svg=true, in="goo", in2="SourceGraphic")
 

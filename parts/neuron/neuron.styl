@@ -4,6 +4,9 @@
   --terminal: #0CEBEB;
   --pulse: yellow;
 
+  $base_size = 30px;
+  font-size: 0.5em;
+
   filter:  url("#glow-FFFFFF");
 
   &.motor
@@ -23,9 +26,9 @@
 
     .memory-icon
       position: relative;
-      width: 60px;
-      height: 60px;
-      font-size: 2em;
+      width: $base_size;
+      height: $base_size;
+      font-size: @width * 0.8;
       pointer-events: none;
 
       i
@@ -37,9 +40,9 @@
         color: black;
 
       &.pulse-icon
-        width: 30px;
-        height: 30px;
-        font-size: 1em;
+        width: $base_size / 2;
+        height: $base_size / 2;
+        font-size: @width * 0.8;
 
   &.language
     --nucleus: #1E6305;
@@ -52,6 +55,7 @@
   .nucleus
     circle
       fill: var(--nucleus);
+      r: $base_size / 2;
 
   .axon
     path
@@ -60,6 +64,7 @@
   .terminal
     circle
       fill: var(--terminal);
+      r: $base_size / 2;
 
   .pulse
     fill: var(--pulse);

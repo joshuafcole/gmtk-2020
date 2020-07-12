@@ -1,4 +1,6 @@
 BaseNeuron
+    @base_size: 30
+
     interface
         g.neuron(svg=true, class=lib.exclusive.dashed_name(Type))
             g.neuron-inner(svg=true)
@@ -13,10 +15,14 @@ BaseNeuron
 
     Type!*
         Normal*
+            @pulse_radius: @base_size / 6
+            @pulse_growth: 0
             on BaseNeuron.create_pulse
                 add Pulse
 
         Motor
+            @pulse_radius: @base_size / 24
+            @pulse_growth: 1 / 4
             on BaseNeuron.create_pulse
                 add Pulse
                     @strength: event.elapsed
@@ -28,10 +34,9 @@ BaseNeuron
                     _pos: lib.neuron.axon.position(_p, BaseNeuron)
                     _deg: lib.neuron.axon.angle(BaseNeuron) * 180 / lib.PI()
                     _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
-                    _r: 10 + _strength / 3
-                    _rx: _r * 1.2 + 4
+                    _r: @pulse_radius + _strength * @pulse_growth
+                    _rx: _r * 1.2
                     _ry: _r
-
                     g.transient-pulse(svg=true)
                         if lib.in(Nucleus.Interaction.DragOrClick) && _strength > 0
                             ellipse.pulse.transient(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
@@ -65,6 +70,9 @@ BaseNeuron
             @icon: ""
             @thoughts: 0
 
+            @pulse_radius: @base_size / 3
+            @pulse_growth: 0
+
             on BaseNeuron.create_pulse
                 add Pulse
                     Memory*
@@ -83,7 +91,7 @@ BaseNeuron
                     @thoughts: @thoughts + 1
 
 
-        Language
+        Language :: Normal
             @phoneme: ""
 
             on BaseNeuron.create_pulse
@@ -94,7 +102,8 @@ BaseNeuron
             Sound*
                 interface
                     audio(src="/assets/phonemes/{{@phoneme}}.mp3", -autoplay=true)
-        Autonomic
+
+        Autonomic :: Normal
 
     Interaction* :: Interactions.MaybeDrag
         None*
@@ -124,7 +133,7 @@ BaseNeuron
 
         interface
             g.nucleus(svg=true)
-                circle(svg=true, cx=@x, cy=@y, r=30)
+                circle(svg=true, cx=@x, cy=@y, r=@base_size / 2)
 
         Interaction* :: Interactions.MaybeDrag
             @elapsed: 0
@@ -154,7 +163,7 @@ BaseNeuron
         @path: ""
 
         on redraw
-            @path: lib.neuron.axon.path(BaseNeuron)
+            @path: lib.neuron.axon.path(BaseNeuron, @base_size / 5)
 
         interface
             g.axon(svg=true)
@@ -169,7 +178,7 @@ BaseNeuron
 
         interface
             g.terminal(svg=true)
-                circle(svg=true, cx=@x, cy=@y, r=30)
+                circle(svg=true, cx=@x, cy=@y, r=@base_size / 2)
 
         Interaction* :: Interactions.MaybeDrag
             None*
@@ -209,8 +218,8 @@ BaseNeuron
 
     Pulse[]
         @p: 0
-        @speed: 10
-        @r: lib.ternary(lib.in(BaseNeuron.Type.Memory), 15, 10)
+        @speed: 5
+        @r: lib.exclusive.get(BaseNeuron.Type, "pulse_radius")
 
         // Used in motor puzzles
         @strength: 1
@@ -231,8 +240,8 @@ BaseNeuron
             _pos: lib.neuron.axon.position(@p, BaseNeuron)
             _deg: lib.neuron.axon.angle(BaseNeuron) * 180 / lib.PI()
             _transform: "rotate({{_deg}}, {{_pos.x}}, {{_pos.y}})"
-            _r: @r + lib.ternary(lib.in(BaseNeuron.Type.Motor), @strength / 6, 0)
-            _rx: _r * 1.2 + 4
+            _r: @r + @strength * lib.exclusive.get(BaseNeuron.Type, "pulse_growth")
+            _rx: _r * 1.2
             _ry: _r
             g.pulse(svg=true)
                 ellipse(svg=true, cx=_pos.x, cy=_pos.y, rx=_rx, ry=_ry, transform=_transform)
