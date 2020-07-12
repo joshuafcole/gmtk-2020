@@ -32,13 +32,14 @@ div.__root, div.sc_root
 
 app
   position: relative;
-  width: 1280px;
-  height: 800px;
+  width: 1600px;
+  height: 900px;
   overflow: hidden;
 
   screen-layer
     overlay();
     flex-direction: row;
+    justify-content: center;
     perspective: 1000px;
     perspective-origin: 50% 52%;
     transform-style: preserve-3d;
@@ -49,37 +50,60 @@ app
 //------------------------------------------------------------------------------
 
 neural-screen-wrapper
-  $w = 384px;
-  $t = 240px;
+  $w = 1000px;
+  $h = 900px;
+  $t = -50px;
   $a = 0.3s;
 
-  $mw = 1280px;
-  $mh = 800px
-
-  pointer-events: none;
   transform-style: preserve-3d;
   align-items: center;
   justify-content: flex-start;
-
   position: relative;
   top: $t;
-  width: $w;
-  height: $w;
+
   transform-origin: 50% 50%;
   transition: transform $a ease, z-index $a step-end;
   z-index: 1;
-  pointer-events: auto;
+  pointer-events: none;
+
+  neural-screen-placeholder
+    position: absolute;
+    width: $w;
+    height: $h;
+    background: linear-gradient(to bottom, #444 0%, #999, 90%, #888 100%);
+    transform: translate3d(0, 0, -30px);
+    z-index: -1;
+    pointer-events: auto;
+
+    h3
+      position: absolute;
+      bottom: 100%; left: 0; right: 0;
+      margin-bottom: 20px;
+      font-size: 8em;
+      text-align: center;
+      background: #ccc;
+
+  &:first-child
+    h3
+      text-align: right;
+      padding-right: 150px;
+
+  &:last-child
+    h3
+      text-align: left;
+      padding-left: 75px;
 
   neural-screen-inner
     position: relative;
-    left: 0;
     top: 0;
-    width: inherit;
-    height: inherit;
+    width: $w;
+    height: $h;
     transform-origin: inherit;
     transition: all $a ease;
-    background: linear-gradient(to bottom, #444 0%, #999, 90%, #666 100%);
+    background: linear-gradient(to bottom, #444 0%, #999, 90%, #888 100%);
     border: 2px solid silver;
+    z-index: 2;
+    pointer-events: auto;
 
   &.focused
     z-index: 10;
@@ -87,28 +111,25 @@ neural-screen-wrapper
 
     neural-screen-inner
       top: - $t;
-      width: $mw;
-      height: $mh;
 
   screen($dx, $dz, $r, $ix)
-    transform: translate3d($dx, 0, $dz) rotateY($r);
+    neural-screen-inner, neural-screen-placeholder
+      transform: translate3d($dx, 0, $dz) rotateY($r);
 
     &.focused neural-screen-inner
-      transform: rotateY(- $r) translate3d(- $dx, 0, - $dz) translate3d((1.5 - $ix) * $w - 129px, 0, 0);
+      transform: translate3d(- $ix * $w, 0, 0);
 
   &.Motor
-    screen(-80px, 0, 45deg, 0);
+    screen(120px, -1000px, 45deg, -1.5);
 
   &.Logic
-    screen(-131px, -225px, 20deg, 1);
+    screen(-5px, -1600px, 22deg, -0.5);
 
   &.Language
-    screen(-124px, -225px, -20deg, 2);
+    screen(10px, -1600px, -22deg, 0.5);
 
   &.Memory
-    screen(-174px, 0, -45deg, 3);
-
-
+    screen(-115px, -1000px, -45deg, 1.5);
 
   svg.neural-screen
     // pointer-events: auto;

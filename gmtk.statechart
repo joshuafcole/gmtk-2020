@@ -171,9 +171,11 @@ App*
             _window: lib.window_size()
             _view: lib.exclusive.dashed_name(View)
             neural-screen-wrapper(class="{{_view}} {{@name}}", style=@Transform.string)
+                neural-screen-placeholder
+                    h3 {{@name}}
                 neural-screen-inner
-                    svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
-                        // svg.neural-screen(svg=true, postRender=lib.resize_svg, w=1280, h=800)
+                    // svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
+                    svg.neural-screen(svg=true, postRender=lib.resize_svg, w=1000, h=900)
                         draw Neuron
 
         Transform*
@@ -199,6 +201,7 @@ SVGDefs*
     interface
         svg.defs(svg=true, style="width: 0; height: 0")
             draw GooFilter
+            draw GlowFilter
 
     GooFilter*
         interface
