@@ -12,28 +12,20 @@ async function bundle(folder_name: string) {
 
   console.log("Bundling: ", folder_path);
   let files = await fs.readdir(folder_path);
-  let map =
-    folder_name === "scripts"
-      ? flat_map(folder_path, files)
-      : shallow_map(folder_path, files);
+  let map = folder_name === "scripts" ?
+    await flat_map(folder_path, files) :
+    await shallow_map(folder_path, files);
 
-  for (let file of files) {
-    let name = path.basename(file, ".txt");
-    console.log("-", file);
-    map[name] = await fs.readFile(path.resolve(folder_path, file), {
-      encoding: "utf-8"
-    });
-  }
-
+  console.log(">", path.resolve(process.cwd(), "ugc", folder_name + ".bundle.json"));
   let out = path.resolve(process.cwd(), "ugc", folder_name + ".bundle.json");
-  await fs.writeFile(out, JSON.stringify(map));
+  await fs.writeFile(out, JSON.stringify(map, null, "\t"));
 }
 
-async function flat_map(root: string, files: string[]) {
+async function flat_map(root: string, files: string[], ext = ".txt", depth = 0) {
   let map: { [name: string]: string } = {};
   for (let file of files) {
-    let name = path.basename(file, ".txt");
-    console.log("-", file);
+    let name = path.basename(file, ext);
+    console.log("  ".repeat(depth), "-", file);
     map[name] = await fs.readFile(path.resolve(root, file), {
       encoding: "utf-8"
     });
@@ -46,8 +38,8 @@ async function shallow_map(root: string, folders: string[]) {
   for (let sub of folders) {
     let sub_root = path.resolve(root, sub);
     let files = await fs.readdir(sub_root);
-    map[sub] = await flat_map(sub_root, files);
-    console.log(sub, sub_root, files);
+    console.log("-", sub, files);
+    map[sub] = await flat_map(sub_root, files, ".json", 1);
     for (let key in map[sub]) {
       map[sub][key] = JSON.parse(map[sub][key]);
     }

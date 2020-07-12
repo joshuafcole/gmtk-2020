@@ -6,16 +6,14 @@ App*
     on state.enter
         _: lib.start_ticking()
 
-        add NeuralScreen
-            @name: "Motor"
-        add NeuralScreen
-            @name: "Logic"
-        add NeuralScreen
-            @name: "Language"
-        add NeuralScreen
-            @name: "Memory"
-
-        _: lib.editor.load_all(App)
+        // add NeuralScreen
+        //     @name: "Motor"
+        // add NeuralScreen
+        //     @name: "Logic"
+        // add NeuralScreen
+        //     @name: "Language"
+        // add NeuralScreen
+        //     @name: "Memory"
 
     on think_sub
         send think

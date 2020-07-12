@@ -3,6 +3,10 @@ import std from "../std/std";
 import {NeuralScreen, App} from "../../gmtk";
 import {Neuron, Thought} from "../neuron/neuron";
 
+import cached_screens from "../../ugc/screens.bundle.json";
+
+console.log(cached_screens);
+
 export interface EditorType {
   Normal?: {},
   Motor?: {},
@@ -44,11 +48,42 @@ let lib = {
   save(screen: NeuralScreen, prevent?: () => void) {
     let raw = screen.Neuron.to_json() as Partial<Neuron>[];
     for(let neuron of raw) {
-      delete neuron.Interaction;
-      delete neuron.Pulse;
-      delete neuron.Nucleus!.Interaction;
-      delete neuron.Terminal!.Interaction;
-      delete neuron.Axon;
+      let n = neuron as any;
+      delete n.id;
+      delete n.Properties;
+      delete n.Interaction;
+      delete n.Pulse;
+      delete n.Nucleus.Interaction;
+      delete n.Nucleus.Flash;
+      delete n.Nucleus.id;
+      delete n.Terminal.Interaction;
+      delete n.Terminal.Flash;
+      delete n.Terminal.id;
+      delete n.Axon;
+
+      delete n.Type.id;
+      if(n.Type.Normal) {
+        delete n.Type;
+
+      } else if(n.Type.Motor) {
+        delete n.Type.Motor.id;
+        delete n.Type.Motor.Properties;
+        delete n.Type.Motor.TransientPulse;
+
+      } else if(n.Type.Logic) {
+        delete n.Type.Logic.id;
+        delete n.Type.Logic.Properties;
+
+      } else if(n.Type.Language) {
+        delete n.Type.Language.id;
+        delete n.Type.Language.Properties;
+        delete n.Type.Language.Sound;
+
+      } else if(n.Type.Memory) {
+        delete n.Type.Memory.id;
+        delete n.Type.Memory.Properties;
+        delete n.Type.Memory.Icon;
+      }
     }
 
     fetch(`/ugc/screens/${screen.name}.json`, {
@@ -58,15 +93,26 @@ let lib = {
     });
     if(prevent) prevent();
   },
-  load_all(app: App) {
+  load_all(app: App, scene: string) {
+    app.NeuralScreen.each((screen) => screen.remove());
+    app.NeuralScreen.add({name: "Motor"});
+    app.NeuralScreen.add({name: "Logic"});
+    app.NeuralScreen.add({name: "Language"});
+    app.NeuralScreen.add({name: "Memory"});
     app.NeuralScreen.each((screen) => {
-      lib.load(screen);
+      console.log("YO", scene, screen.name);
+      lib.load(screen, scene);
     });
   },
-  async load(screen: NeuralScreen) {
+  async load(screen: NeuralScreen, scene: string) {
     try {
-      let res = await fetch(`/ugc/screens/${screen.name}.json`);
-      let raw:Neuron[] = await res.json();
+      // let res = await fetch(`/ugc/screens/${screen.name}.json`);
+      // let raw:Neuron[] = await res.json();
+      if(!cached_screens[scene]) {
+        console.warn(`Attempted to load screens for non-bundled scene: '${scene}'`);
+        return;
+      }
+      let raw:Neuron[] = cached_screens[scene][screen.name];
 
       screen.Neuron.each((neuron) => neuron.remove());
 

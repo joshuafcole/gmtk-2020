@@ -4,10 +4,11 @@ BaseScene
     on state.enter
         @App.active_scene: @name
 
+        _: lib.editor.load_all(App, @name)
+
         _first: lib.dialog.load_script(Dialog, @name)
         send goto to Dialog
             message: _first
-
 
 SceneWrapper!*
     Tutorial* :: BaseScene

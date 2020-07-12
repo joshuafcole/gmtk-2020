@@ -8,5 +8,6 @@
 *.zip
 node_modules/
 dist/
+ugc/*.bundle.json
 
 !typings.d.ts
