@@ -157,6 +157,10 @@ App*
         Neuron[] :: BaseNeuron
 
 SVGDefs*
+    on state.enter
+        add GlowFilter
+            @color: "FF0000"
+
     interface
         svg.defs(svg=true, style="width: 0; height: 0")
             draw GooFilter

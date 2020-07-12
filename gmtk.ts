@@ -24,11 +24,18 @@ export let lib = {
 
   color_to_matrix(color:string) {
     let [r, g, b, a] = [
-      (parseInt(color.slice(0, 2)) / 255).toFixed(2),
-      (parseInt(color.slice(2, 4)) / 255).toFixed(2),
-      (parseInt(color.slice(4, 6)) / 255).toFixed(2),
-      (parseInt(color.slice(6, 8) || "FF") / 255).toFixed(2)
+      (parseInt(color.slice(0, 2), 16) / 255).toFixed(2),
+      (parseInt(color.slice(2, 4), 16) / 255).toFixed(2),
+      (parseInt(color.slice(4, 6), 16) / 255).toFixed(2),
+      (parseInt(color.slice(6, 8) || "FF", 16) / 255).toFixed(2)
     ];
+    console.log(color);
+    console.log(
+      color.slice(0, 2),
+      color.slice(2, 4),
+      color.slice(4, 6),
+      color.slice(6, 8)
+    );
 
     return `
       ${r} 0    0    0    0

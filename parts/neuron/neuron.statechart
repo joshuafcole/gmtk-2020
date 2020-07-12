@@ -2,7 +2,9 @@ BaseNeuron
     @base_size: 30
 
     interface
-        g.neuron(svg=true, class=lib.exclusive.dashed_name(Type))
+        _type: lib.exclusive.dashed_name(Type)
+        _selected: lib.ternary(lib.editor.selected(BaseNeuron, Editor), "selected", "")
+        g.neuron(svg=true, class="{{_type}} {{_selected}}")
             g.neuron-inner(svg=true)
                 draw Axon
                 draw Nucleus
@@ -133,7 +135,8 @@ BaseNeuron
 
         interface
             g.nucleus(svg=true)
-                circle(svg=true, cx=@x, cy=@y, r=@base_size / 2)
+                circle.halo(svg=true, cx=@x, cy=@y, r=@base_size / 2 + 10)
+                circle.real(svg=true, cx=@x, cy=@y, r=@base_size / 2)
 
         Interaction* :: Interactions.MaybeDrag
             @elapsed: 0
@@ -178,7 +181,8 @@ BaseNeuron
 
         interface
             g.terminal(svg=true)
-                circle(svg=true, cx=@x, cy=@y, r=@base_size / 2)
+                circle.halo(svg=true, cx=@x, cy=@y, r=@base_size / 2 + 10)
+                circle.real(svg=true, cx=@x, cy=@y, r=@base_size / 2)
 
         Interaction* :: Interactions.MaybeDrag
             None*

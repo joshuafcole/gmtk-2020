@@ -5,6 +5,7 @@
 *.js.map
 *.DS_Store
 *.tgz
+*.zip
 node_modules/
 dist/
 

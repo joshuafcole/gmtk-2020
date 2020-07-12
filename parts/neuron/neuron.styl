@@ -7,7 +7,10 @@
   $base_size = 30px;
   font-size: 0.5em;
 
-  filter:  url("#glow-FFFFFF");
+  filter: url("#glow-FFFFFF");
+
+  &.selected
+    filter: url("#glow-FF0000");
 
   &.motor
     --nucleus: #9E1B38;
@@ -53,18 +56,20 @@
     filter: url("#goo");
 
   .nucleus
-    circle
+    circle.real
       fill: var(--nucleus);
-      r: $base_size / 2;
+    circle.halo
+      fill: transparent;
 
   .axon
     path
       fill: var(--axon);
 
   .terminal
-    circle
+    circle.real
       fill: var(--terminal);
-      r: $base_size / 2;
+    circle.halo
+      fill: transparent;
 
   .pulse
     fill: var(--pulse);

@@ -1,3 +1,5 @@
+import {Ref} from "../std/types";
+import std from "../std/std";
 import {NeuralScreen, App} from "../../gmtk";
 import {Neuron, Thought} from "../neuron/neuron";
 
@@ -7,6 +9,28 @@ export interface EditorType {
   Logic?: {},
   Language?: {},
   Memory?: {}
+}
+
+export interface Editor {
+  State: {
+    Disabled?: {},
+    Enabled?: {
+      Tool: {
+        Add?: any,
+        Flag?: any
+      },
+      Interaction: {
+        None?: {},
+        Adding?: {
+          AddingNeuron: Neuron&Ref
+        },
+        Editing?: {
+          SelectedNeuron: Neuron&Ref
+        }
+      }
+    },
+
+  }
 }
 
 let lib = {
@@ -70,6 +94,10 @@ let lib = {
       console.warn("Unable to load screen file! Please try reloading.");
       console.warn(err);
     }
+  },
+
+  selected(neuron: Neuron&Ref, editor:Editor) {
+    return std.is(neuron, editor.State.Enabled?.Interaction.Editing?.SelectedNeuron);
   },
 
   convert_to(neuron: Neuron, type: Partial<Neuron["Type"]>) {

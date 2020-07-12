@@ -14,6 +14,12 @@ Editor*
             on any.keyboard.down (event.mod.control && event.key == "s")
                 _: lib.editor.save_focused(App, event.prevent)
 
+            interface
+                editor-content
+                    editing-notice
+                        i.fas.fa-edit
+                        draw Tool
+
             Tool!*
                 on any.keyboard.down (event.key == "n") -> Normal
                 on any.keyboard.down (event.key == "m") -> Motor
@@ -78,9 +84,21 @@ Editor*
                     on Neuron.Label.mouse.down (event.button == 0 && event.mod.shift && lib.in(Tool.Flag) && lib.in(Neuron.Label))
                         remove Neuron.Label
 
-                    on NeuralScreen.Neuron.mouse.down (event.button == 0 && lib.in(Tool.Flag) && !lib.in(Neuron.Label))
+                    on Neuron.mouse.down (event.button == 0 && lib.in(Tool.Flag) && !lib.in(Neuron.Label))
                         _p: lib.editor.compute_p(Neuron, event.view_x, event.view_y)
                         _: lib.editor.label(Neuron, "unlabeled", _p)
+
+                    on Neuron.mouse.down -> Editing
+                        send select to Editor
+                            neuron: Neuron
+
+                    on Neuron.Nucleus.mouse.down -> Editing
+                        send select to Editor
+                            neuron: Neuron
+
+                    on Neuron.Terminal.mouse.down -> Editing
+                        send select to Editor
+                            neuron: Neuron
 
                 Adding
                     AddingNeuron references NeuralScreen.Neuron
@@ -104,8 +122,22 @@ Editor*
                         remove AddingNeuron
                         dereference AddingNeuron in AddingNeuron
 
-            interface
-                editor-content
-                    editing-notice
-                        i.fas.fa-edit
-                        draw Tool
+                Editing
+                    on NeuralScreen.mouse.down -> None
+
+                    on Editor.select
+                        reference event.neuron in SelectedNeuron
+
+                    on Neuron.mouse.down
+                        send select to Editor
+                            neuron: Neuron
+
+                    on Neuron.Nucleus.mouse.down
+                        send select to Editor
+                            neuron: Neuron
+
+                    on Neuron.Terminal.mouse.down
+                        send select to Editor
+                            neuron: Neuron
+
+                    SelectedNeuron references Neuron
