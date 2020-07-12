@@ -13,6 +13,22 @@ export let lib = {
   neuron,
   editor,
 
+  color_to_matrix(color:string) {
+    let [r, g, b, a] = [
+      (parseInt(color.slice(0, 2)) / 255).toFixed(2),
+      (parseInt(color.slice(2, 4)) / 255).toFixed(2),
+      (parseInt(color.slice(4, 6)) / 255).toFixed(2),
+      (parseInt(color.slice(6, 8) || "FF") / 255).toFixed(2)
+    ];
+
+    return `
+      ${r} 0    0    0    0
+      0    ${g} 0    0    0
+      0    0    ${b} 0    0
+      0    0    0    ${a} 0
+    `;
+  },
+
   //----------------------------------------------------------------------------
   // UI
   //----------------------------------------------------------------------------

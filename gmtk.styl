@@ -25,13 +25,22 @@ head *
 div.__root, div.sc_root
   flex: 1;
 
+.sc_root
+  align-items: center;
+  justify-content: center;
+  background: black;
 
 app
+  position: relative;
+  width: 1280px;
+  height: 800px;
+  overflow: hidden;
+
   screen-layer
     overlay();
     flex-direction: row;
-    perspective: 500px;
-    perspective-origin: 50% 33%;
+    perspective: 1000px;
+    perspective-origin: 50% 52%;
     transform-style: preserve-3d;
     overflow: hidden;
 
@@ -40,12 +49,26 @@ app
 //------------------------------------------------------------------------------
 
 neural-screen-wrapper
+  $w = 384px;
+  $t = 240px;
+  $a = 0.3s;
+
+  $mw = 1280px;
+  $mh = 800px
+
   pointer-events: none;
   transform-style: preserve-3d;
   align-items: center;
   justify-content: flex-start;
 
-  $w = 320px;
+  position: relative;
+  top: $t;
+  width: $w;
+  height: $w;
+  transform-origin: 50% 50%;
+  transition: transform $a ease, z-index $a step-end;
+  z-index: 1;
+  pointer-events: auto;
 
   neural-screen-inner
     position: relative;
@@ -54,53 +77,36 @@ neural-screen-wrapper
     width: inherit;
     height: inherit;
     transform-origin: inherit;
-    transition: all 0.3s ease;
+    transition: all $a ease;
     background: linear-gradient(to bottom, #444 0%, #999, 90%, #666 100%);
     border: 2px solid silver;
 
   &.focused
     z-index: 10;
+    transition: transform $a ease, z-index $a step-start;
 
     neural-screen-inner
-      top: -200px;
-      width: 100vw;
-      height: 100vh;
+      top: - $t;
+      width: $mw;
+      height: $mh;
 
-  position: relative;
-  width: $w;
-  height: $w;
-  transform-origin: 50% 50%;
-  transition: transform 0.4s ease;
-  pointer-events: auto;
+  screen($dx, $dz, $r, $ix)
+    transform: translate3d($dx, 0, $dz) rotateY($r);
+
+    &.focused neural-screen-inner
+      transform: rotateY(- $r) translate3d(- $dx, 0, - $dz) translate3d((1.5 - $ix) * $w - 129px, 0, 0);
 
   &.Motor
-    top: 200px;
-    transform: translate3d(-50px, 0, -125px) rotateY(30deg);
-
-    &.focused neural-screen-inner
-      // transform: rotateY(-30deg) translate3d(50px, 0, 125px) translate3d(0, 0, 225px) translateX(65px);
-      transform: rotateY(-30deg) translate3d(50px, 0, 125px) translate3d(1.5 * $w, 0, 0);
+    screen(-80px, 0, 45deg, 0);
 
   &.Logic
-    top: 200px;
-    transform: translate3d(-25px, 0, -250px) rotateY(10deg);
-
-    &.focused neural-screen-inner
-      transform: rotateY(-10deg) translate3d(25px, 0, 250px) translate3d(0.5 * $w, 0, 0)
+    screen(-131px, -225px, 20deg, 1);
 
   &.Language
-    top: 200px;
-    transform: translate3d(25px, 0, -250px) rotateY(-10deg);
-
-    &.focused neural-screen-inner
-      transform: rotateY(10deg) translate3d(-25px, 0, 250px) translate3d(-0.5 * $w, 0, 0)
+    screen(-124px, -225px, -20deg, 2);
 
   &.Memory
-    top: 200px;
-    transform: translate3d(50px, 0, -125px) rotateY(-30deg);
-
-    &.focused neural-screen-inner
-      transform: rotateY(30deg) translate3d(-50px, 0, 125px) translate3d(-1.5 * $w, 0, 0)
+    screen(-174px, 0, -45deg, 3);
 
 
 

@@ -1,25 +1,25 @@
 .neuron
-  --nucleus: indigo;
-  --axon: mix(indigo, blue, 50%);
-  --terminal: blue;
+  --nucleus: #29FFC6;
+  --axon: #20E3B2;
+  --terminal: #0CEBEB;
   --pulse: yellow;
 
   pointer-events: auto;
 
   &.motor
-    --nucleus: lawngreen;
-    --axon: cyan;
-    --terminal: #87CEFA
+    --nucleus: #9E1B38;
+    --axon: mix(#9E1B38, #F05350, 50%);
+    --terminal: #F05350;
 
   &.logic
-    --nucleus: red;
-    --axon: mix(red, orange, 50%);
-    --terminal: orange;
+    --nucleus: #2D6DE9;
+    --axon: mix(#2D6DE9, #12C2E9, 50%);
+    --terminal: #12C2E9;
 
   &.memory
-    --nucleus: pink;
-    --axon: mix(pink, brown, 50%);
-    --terminal: brown;
+    --nucleus: #EC008C;
+    --axon: mix(#EC008C, #FC6767, 50%);
+    --terminal: #FC6767;
 
     .memory-icon
       position: relative;
@@ -42,9 +42,9 @@
         font-size: 1em;
 
   &.language
-    --nucleus: darkgreen;
-    --axon: mix(darkgreen, gold, 50%);
-    --terminal: gold;
+    --nucleus: #1E6305;
+    --axon: mix(#1E6305, #BDFF00, 50%);
+    --terminal: #BDFF00;
 
   .neuron-inner
     filter: url("#goo");

@@ -156,6 +156,8 @@ App*
 
     interface
         app
+            control-room-background
+                img.control-room(src="./assets/control-room.svg")
             screen-layer
                 draw NeuralScreen
 
@@ -171,6 +173,7 @@ App*
             neural-screen-wrapper(class="{{_view}} {{@name}}", style=@Transform.string)
                 neural-screen-inner
                     svg.neural-screen(svg=true, postRender=lib.resize_svg, w=_window.width, h=_window.height)
+                        // svg.neural-screen(svg=true, postRender=lib.resize_svg, w=1280, h=800)
                         draw Neuron
 
         Transform*
@@ -203,5 +206,17 @@ SVGDefs*
                 feGaussianBlur(svg=true, in="SourceGraphic", stdDeviation="10", result="blur")
                 feColorMatrix(svg=true, in="blur", type="matrix", values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7", result="goo")
                 feBlend(svg=true, in="goo", in2="SourceGraphic")
+
+    GlowFilter[1]
+        @color: "FFFFFF"
+        bind @matrix: lib.color_to_matrix(@color)
+
+        interface
+            filter(svg=true, id="glow-{{@color}}")
+                    feColorMatrix(svg=true, type="matrix", values=@matrix)
+                    feGaussianBlur(svg=true, stdDeviation=6, result="colored_blur")
+                    feMerge(svg=true)
+                        feMergeNode(svg=true, in="colored_blur")
+                        feMergeNode(svg=true, in="SourceGraphic")
 
 import "./parts/editor/editor.statechart"
